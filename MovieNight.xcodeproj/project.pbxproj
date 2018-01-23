@@ -12,6 +12,13 @@
 		FACB05162016769D006545D6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FACB05142016769D006545D6 /* Main.storyboard */; };
 		FACB05182016769D006545D6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FACB05172016769D006545D6 /* Assets.xcassets */; };
 		FACB051B2016769D006545D6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FACB05192016769D006545D6 /* LaunchScreen.storyboard */; };
+		FACB05232017CE95006545D6 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACB05222017CE95006545D6 /* Errors.swift */; };
+		FACB052A2017CF50006545D6 /* JSONDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACB05292017CF50006545D6 /* JSONDownloader.swift */; };
+		FACB052C2017CF93006545D6 /* MovieDatabaseAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACB052B2017CF93006545D6 /* MovieDatabaseAPIClient.swift */; };
+		FACB052F2017D042006545D6 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACB052E2017D042006545D6 /* Endpoint.swift */; };
+		FACB05312017D0A2006545D6 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACB05302017D0A2006545D6 /* Movie.swift */; };
+		FACB05332017D0F2006545D6 /* MovieDBEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACB05322017D0F2006545D6 /* MovieDBEntity.swift */; };
+		FACB05352017D31F006545D6 /* StubData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACB05342017D31F006545D6 /* StubData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +29,13 @@
 		FACB05172016769D006545D6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FACB051A2016769D006545D6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FACB051C2016769D006545D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FACB05222017CE95006545D6 /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
+		FACB05292017CF50006545D6 /* JSONDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONDownloader.swift; sourceTree = "<group>"; };
+		FACB052B2017CF93006545D6 /* MovieDatabaseAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDatabaseAPIClient.swift; sourceTree = "<group>"; };
+		FACB052E2017D042006545D6 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		FACB05302017D0A2006545D6 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		FACB05322017D0F2006545D6 /* MovieDBEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDBEntity.swift; sourceTree = "<group>"; };
+		FACB05342017D31F006545D6 /* StubData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StubData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,11 +71,66 @@
 				FACB05102016769D006545D6 /* AppDelegate.swift */,
 				FACB05122016769D006545D6 /* ViewController.swift */,
 				FACB05142016769D006545D6 /* Main.storyboard */,
+				FACB05222017CE95006545D6 /* Errors.swift */,
+				FACB05282017CF1F006545D6 /* Data Sources */,
+				FACB05242017CEAA006545D6 /* Networking */,
+				FACB05252017CEB4006545D6 /* Models */,
+				FACB05262017CEBC006545D6 /* View Models */,
+				FACB05272017CECD006545D6 /* Controllers */,
 				FACB05172016769D006545D6 /* Assets.xcassets */,
 				FACB05192016769D006545D6 /* LaunchScreen.storyboard */,
 				FACB051C2016769D006545D6 /* Info.plist */,
 			);
 			path = MovieNight;
+			sourceTree = "<group>";
+		};
+		FACB05242017CEAA006545D6 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				FACB052D2017D02B006545D6 /* Endpoint */,
+				FACB05292017CF50006545D6 /* JSONDownloader.swift */,
+				FACB052B2017CF93006545D6 /* MovieDatabaseAPIClient.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		FACB05252017CEB4006545D6 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FACB05322017D0F2006545D6 /* MovieDBEntity.swift */,
+				FACB05302017D0A2006545D6 /* Movie.swift */,
+				FACB05342017D31F006545D6 /* StubData.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		FACB05262017CEBC006545D6 /* View Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "View Models";
+			sourceTree = "<group>";
+		};
+		FACB05272017CECD006545D6 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		FACB05282017CF1F006545D6 /* Data Sources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Data Sources";
+			sourceTree = "<group>";
+		};
+		FACB052D2017D02B006545D6 /* Endpoint */ = {
+			isa = PBXGroup;
+			children = (
+				FACB052E2017D042006545D6 /* Endpoint.swift */,
+			);
+			path = Endpoint;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -136,8 +205,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FACB05312017D0A2006545D6 /* Movie.swift in Sources */,
+				FACB05332017D0F2006545D6 /* MovieDBEntity.swift in Sources */,
+				FACB052A2017CF50006545D6 /* JSONDownloader.swift in Sources */,
 				FACB05132016769D006545D6 /* ViewController.swift in Sources */,
+				FACB05232017CE95006545D6 /* Errors.swift in Sources */,
 				FACB05112016769D006545D6 /* AppDelegate.swift in Sources */,
+				FACB052F2017D042006545D6 /* Endpoint.swift in Sources */,
+				FACB052C2017CF93006545D6 /* MovieDatabaseAPIClient.swift in Sources */,
+				FACB05352017D31F006545D6 /* StubData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
