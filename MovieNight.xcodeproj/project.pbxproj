@@ -19,6 +19,8 @@
 		FACB05312017D0A2006545D6 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACB05302017D0A2006545D6 /* Movie.swift */; };
 		FACB05332017D0F2006545D6 /* MovieDBEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACB05322017D0F2006545D6 /* MovieDBEntity.swift */; };
 		FACB05352017D31F006545D6 /* StubData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACB05342017D31F006545D6 /* StubData.swift */; };
+		FACB05572017FFC5006545D6 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACB05562017FFC5006545D6 /* Person.swift */; };
+		FACB05592018002D006545D6 /* Genre.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACB05582018002D006545D6 /* Genre.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +38,8 @@
 		FACB05302017D0A2006545D6 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		FACB05322017D0F2006545D6 /* MovieDBEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDBEntity.swift; sourceTree = "<group>"; };
 		FACB05342017D31F006545D6 /* StubData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StubData.swift; sourceTree = "<group>"; };
+		FACB05562017FFC5006545D6 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		FACB05582018002D006545D6 /* Genre.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Genre.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,8 +101,10 @@
 		FACB05252017CEB4006545D6 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				FACB05582018002D006545D6 /* Genre.swift */,
 				FACB05322017D0F2006545D6 /* MovieDBEntity.swift */,
 				FACB05302017D0A2006545D6 /* Movie.swift */,
+				FACB05562017FFC5006545D6 /* Person.swift */,
 				FACB05342017D31F006545D6 /* StubData.swift */,
 			);
 			path = Models;
@@ -205,8 +211,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FACB05572017FFC5006545D6 /* Person.swift in Sources */,
 				FACB05312017D0A2006545D6 /* Movie.swift in Sources */,
 				FACB05332017D0F2006545D6 /* MovieDBEntity.swift in Sources */,
+				FACB05592018002D006545D6 /* Genre.swift in Sources */,
 				FACB052A2017CF50006545D6 /* JSONDownloader.swift in Sources */,
 				FACB05132016769D006545D6 /* ViewController.swift in Sources */,
 				FACB05232017CE95006545D6 /* Errors.swift in Sources */,

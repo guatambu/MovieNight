@@ -9,7 +9,6 @@
 import Foundation
 
 
-protocol StarWarsEntity {
-    var name: String { get }
-    var length: String { get }
+protocol MovieDBEntity {
+    var id: Int { get }
 }

@@ -1,5 +1,5 @@
 //
-//  Movie.swift
+//  Person.swift
 //  MovieNight
 //
 //  Created by Michael Guatambu Davis on 1/23/18.
@@ -8,17 +8,15 @@
 
 import Foundation
 
-class Movie: MovieDBEntity {
+class Person: MovieDBEntity {
     // ID
     var id: Int
-    // Title
-    var title: String
-    // Release Date
-    var release_date: String
+    // Name
+    var name: String
     // Genres
     var genres: [String: Any]
     // Movie Poster Path
-    var poster_path: String
+    var profile_path: String
     
     
     
