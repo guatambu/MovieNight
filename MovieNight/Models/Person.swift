@@ -13,10 +13,14 @@ class Person: MovieDBEntity {
     var id: Int
     // Name
     var name: String
+    // Genre IDs
+    var genre_ids: [Int]
     // Genres
-    var genres: [String: Any]
-    // Movie Poster Path
+    var genres: [String]
+    // Profile Pic Path
     var profile_path: String
+    // Movies List
+    var movies: [String: String]
     
     
     

@@ -19,8 +19,10 @@ class Movie: MovieDBEntity {
     var genres: [String: Any]
     // Movie Poster Path
     var poster_path: String
-    
-    
+    // Movie Rating
+    var vote_average: Int
+    // Movie Popularity
+    var vote_count: Int
     
     
     init?(json: [String: Any]) {
