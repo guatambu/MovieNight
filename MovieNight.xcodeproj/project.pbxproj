@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FAB7E495201BCF560008497D /* YouTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB7E494201BCF560008497D /* YouTableViewCell.swift */; };
 		FACB05112016769D006545D6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACB05102016769D006545D6 /* AppDelegate.swift */; };
 		FACB05132016769D006545D6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACB05122016769D006545D6 /* ViewController.swift */; };
 		FACB05162016769D006545D6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FACB05142016769D006545D6 /* Main.storyboard */; };
@@ -24,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FAB7E494201BCF560008497D /* YouTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouTableViewCell.swift; sourceTree = "<group>"; };
 		FACB050D2016769D006545D6 /* MovieNight.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieNight.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FACB05102016769D006545D6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FACB05122016769D006545D6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -120,6 +122,7 @@
 		FACB05272017CECD006545D6 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				FAB7E494201BCF560008497D /* YouTableViewCell.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -212,6 +215,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FACB05572017FFC5006545D6 /* Person.swift in Sources */,
+				FAB7E495201BCF560008497D /* YouTableViewCell.swift in Sources */,
 				FACB05312017D0A2006545D6 /* Movie.swift in Sources */,
 				FACB05332017D0F2006545D6 /* MovieDBEntity.swift in Sources */,
 				FACB05592018002D006545D6 /* Genre.swift in Sources */,
