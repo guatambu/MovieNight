@@ -18,11 +18,14 @@ import Foundation
 
 URL components (examples)
 
-base URL: https://api.themoviedb.org/3
-genre path: /genre
-movie path: /movie
-person path: /person
-genre/movie/person id path: /Integer
+API base URL: https://api.themoviedb.org/3/
+Image library base URL: https://image.tmdb.org/t/p/
+genre path: genre/
+movie path: movie/
+person path: person/
+movie genre list path: /genre/movie/list
+ get list of movies in genre path: /genre/{genre_id}/movies
+genre/movie/person id path: Integer
 start of URL query item path: ?
 additional query items path: &
 api key path: api_key=<<api_key>>
@@ -63,6 +66,7 @@ protocol Endpoint {
     var base: String { get }
     var path: String { get }
     var queryItems: [URLQueryItem] { get }
+    
 }
 
 extension Endpoint {
@@ -80,34 +84,40 @@ extension Endpoint {
     }
 }
 
-enum SWAPI {
-    case films(page: String?)
-    case people(page: String?)
-    case planets(page: String?)
-    case spaceships(page: String?)
-    case species(page: String?)
-    case vehicles(page: String?)
+enum TMDBAPI {
+    case movie
+    case person
+    case movieGenreList
+    case moviesInGenre(page: String?)
 }
 
-extension SWAPI: Endpoint {
+extension TMDBAPI: Endpoint {
     var base: String {
-        return "https://swapi.co"
+        return "https://api.themoviedb.org/3/"
+    }
+    
+    var baseImages: String {
+        return "https://image.tmdb.org/t/p/"
+    }
+    
+    fileprivate var api_key: String {
+        return "9d2b65148c48ec092a601516a168a71b"
     }
     
     var path: String {
         switch self {
-        case .films: return "/api/films/"
-        case .people: return "/api/people/"
-        case .planets: return "/api/planets/"
-        case .spaceships: return "/api/starships/"
-        case .species: return "/api/species/"
-        case .vehicles: return "/api/vehicles/"
+        case .movie: return "movie/"
+        case .person: return "person/"
+        case .movieGenreList: return "/genre/movie/list"
+        case .moviesInGenre: return "/genre/\(id)/movies"
         }
     }
     
+    var id: Int
+    
     var queryItems: [URLQueryItem] {
         switch self {
-        case .films(let page):
+        case .moviesInGenre(let page):
             var result = [URLQueryItem]()
             
             if let page = page {
@@ -116,51 +126,18 @@ extension SWAPI: Endpoint {
             }
             return result
             
-        case .people(let page):
-            var result = [URLQueryItem]()
             
-            if let page = page {
-                let pageNumber = URLQueryItem(name: "page", value: page)
-                result.append(pageNumber)
-            }
-            return result
-            
-        case .planets(let page):
-            var result = [URLQueryItem]()
-            
-            if let page = page {
-                let pageNumber = URLQueryItem(name: "page", value: page)
-                result.append(pageNumber)
-            }
-            return result
-            
-        case .spaceships(let page):
-            var result = [URLQueryItem]()
-            
-            if let page = page {
-                let pageNumber = URLQueryItem(name: "page", value: page)
-                result.append(pageNumber)
-            }
-            return result
-            
-        case .species(let page):
-            var result = [URLQueryItem]()
-            
-            if let page = page {
-                let pageNumber = URLQueryItem(name: "page", value: page)
-                result.append(pageNumber)
-            }
-            return result
-            
-        case .vehicles(let page):
-            var result = [URLQueryItem]()
-            
-            if let page = page {
-                let pageNumber = URLQueryItem(name: "page", value: page)
-                result.append(pageNumber)
-            }
-            return result
         }
     }
     
 }
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 

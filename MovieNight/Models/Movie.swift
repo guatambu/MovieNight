@@ -24,7 +24,24 @@ class Movie: MovieDBEntity {
     // Movie Popularity
     var vote_count: Int
     
+    init(id: Int,
+         title: String,
+         release_date: String,
+         genres: [String: Any],
+         poster_path: String,
+         vote_average: Int,
+         vote_count: Int) {
+            self.id = id
+            self.title = title
+            self.release_date = release_date
+            self.genres = genres
+            self.poster_path = poster_path
+            self.vote_average = vote_average
+            self.vote_count = vote_count
+    }
     
+    
+    /*
     init?(json: [String: Any]) {
         struct Key {
             static let length = "length"
@@ -85,4 +102,5 @@ class Movie: MovieDBEntity {
         self.make = makeValue
         self.url = urlValue
     }
+    */
 }

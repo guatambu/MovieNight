@@ -22,9 +22,23 @@ class Person: MovieDBEntity {
     // Movies List
     var movies: [String: String]
     
+    init(id: Int,
+         name: String,
+         genre_ids: [Int],
+         genres: [String],
+         profile_path: String,
+         movies: [String: String]
+        ) {
+            self.id = id
+            self.name = name
+            self.genre_ids = genre_ids
+            self.genres = genres
+            self.profile_path = profile_path
+            self.movies = movies
+    }
     
     
-    
+    /*
     init?(json: [String: Any]) {
         struct Key {
             static let length = "length"
@@ -85,4 +99,5 @@ class Person: MovieDBEntity {
         self.make = makeValue
         self.url = urlValue
     }
+    */
 }
