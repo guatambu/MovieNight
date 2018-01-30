@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 class Movie: MovieDBEntity {
     // ID
@@ -18,7 +19,7 @@ class Movie: MovieDBEntity {
     // Genres
     var genres: [String: Any]
     // Movie Poster Path
-    var poster_path: String
+    var poster_path: UIImage
     // Movie Rating
     var vote_average: Int
     // Movie Popularity
@@ -28,7 +29,7 @@ class Movie: MovieDBEntity {
          title: String,
          release_date: String,
          genres: [String: Any],
-         poster_path: String,
+         poster_path: UIImage,
          vote_average: Int,
          vote_count: Int) {
             self.id = id
@@ -104,3 +105,6 @@ class Movie: MovieDBEntity {
     }
     */
 }
+
+
+

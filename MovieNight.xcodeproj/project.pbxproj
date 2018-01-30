@@ -7,9 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		FAB7E495201BCF560008497D /* YouTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB7E494201BCF560008497D /* YouTableViewCell.swift */; };
+		FAB7E495201BCF560008497D /* YourResultsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB7E494201BCF560008497D /* YourResultsTableViewCell.swift */; };
+		FAB7E497201BF1560008497D /* MovieTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB7E496201BF1560008497D /* MovieTableViewController.swift */; };
+		FAB7E499201FCD0E0008497D /* YouGenreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB7E498201FCD0E0008497D /* YouGenreTableViewCell.swift */; };
+		FAB7E49B201FD4E40008497D /* YourFriendGenreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB7E49A201FD4E40008497D /* YourFriendGenreTableViewCell.swift */; };
+		FAB7E49E201FF2470008497D /* YouActorsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB7E49D201FF2470008497D /* YouActorsTableViewCell.swift */; };
+		FAB7E4A0201FF25B0008497D /* YourFriendActorsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB7E49F201FF25B0008497D /* YourFriendActorsTableViewCell.swift */; };
+		FAB7E4A4202107B10008497D /* YourMovieFinalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB7E4A3202107B10008497D /* YourMovieFinalViewController.swift */; };
+		FAB7E4A6202108380008497D /* YourResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB7E4A5202108380008497D /* YourResultsTableViewController.swift */; };
+		FAB7E4AA2021089E0008497D /* YouGenresTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB7E4A92021089E0008497D /* YouGenresTableViewController.swift */; };
+		FAB7E4AC202108AF0008497D /* YouPersonsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB7E4AB202108AF0008497D /* YouPersonsTableViewController.swift */; };
+		FAB7E4AE202108C20008497D /* YourFriendGenresTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB7E4AD202108C20008497D /* YourFriendGenresTableViewController.swift */; };
+		FAB7E4B0202108DE0008497D /* YourFriendPersonsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB7E4AF202108DE0008497D /* YourFriendPersonsTableViewController.swift */; };
 		FACB05112016769D006545D6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACB05102016769D006545D6 /* AppDelegate.swift */; };
-		FACB05132016769D006545D6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACB05122016769D006545D6 /* ViewController.swift */; };
+		FACB05132016769D006545D6 /* HomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACB05122016769D006545D6 /* HomeScreenViewController.swift */; };
 		FACB05162016769D006545D6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FACB05142016769D006545D6 /* Main.storyboard */; };
 		FACB05182016769D006545D6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FACB05172016769D006545D6 /* Assets.xcassets */; };
 		FACB051B2016769D006545D6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FACB05192016769D006545D6 /* LaunchScreen.storyboard */; };
@@ -25,10 +36,21 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		FAB7E494201BCF560008497D /* YouTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouTableViewCell.swift; sourceTree = "<group>"; };
+		FAB7E494201BCF560008497D /* YourResultsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourResultsTableViewCell.swift; sourceTree = "<group>"; };
+		FAB7E496201BF1560008497D /* MovieTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTableViewController.swift; sourceTree = "<group>"; };
+		FAB7E498201FCD0E0008497D /* YouGenreTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouGenreTableViewCell.swift; sourceTree = "<group>"; };
+		FAB7E49A201FD4E40008497D /* YourFriendGenreTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourFriendGenreTableViewCell.swift; sourceTree = "<group>"; };
+		FAB7E49D201FF2470008497D /* YouActorsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouActorsTableViewCell.swift; sourceTree = "<group>"; };
+		FAB7E49F201FF25B0008497D /* YourFriendActorsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourFriendActorsTableViewCell.swift; sourceTree = "<group>"; };
+		FAB7E4A3202107B10008497D /* YourMovieFinalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourMovieFinalViewController.swift; sourceTree = "<group>"; };
+		FAB7E4A5202108380008497D /* YourResultsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourResultsTableViewController.swift; sourceTree = "<group>"; };
+		FAB7E4A92021089E0008497D /* YouGenresTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouGenresTableViewController.swift; sourceTree = "<group>"; };
+		FAB7E4AB202108AF0008497D /* YouPersonsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouPersonsTableViewController.swift; sourceTree = "<group>"; };
+		FAB7E4AD202108C20008497D /* YourFriendGenresTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourFriendGenresTableViewController.swift; sourceTree = "<group>"; };
+		FAB7E4AF202108DE0008497D /* YourFriendPersonsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourFriendPersonsTableViewController.swift; sourceTree = "<group>"; };
 		FACB050D2016769D006545D6 /* MovieNight.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieNight.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FACB05102016769D006545D6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		FACB05122016769D006545D6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		FACB05122016769D006545D6 /* HomeScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenViewController.swift; sourceTree = "<group>"; };
 		FACB05152016769D006545D6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FACB05172016769D006545D6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FACB051A2016769D006545D6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -55,6 +77,52 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FAB7E49C201FF2110008497D /* TableViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				FAB7E494201BCF560008497D /* YourResultsTableViewCell.swift */,
+				FAB7E4A1201FF2610008497D /* You */,
+				FAB7E4A2201FF2670008497D /* Your Friend */,
+			);
+			path = TableViewCells;
+			sourceTree = "<group>";
+		};
+		FAB7E4A1201FF2610008497D /* You */ = {
+			isa = PBXGroup;
+			children = (
+				FAB7E498201FCD0E0008497D /* YouGenreTableViewCell.swift */,
+				FAB7E49D201FF2470008497D /* YouActorsTableViewCell.swift */,
+			);
+			path = You;
+			sourceTree = "<group>";
+		};
+		FAB7E4A2201FF2670008497D /* Your Friend */ = {
+			isa = PBXGroup;
+			children = (
+				FAB7E49A201FD4E40008497D /* YourFriendGenreTableViewCell.swift */,
+				FAB7E49F201FF25B0008497D /* YourFriendActorsTableViewCell.swift */,
+			);
+			path = "Your Friend";
+			sourceTree = "<group>";
+		};
+		FAB7E4A7202108750008497D /* You */ = {
+			isa = PBXGroup;
+			children = (
+				FAB7E4A92021089E0008497D /* YouGenresTableViewController.swift */,
+				FAB7E4AB202108AF0008497D /* YouPersonsTableViewController.swift */,
+			);
+			path = You;
+			sourceTree = "<group>";
+		};
+		FAB7E4A82021087D0008497D /* Your Friend */ = {
+			isa = PBXGroup;
+			children = (
+				FAB7E4AD202108C20008497D /* YourFriendGenresTableViewController.swift */,
+				FAB7E4AF202108DE0008497D /* YourFriendPersonsTableViewController.swift */,
+			);
+			path = "Your Friend";
+			sourceTree = "<group>";
+		};
 		FACB05042016769D006545D6 = {
 			isa = PBXGroup;
 			children = (
@@ -75,7 +143,6 @@
 			isa = PBXGroup;
 			children = (
 				FACB05102016769D006545D6 /* AppDelegate.swift */,
-				FACB05122016769D006545D6 /* ViewController.swift */,
 				FACB05142016769D006545D6 /* Main.storyboard */,
 				FACB05222017CE95006545D6 /* Errors.swift */,
 				FACB05282017CF1F006545D6 /* Data Sources */,
@@ -103,8 +170,8 @@
 		FACB05252017CEB4006545D6 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				FACB05582018002D006545D6 /* Genre.swift */,
 				FACB05322017D0F2006545D6 /* MovieDBEntity.swift */,
+				FACB05582018002D006545D6 /* Genre.swift */,
 				FACB05302017D0A2006545D6 /* Movie.swift */,
 				FACB05562017FFC5006545D6 /* Person.swift */,
 				FACB05342017D31F006545D6 /* StubData.swift */,
@@ -115,6 +182,7 @@
 		FACB05262017CEBC006545D6 /* View Models */ = {
 			isa = PBXGroup;
 			children = (
+				FAB7E496201BF1560008497D /* MovieTableViewController.swift */,
 			);
 			path = "View Models";
 			sourceTree = "<group>";
@@ -122,7 +190,12 @@
 		FACB05272017CECD006545D6 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				FAB7E494201BCF560008497D /* YouTableViewCell.swift */,
+				FACB05122016769D006545D6 /* HomeScreenViewController.swift */,
+				FAB7E4A5202108380008497D /* YourResultsTableViewController.swift */,
+				FAB7E4A3202107B10008497D /* YourMovieFinalViewController.swift */,
+				FAB7E4A7202108750008497D /* You */,
+				FAB7E4A82021087D0008497D /* Your Friend */,
+				FAB7E49C201FF2110008497D /* TableViewCells */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -215,15 +288,26 @@
 			buildActionMask = 2147483647;
 			files = (
 				FACB05572017FFC5006545D6 /* Person.swift in Sources */,
-				FAB7E495201BCF560008497D /* YouTableViewCell.swift in Sources */,
+				FAB7E495201BCF560008497D /* YourResultsTableViewCell.swift in Sources */,
+				FAB7E4AE202108C20008497D /* YourFriendGenresTableViewController.swift in Sources */,
 				FACB05312017D0A2006545D6 /* Movie.swift in Sources */,
+				FAB7E49E201FF2470008497D /* YouActorsTableViewCell.swift in Sources */,
+				FAB7E4AC202108AF0008497D /* YouPersonsTableViewController.swift in Sources */,
 				FACB05332017D0F2006545D6 /* MovieDBEntity.swift in Sources */,
 				FACB05592018002D006545D6 /* Genre.swift in Sources */,
+				FAB7E499201FCD0E0008497D /* YouGenreTableViewCell.swift in Sources */,
 				FACB052A2017CF50006545D6 /* JSONDownloader.swift in Sources */,
-				FACB05132016769D006545D6 /* ViewController.swift in Sources */,
+				FAB7E4A0201FF25B0008497D /* YourFriendActorsTableViewCell.swift in Sources */,
+				FACB05132016769D006545D6 /* HomeScreenViewController.swift in Sources */,
+				FAB7E4B0202108DE0008497D /* YourFriendPersonsTableViewController.swift in Sources */,
 				FACB05232017CE95006545D6 /* Errors.swift in Sources */,
+				FAB7E4A6202108380008497D /* YourResultsTableViewController.swift in Sources */,
+				FAB7E4A4202107B10008497D /* YourMovieFinalViewController.swift in Sources */,
+				FAB7E497201BF1560008497D /* MovieTableViewController.swift in Sources */,
 				FACB05112016769D006545D6 /* AppDelegate.swift in Sources */,
 				FACB052F2017D042006545D6 /* Endpoint.swift in Sources */,
+				FAB7E49B201FD4E40008497D /* YourFriendGenreTableViewCell.swift in Sources */,
+				FAB7E4AA2021089E0008497D /* YouGenresTableViewController.swift in Sources */,
 				FACB052C2017CF93006545D6 /* MovieDatabaseAPIClient.swift in Sources */,
 				FACB05352017D31F006545D6 /* StubData.swift in Sources */,
 			);

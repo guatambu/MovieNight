@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 class Person: MovieDBEntity {
     // ID
@@ -18,7 +19,7 @@ class Person: MovieDBEntity {
     // Genres
     var genres: [String]
     // Profile Pic Path
-    var profile_path: String
+    var profile_path: UIImage
     // Movies List
     var movies: [String: String]
     
@@ -26,7 +27,7 @@ class Person: MovieDBEntity {
          name: String,
          genre_ids: [Int],
          genres: [String],
-         profile_path: String,
+         profile_path: UIImage,
          movies: [String: String]
         ) {
             self.id = id

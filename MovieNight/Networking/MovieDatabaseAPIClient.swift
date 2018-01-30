@@ -11,6 +11,8 @@ import Foundation
 
 class MovieDatabaseAPIClient {
 
+    /*
+    
     let downloader = JSONDownloader()
     let session = URLSession.shared
     
@@ -61,5 +63,5 @@ class MovieDatabaseAPIClient {
         }
         task.resume()
     }
-
+ */
 }

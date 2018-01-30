@@ -59,7 +59,7 @@ https://image.tmdb.org/t/p/w500/kqjL17yufvn9OVLyXYpvtyrFfak.jpg
 
 ******
 
-*/
+
 
 
 protocol Endpoint {
@@ -133,7 +133,7 @@ extension TMDBAPI: Endpoint {
 }
 
  
- 
+ */
  
  
  

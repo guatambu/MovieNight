@@ -8,7 +8,7 @@
 
 import UIKit
 
-class YouTableViewCell: UITableViewCell {
+class YourResultsTableViewCell: UITableViewCell {
     
     //MARK: Properties
     @IBOutlet weak var movieTitleLabel: UILabel!
