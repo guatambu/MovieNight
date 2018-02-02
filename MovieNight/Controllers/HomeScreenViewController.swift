@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  HomeScreenViewController.swift
 //  MovieNight
 //
 //  Created by Michael Guatambu Davis on 1/22/18.
@@ -11,9 +11,17 @@ import UIKit
 class HomeScreenViewController: UIViewController {
 
     //MARK: Properties
+    
+    @IBOutlet weak var youStackView: UIStackView!
+    @IBOutlet weak var friendStackView: UIStackView!
+    @IBOutlet weak var timeToPickAMovieOutlet: UIButton!
+    
+    @IBAction func youPickAMovie(_ sender: Any) {
+    }
+    @IBAction func friendPickAMovie(_ sender: Any) {
+    }
 
-    @IBOutlet weak var timeToPickMovieLabel: UIButton!
-    @IBAction func TimeToPickMovie(_ sender: Any) {
+    @IBAction func timeToPickAMovie(_ sender: Any) {
     }
     
     override func viewDidLoad() {
