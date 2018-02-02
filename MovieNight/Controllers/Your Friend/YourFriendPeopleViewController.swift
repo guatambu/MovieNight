@@ -1,19 +1,21 @@
 //
-//  YouGenreViewController.swift
+//  YourFriendPeopleViewController.swift
 //  MovieNight
 //
-//  Created by Michael Guatambu Davis on 2/1/18.
+//  Created by Michael Guatambu Davis on 2/2/18.
 //  Copyright © 2018 leme group. All rights reserved.
 //
 
 import UIKit
 
-class YouGenreViewController: UIViewController {
-    
+class YourFriendPeopleViewController: UIViewController {
+
     //MARK: Properties
     
-    @IBOutlet weak var selecteGenresLabel: UILabel!
-    @IBOutlet weak var selectedBubbleImageView: UIView!
+    @IBOutlet weak var selectedPeopleBubbleImageView: UIImageView!
+    @IBOutlet weak var selectedPeopleLabel: UILabel!
+    @IBOutlet weak var selectedGenresLabel: UILabel!
+    @IBOutlet weak var selectedGenresBubbleImageView: UIImageView!
     
     
     //MARK: ViewDidLoad

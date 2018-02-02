@@ -1,5 +1,5 @@
 //
-//  YouActorViewController.swift
+//  YouPeopleViewController.swift
 //  MovieNight
 //
 //  Created by Michael Guatambu Davis on 2/1/18.
@@ -8,11 +8,16 @@
 
 import UIKit
 
-class YouActorViewController: UIViewController {
+class YouPeopleViewController: UIViewController {
 
     //MARK: Properties
+    
+    @IBOutlet weak var selectedGenreBubbleImageView: UIImageView!
     @IBOutlet weak var selectedGenresLabel: UILabel!
-
+    @IBOutlet weak var selectedPeopleBubbleImageView: UIImageView!
+    @IBOutlet weak var selectedPeopleLabel: UILabel!
+    
+    //MARK: ViewDidLoad
     
     override func viewDidLoad() {
         super.viewDidLoad()
