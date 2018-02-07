@@ -2,7 +2,7 @@
 //  YourMovieFinalViewController.swift
 //  MovieNight
 //
-//  Created by Michael G Davis on 1/30/18.
+//  Created by Michael Guatambu Davis on 1/30/18.
 //  Copyright © 2018 leme group. All rights reserved.
 //
 

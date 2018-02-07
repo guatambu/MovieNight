@@ -16,45 +16,77 @@ import Foundation
 
 ******
 
-URL components (examples)
+URL including components (examples)
+ 
 
+1) ***** Full URL for comprehensive list of movie genres:
+ 
 API base URL: https://api.themoviedb.org/3/
-Image library base URL: https://image.tmdb.org/t/p/
-genre path: genre/
-movie path: movie/
-person path: person/
-movie genre list path: /genre/movie/list
- get list of movies in genre path: /genre/{genre_id}/movies
-genre/movie/person id path: Integer
-start of URL query item path: ?
-additional query items path: &
-api key path: api_key=<<api_key>>
+path: genre/movie/list
+-> ?
+api_key=9d2b65148c48ec092a601516a168a71b
+-> &
+ 
+ *** query items -> key = value pairs available ***
+ 
+ -> language=en-US
+ 
+ 
+2) ***** List of Popular People to choose from URL *****
 
-language path: language=
-chosen language path ex. : language=en-US
-adult movies path: include_adult=BOOLEAN
+API base URL:  https://api.themoviedb.org/3/
+path:  person/popular
+-> ?
+api_key=9d2b65148c48ec092a601516a168a71b
+-> &
 
-sort path: sort_by=
-sort options: popularity.asc/desc, release_date.asc/desc, revenue.asc/desc, vote_average.asc/desc, vote_count.asc/desc, created_at.asc/desc <-(genre only)
+ *** query items -> key = value pairs available ***
 
-image base URL: https://image.tmdb.org/t/p/
-image size path: w500
-image poster_path: /kqjL17yufvn9OVLyXYpvtyrFfak.jpg
+ -> language=en-US
+ -> &
+ -> page=1
 
-full URL for a specific movie:
-https://api.themoviedb.org/3/movie/550?api_key=<<api_key>>
+    *** Person Profile Pic URL for popular person list ***
 
-full URL for a specific list of movies in a genre:
-https://api.themoviedb.org/3/genre/{genre_id: Integer}/movies?api_key=<<api_key>>&language=en-US&include_adult=false&sort_by=created_at.asc
+    image base URL: https://image.tmdb.org/t/p/
+    image size path: w500
+    image poster_path: /kqjL17yufvn9OVLyXYpvtyrFfak.jpg
+ 
 
-full URL for comprehensive list of movie genres:
-https://api.themoviedb.org/3/genre/movie/list?api_key=<<api_key>>&language=en-US
+3) ***** List Of Movies With Genre And Person To Choose From URL:
+ 
+API base URL: https://api.themoviedb.org/3/
+path: discover/movie
+-> ?
+api_key=9d2b65148c48ec092a601516a168a71b
+-> &
+ 
+ *** query items -> key = value pairs available ***
+ -> language=en-US
+ -> &
+ -> sort_by=popularity.desc
+ -> &
+ -> include_adult=false
+ -> &
+ -> include_video=false
+ -> &
+ -> page=2
+ -> &
+ -> with_genres=35
+ -> &
+ -> with_people=53
 
-full URL for a specifuc person/actor/director:
-https://api.themoviedb.org/3/person/10?api_key=<<api_key>>&language=en-US
+    * sort path: sort_by=
+    * sort options: popularity.asc/desc, release_date.asc/desc, revenue.asc/desc, vote_average.asc/desc, vote_count.asc/desc, created_at.asc/desc <-(genre only)
+ 
 
-full URL for a specific image:
-https://image.tmdb.org/t/p/w500/kqjL17yufvn9OVLyXYpvtyrFfak.jpg
+4) ***** Full URL for a specific movie: *****
+ 
+API base URL:  https://api.themoviedb.org/3/
+path:  movie/
+movie id: <Movie_ID#>
+-> ?
+api_key=9d2b65148c48ec092a601516a168a71b
 
 
 ******
@@ -68,6 +100,7 @@ protocol Endpoint {
     var queryItems: [URLQueryItem] { get }
     
 }
+
 
 extension Endpoint {
     var urlComponents: URLComponents {
@@ -85,19 +118,26 @@ extension Endpoint {
 }
 
 enum TMDBAPI {
-    case movie
-    case person
     case movieGenreList
-    case moviesInGenre(page: String?)
+    case person
+    case moviesInGenreWithPerson(page: String?)
+    case movie
 }
 
 extension TMDBAPI: Endpoint {
-    var base: String {
-        return "https://api.themoviedb.org/3/"
-    }
-    
+ 
     var baseImages: String {
         return "https://image.tmdb.org/t/p/"
+    }
+ 
+    var pathImages: String {
+        switch self{
+        case .small: return "w185"
+        case .big: return "original"
+        }
+    }
+    var base: String {
+        return "https://api.themoviedb.org/3/"
     }
     
     fileprivate var api_key: String {
@@ -106,18 +146,59 @@ extension TMDBAPI: Endpoint {
     
     var path: String {
         switch self {
-        case .movie: return "movie/"
-        case .person: return "person/"
         case .movieGenreList: return "/genre/movie/list"
-        case .moviesInGenre: return "/genre/\(id)/movies"
+        case .person: return "person/popular"
+        case .moviesInGenreWithPerson: return "discover/movie"
+        case .movie: return "movie/"
         }
     }
-    
-    var id: Int
-    
+ 
     var queryItems: [URLQueryItem] {
         switch self {
-        case .moviesInGenre(let page):
+        case .movieGenreList(let language):
+            var result = [URLQueryItem]()
+ 
+            if let language = language {
+                let chosenLanguage = URLQueryItem(name: /*key*/ "language", value: en-US
+                result.append(chosenLanguage)
+            }
+ 
+            if let sort_by = sort_by {
+                let wayToSort = URLQueryItem(name: /*key*/ "sort_by", value: popularity.desc
+                result.append(wayToSort)
+            }
+ 
+            if let include_adult = include_adult {
+                let isAdult = URLQueryItem(name: /*key*/ "include_adult", value: false
+                result.append(isAdult)
+            }
+ 
+            if let include_video = include_video {
+                let isVideo = URLQueryItem(name: /*key*/ "include_video", value: false
+                result.append(isVideo)
+            }
+ 
+            if let page = page {
+                let pageNumebr = URLQueryItem(name: /*key*/ "page", value: page
+                result.append(pageNumber)
+            }
+ 
+            if let with_genre = with_genre {
+                let genreID = URLQueryItem(name: /*key*/ "with_genre", value: <GENRE_ID#>
+                result.append(genreID)
+            }
+ 
+            if let people = people {
+                let personID = URLQueryItem(name: /*key*/ "with_people", value: <PEOPLE_ID#>
+                result.append(personID)
+            }
+        return result
+ 
+        case .person:
+            var result = ""
+            return result
+ 
+        case .moviesInGenreWithPerson(let page):
             var result = [URLQueryItem]()
             
             if let page = page {
@@ -125,11 +206,47 @@ extension TMDBAPI: Endpoint {
                 result.append(pageNumber)
             }
             return result
-            
-            
-        }
+
+        case .movie:
+            var result = ""
+            return result
     }
     
+}
+ 
+
+ 
+******
+Images URL info
+ 
+movie posters have an image path called: "poster_path"
+
+ person profile pics have an image path called:  "profile_path"
+******
+ 
+enum TMDBImagesAPI {
+    case small
+    case large
+}
+ 
+protocol ImageEndpoint {
+    var base: String { get }
+    var sizePath: String { get }
+}
+
+
+extension ImageEndpoint {
+    var urlComponents: URLComponents {
+        var components = URLComponents(string: base)!
+        components.sizePath = sizePath
+
+        return components
+    }
+
+    var request: URLRequest {
+        let url = urlComponents.url!
+        return URLRequest(url: url)
+    }
 }
 
  
