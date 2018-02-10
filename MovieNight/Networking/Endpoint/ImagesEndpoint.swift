@@ -62,15 +62,15 @@ enum TMDBImagesAPI {
 extension TMDBImagesAPI: ImageEndpoint {
 
     var base: String {
-        return "https://image.tmdb.org/t/p/"
+        return "https://image.tmdb.org/t/p"
     }
 
     var path: String {
         switch self{
-        case .smallPersonProfileImage(let profilePathSmallSize): return "w185/\(profilePathSmallSize)"
-        case .originalPersonProfileImage(let profilePathOriginalSize): return "original/\(profilePathOriginalSize)"
-        case .smallMoviePosterImage(let posterPathSmallSize): return "w185/\(posterPathSmallSize)"
-        case .originalMoviePosterImage(let posterPathOriginalSize): return "original/\(posterPathOriginalSize)"
+        case .smallPersonProfileImage(let profilePathSmallSize): return "/w185/\(profilePathSmallSize)"
+        case .originalPersonProfileImage(let profilePathOriginalSize): return "/original/\(profilePathOriginalSize)"
+        case .smallMoviePosterImage(let posterPathSmallSize): return "/w185/\(posterPathSmallSize)"
+        case .originalMoviePosterImage(let posterPathOriginalSize): return "/original/\(posterPathOriginalSize)"
         }
     }
 }
