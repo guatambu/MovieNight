@@ -52,10 +52,10 @@ extension ImageEndpoint {
 }
 
 enum TMDBImagesAPI {
-    case smallPersonProfileImage(smallProfilePath: String)
-    case originalPersonProfileImage(originalProfilePath: String)
-    case smallMoviePosterImage(smallPosterPath: String)
-    case originalMoviePosterImage(originalPosterPath: String)
+    case smallPersonProfileImage(profilePathSmallSize: String)
+    case originalPersonProfileImage(profilePathOriginalSize: String)
+    case smallMoviePosterImage(posterPathSmallSize: String)
+    case originalMoviePosterImage(posterPathOriginalSize: String)
 }
 
 
@@ -67,10 +67,10 @@ extension TMDBImagesAPI: ImageEndpoint {
 
     var path: String {
         switch self{
-        case .smallPersonProfileImage(let smallProfilePath): return "w185/\(smallProfilePath)"
-        case .originalPersonProfileImage(let originalProfilePath): return "original/\(originalProfilePath)"
-        case .smallMoviePosterImage(let smallPosterPath): return "w185/\(smallPosterPath)"
-        case .originalMoviePosterImage(let originalPosterPath): return "original/\(originalPosterPath)"
+        case .smallPersonProfileImage(let profilePathSmallSize): return "w185/\(profilePathSmallSize)"
+        case .originalPersonProfileImage(let profilePathOriginalSize): return "original/\(profilePathOriginalSize)"
+        case .smallMoviePosterImage(let posterPathSmallSize): return "w185/\(posterPathSmallSize)"
+        case .originalMoviePosterImage(let posterPathOriginalSize): return "original/\(posterPathOriginalSize)"
         }
     }
 }

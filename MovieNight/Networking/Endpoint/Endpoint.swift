@@ -93,6 +93,20 @@ api_key=9d2b65148c48ec092a601516a168a71b
 */
 
 
+struct Movie1 {
+    let langauge: String = "en-US"
+    let sortBy: String = "pop.desc"
+    let includeAdult: String = "false"
+    let includeVideo: String = "false"
+    let page: String = "12"
+    let withGenreID: String = "28"
+    let people: String = "53"
+    let movieID: String = "12"
+}
+
+let myMovie = Movie1()
+
+
 protocol Endpoint {
     var base: String { get }
     var path: String { get }
@@ -100,6 +114,9 @@ protocol Endpoint {
     
 }
 
+fileprivate var apiKey: String {
+    return "9d2b65148c48ec092a601516a168a71b"
+}
 
 extension Endpoint {
     var urlComponents: URLComponents {
@@ -119,133 +136,132 @@ extension Endpoint {
 enum TMDBAPI {
     case movieGenreList(apiKey: String?, language: String?)
     case person(apiKey: String?, language: String?, page: String?)
-    case moviesInGenreWithPerson(apiKey: String?, language: String?, sortBy: String?, includeAdult: String?, includeVideo: String?, page: String?, withGenre: String?, people: String?)
-    case movie(apiKey: String?, language: String?)
+    case moviesInGenreWithPerson(apiKey: String?, language: String?, sortBy: String?, includeAdult: String?, includeVideo: String?, page: String?, withGenreID: String?, people: String?)
+    case movie(movieID: String, apiKey: String, language: String)
 }
 
 extension TMDBAPI: Endpoint {
- 
+    
     var base: String {
-        return "https://api.themoviedb.org/3/"
+        return "https://api.themoviedb.org/3"
     }
     
-    fileprivate var apiKey: String {
-        return "9d2b65148c48ec092a601516a168a71b"
-    }
+    
     
     var path: String {
         switch self {
         case .movieGenreList: return "/genre/movie/list"
-        case .person: return "person/popular"
-        case .moviesInGenreWithPerson: return "discover/movie"
-        case .movie(let movieID): return "movie/\(movieID)"
+        case .person: return "/person/popular"
+        case .moviesInGenreWithPerson: return "/discover/movie"
+        case .movie(let id): return "/movie/\(id.movieID)"
         }
     }
- 
- 
+    
+    
     var queryItems: [URLQueryItem] {
         switch self {
- 
+            
         case .movieGenreList(let apiKey, let language):
- 
+            
             var result = [URLQueryItem]()
-
+            
             if let apiKey = apiKey {
                 let apiKeyValue = URLQueryItem(name: "apiKey", value: apiKey)
                 result.append(apiKeyValue)
             }
- 
+            
             if let language = language {
-                let chosenLanguage = URLQueryItem(name: "language", value: "en-US")
+                let chosenLanguage = URLQueryItem(name: "language", value: language)
                 result.append(chosenLanguage)
             }
- 
+            
             return result
- 
+            
         case .person(let apiKey, let language, let page):
- 
+            
             var result = [URLQueryItem]()
-
+            
             if let apiKey = apiKey {
                 let apiKeyValue = URLQueryItem(name: "apiKey", value: apiKey)
                 result.append(apiKeyValue)
             }
- 
+            
             if let language = language {
-                let chosenLanguage = URLQueryItem(name: "language", value: "en-US")
+                let chosenLanguage = URLQueryItem(name: "language", value: language)
                 result.append(chosenLanguage)
             }
- 
+            
             if let page = page {
                 let pageNumber = URLQueryItem(name: "page", value: page)
                 result.append(pageNumber)
             }
- 
+            
             return result
- 
-        case .moviesInGenreWithPerson(let apiKey, let language, let sortBy, let includeAdult, let includeVideo, let page, let withGenre, let people):
- 
+            
+        case .moviesInGenreWithPerson(let apiKey, let language, let sortBy, let includeAdult, let includeVideo, let page, let withGenreID, let people):
+            
             var result = [URLQueryItem]()
- 
+            
             if let apiKey = apiKey {
                 let apiKeyValue = URLQueryItem(name: "apiKey", value: apiKey)
                 result.append(apiKeyValue)
             }
- 
+            
             if let language = language {
-                let chosenLanguage = URLQueryItem(name: "language", value: "en-US")
+                let chosenLanguage = URLQueryItem(name: "language", value: language)
                 result.append(chosenLanguage)
             }
- 
+            
             if let sortBy = sortBy {
-                let wayToSort = URLQueryItem(name: "sort_by", value: "popularity.desc")
+                let wayToSort = URLQueryItem(name: "sort_by", value: sortBy)
                 result.append(wayToSort)
             }
- 
+            
             if let includeAdult = includeAdult {
-                let isAdult = URLQueryItem(name: "include_adult", value: "false")
+                let isAdult = URLQueryItem(name: "include_adult", value: includeAdult)
                 result.append(isAdult)
             }
- 
+            
             if let includeVideo = includeVideo {
-                let isVideo = URLQueryItem(name: "include_video", value: "false")
+                let isVideo = URLQueryItem(name: "include_video", value: includeVideo)
                 result.append(isVideo)
             }
- 
+            
             if let page = page {
                 let pageNumber = URLQueryItem(name: "page", value: page)
                 result.append(pageNumber)
             }
- 
-            if let withGenre = withGenre {
-                let genreID = URLQueryItem(name: "with_genre", value: "/*<GENRE_ID#>*/")
+            
+            if let withGenreID = withGenreID {
+                let genreID = URLQueryItem(name: "with_genre", value: withGenreID)
                 result.append(genreID)
             }
- 
+            
             if let people = people {
-                let personID = URLQueryItem(name: "with_people", value: "/*<PEOPLE_ID#>*/")
+                let personID = URLQueryItem(name: "with_people", value: people)
                 result.append(personID)
             }
- 
+            
             return result
-
-        case .movie(let apiKey, let language):
+            
+        case .movie(let movieID, let apiKey, let language):
             var result = [URLQueryItem]()
- 
-            if let apiKey = apiKey {
-                let apiKeyValue = URLQueryItem(name: "apiKey", value: apiKey)
-                result.append(apiKeyValue)
-            }
- 
-            if let language = language {
-                let chosenLanguage = URLQueryItem(name: "language", value: "en-US")
-                result.append(chosenLanguage)
-            }
+            
+            let movieIDValue = URLQueryItem(name: "movieID", value: movieID)
+            
+            let apiKeyValue = URLQueryItem(name: "apiKey", value: apiKey)
+            result.append(apiKeyValue)
+            
+            
+            
+            let chosenLanguage = URLQueryItem(name: "language", value: language)
+            result.append(chosenLanguage)
+            
             return result
         }
-    
+        
     }
-
+    
 }
 
  
