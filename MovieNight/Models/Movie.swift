@@ -15,95 +15,62 @@ class Movie: MovieDBEntity {
     // Title
     var title: String
     // Release Date
-    var release_date: String
+    var releaseDate: String
     // Genres
     var genres: [String: Any]
     // Movie Poster Path
-    var poster_path: UIImage
+    var posterPath: String
     // Movie Rating
-    var vote_average: Int
+    var voteAverage: Int
     // Movie Popularity
-    var vote_count: Int
+    var voteCount: Int
     
     init(id: Int,
          title: String,
-         release_date: String,
+         releaseDate: String,
          genres: [String: Any],
-         poster_path: UIImage,
-         vote_average: Int,
-         vote_count: Int) {
+         posterPath: String,
+         voteAverage: Int,
+         voteCount: Int) {
             self.id = id
             self.title = title
-            self.release_date = release_date
+            self.releaseDate = releaseDate
             self.genres = genres
-            self.poster_path = poster_path
-            self.vote_average = vote_average
-            self.vote_count = vote_count
+            self.posterPath = posterPath
+            self.voteAverage = voteAverage
+            self.voteCount = voteCount
     }
     
     
     /*
-    init?(json: [String: Any]) {
-        struct Key {
-            static let length = "length"
-            static let pilots = "pilots"
-            static let crew = "crew"
-            static let name = "name"
-            static let films = "films"
-            static let model = "model"
-            static let cost_in_credits = "cost_in_credits"
-            static let cargoCapacity = "cargo_capacity"
-            static let maxAtmospheringSpeed = "max_atmosphering_speed"
-            static let edited = "edited"
-            static let created = "created"
-            static let passengers = "passengers"
-            static let starship_class = "starship_class"
-            static let hyperdriveRating = "hyperdrive_rating"
-            static let mglt = "MGLT"
-            static let consumables = "consumables"
-            static let make = "manufacturer"
-            static let url = "url"
-        }
-        guard let lengthValue = json[Key.length] as? String,
-            let pilotsValue = json[Key.pilots] as? [Any],
-            let crewValue = json[Key.crew] as? String,
-            let nameValue = json[Key.name] as? String,
-            let filmsValue = json[Key.films] as? [Any],
-            let modelValue = json[Key.model] as? String,
-            let costInCreditsValue = json[Key.cost_in_credits] as? String,
-            let cargoCapacityValue = json[Key.cargoCapacity] as? String,
-            let maxAtmospheringSpeedValue = json[Key.maxAtmospheringSpeed] as? String,
-            let editedValue = json[Key.edited] as? String,
-            let createdValue = json[Key.created] as? String,
-            let passengersValue = json[Key.passengers] as? String,
-            let starshipClassValue = json[Key.starship_class] as? String,
-            let hyperdriveRatingValue = json[Key.hyperdriveRating] as? String,
-            let mgltValue = json[Key.mglt] as? String,
-            let consumablesValue = json[Key.consumables] as? String,
-            let makeValue = json[Key.make] as? String,
-            let urlValue = json[Key.url] as? String
-            else { return nil }
-        
-        self.length = lengthValue
-        self.pilots = pilotsValue
-        self.crew = crewValue
-        self.name = nameValue
-        self.films = filmsValue
-        self.model = modelValue
-        self.cost_in_credits = costInCreditsValue
-        self.cargoCapacity = cargoCapacityValue
-        self.maxAtmospheringSpeed = maxAtmospheringSpeedValue
-        self.edited = editedValue
-        self.created = createdValue
-        self.passengers = passengersValue
-        self.starship_class = starshipClassValue
-        self.hyperdriveRating = hyperdriveRatingValue
-        self.mglt = mgltValue
-        self.consumables = consumablesValue
-        self.make = makeValue
-        self.url = urlValue
-    }
-    */
+     init?(json: [String: Any]) {
+         struct Key {
+             static let id = "ID"
+             static let title = "title"
+             static let releaseDate = "release_date"
+             static let genres = "genres"
+             static let posterPath = "poster_path"
+             static let voteAverage = "vote_average"
+             static let voteCount = "vote_count"
+         }
+         guard let idValue = json[Key.id] as? Int,
+             let titleValue = json[Key.title] as? String,
+             let releaseDateValue = json[Key.releaseDate] as? String,
+             let genresValue = json[Key.genres] as? [String: Any],
+             let posterPathValue = json[Key.posterPath] as? String,
+             let voteAverageValue = json[Key.voteAverage] as? Int,
+             let voteCountValue = json[Key.voteCount] as? Int
+             else { return nil }
+     
+         self.id = idValue
+         self.title = titleValue
+         self.releaseDate = releaseDateValue
+         self.genres = genresValue
+         self.posterPath = posterPathValue
+         self.voteAverage = voteAverageValue
+         self.voteCount = voteCountValue
+     }
+     */
 }
 
 

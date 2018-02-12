@@ -2,7 +2,7 @@
 //  ImagesEndpoint.swift
 //  MovieNight
 //
-//  Created by ichael Guatambu Davis on 2/8/18.
+//  Created by Michael Guatambu Davis on 2/8/18.
 //  Copyright © 2018 leme group. All rights reserved.
 //
 
@@ -44,7 +44,7 @@ extension ImageEndpoint {
         
         return components
     }
-    
+ 
     var request: URLRequest {
         let url = urlComponents.url!
         return URLRequest(url: url)

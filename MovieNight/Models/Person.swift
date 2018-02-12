@@ -15,26 +15,26 @@ class Person: MovieDBEntity {
     // Name
     var name: String
     // Genre IDs
-    var genre_ids: [Int]
+    var genreIDs: [Int]
     // Genres
     var genres: [String]
     // Profile Pic Path
-    var profile_path: UIImage
+    var profilePath: String
     // Movies List
     var movies: [String: String]
     
     init(id: Int,
          name: String,
-         genre_ids: [Int],
+         genreIDs: [Int],
          genres: [String],
-         profile_path: UIImage,
+         profilePath: String,
          movies: [String: String]
         ) {
             self.id = id
             self.name = name
-            self.genre_ids = genre_ids
+            self.genreIDs = genreIDs
             self.genres = genres
-            self.profile_path = profile_path
+            self.profilePath = profilePath
             self.movies = movies
     }
     
@@ -42,63 +42,27 @@ class Person: MovieDBEntity {
     /*
     init?(json: [String: Any]) {
         struct Key {
-            static let length = "length"
-            static let pilots = "pilots"
-            static let crew = "crew"
+            static let id = "ID"
             static let name = "name"
-            static let films = "films"
-            static let model = "model"
-            static let cost_in_credits = "cost_in_credits"
-            static let cargoCapacity = "cargo_capacity"
-            static let maxAtmospheringSpeed = "max_atmosphering_speed"
-            static let edited = "edited"
-            static let created = "created"
-            static let passengers = "passengers"
-            static let starship_class = "starship_class"
-            static let hyperdriveRating = "hyperdrive_rating"
-            static let mglt = "MGLT"
-            static let consumables = "consumables"
-            static let make = "manufacturer"
-            static let url = "url"
+            static let genreIDs = "genre_ids"
+            static let genres = "genres"
+            static let profilePath = "profile_path"
+            static let movies = "movies"
         }
-        guard let lengthValue = json[Key.length] as? String,
-            let pilotsValue = json[Key.pilots] as? [Any],
-            let crewValue = json[Key.crew] as? String,
+        guard let idValue = json[Key.id] as? Int,
             let nameValue = json[Key.name] as? String,
-            let filmsValue = json[Key.films] as? [Any],
-            let modelValue = json[Key.model] as? String,
-            let costInCreditsValue = json[Key.cost_in_credits] as? String,
-            let cargoCapacityValue = json[Key.cargoCapacity] as? String,
-            let maxAtmospheringSpeedValue = json[Key.maxAtmospheringSpeed] as? String,
-            let editedValue = json[Key.edited] as? String,
-            let createdValue = json[Key.created] as? String,
-            let passengersValue = json[Key.passengers] as? String,
-            let starshipClassValue = json[Key.starship_class] as? String,
-            let hyperdriveRatingValue = json[Key.hyperdriveRating] as? String,
-            let mgltValue = json[Key.mglt] as? String,
-            let consumablesValue = json[Key.consumables] as? String,
-            let makeValue = json[Key.make] as? String,
-            let urlValue = json[Key.url] as? String
+            let genreIDsValue = json[Key.genreIDs] as? [Int],
+            let genresValue = json[Key.genres] as? [String],
+            let profilePathValue = json[Key.profilePath] as? String,
+            let moviesValue = json[Key.movies] as? [String: String]
             else { return nil }
         
-        self.length = lengthValue
-        self.pilots = pilotsValue
-        self.crew = crewValue
+        self.id = idValue
         self.name = nameValue
-        self.films = filmsValue
-        self.model = modelValue
-        self.cost_in_credits = costInCreditsValue
-        self.cargoCapacity = cargoCapacityValue
-        self.maxAtmospheringSpeed = maxAtmospheringSpeedValue
-        self.edited = editedValue
-        self.created = createdValue
-        self.passengers = passengersValue
-        self.starship_class = starshipClassValue
-        self.hyperdriveRating = hyperdriveRatingValue
-        self.mglt = mgltValue
-        self.consumables = consumablesValue
-        self.make = makeValue
-        self.url = urlValue
+        self.genreIDs = genreIDsValue
+        self.genres = genresValue
+        self.profilePath = profilePathValue
+        self.movies = moviesValue
     }
     */
 }
