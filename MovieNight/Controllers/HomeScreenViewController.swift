@@ -12,29 +12,11 @@ class HomeScreenViewController: UIViewController {
 
     //MARK: Properties
     
-    /*@IBOutlet weak var youStackView: UIStackView!
-    @IBOutlet weak var friendStackView: UIStackView!
-    @IBOutlet weak var timeToPickAMovieOutlet: UIButton!
     
-    @IBAction func youPickAMovie(_ sender: Any) {
-    }
-    @IBAction func friendPickAMovie(_ sender: Any) {
-    }
-
-    @IBAction func timeToPickAMovie(_ sender: Any) {
-    }*/
     
-    @IBOutlet weak var youStackView: UIStackView!
-    @IBOutlet weak var yourFriendStackView: UIStackView!
-    @IBOutlet weak var timeToPickAMovieButton: UIButton!
+    //MARK: Actions
     
-    @IBAction func youStartPickingAMovie(_ sender: Any) {
-    }
-    @IBAction func yourFriendStartsToPickAMovieButton(_ sender: Any) {
-    }
     
-    @IBAction func viewMovieResults(_ sender: Any) {
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

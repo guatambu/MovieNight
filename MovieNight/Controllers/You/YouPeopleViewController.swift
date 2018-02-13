@@ -17,6 +17,8 @@ class YouPeopleViewController: UIViewController {
     @IBOutlet weak var selectedPeopleBubbleImageView: UIImageView!
     @IBOutlet weak var selectedPeopleLabel: UILabel!
     
+    //MARK: Actions
+    
     @IBAction func doneButtonAction(_ sender: Any) {
     }
     

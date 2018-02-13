@@ -14,6 +14,8 @@ class YourMovieFinalViewController: UIViewController {
     
     @IBOutlet weak var movieTitleLabel: UILabel!
     @IBOutlet weak var moviePosterImageView: UIImageView!
+
+    //MARK: Actions
     
     @IBAction func startOverButtonAction(_ sender: Any) {
     }

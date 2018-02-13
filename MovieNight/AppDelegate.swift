@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  MovieNight
 //
-//  Created by Kelly Johnson on 1/22/18.
+//  Created by Michael Guatambu Davison 1/22/18.
 //  Copyright © 2018 leme group. All rights reserved.
 //
 

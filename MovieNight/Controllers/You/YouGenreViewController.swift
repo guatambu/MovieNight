@@ -15,6 +15,7 @@ class YouGenreViewController: UIViewController {
     @IBOutlet weak var selecteGenresLabel: UILabel!
     @IBOutlet weak var selectedBubbleImageView: UIView!
     
+    //MARK: Actions
     
     @IBAction func nextButtonAction(_ sender: Any) {
     }

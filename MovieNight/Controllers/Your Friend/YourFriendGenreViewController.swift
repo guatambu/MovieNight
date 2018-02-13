@@ -11,12 +11,11 @@ import UIKit
 class YourFriendGenreViewController: UIViewController {
 
     //MARK: Properties
-    
-    @IBOutlet weak var selectegGenresBubble: UIView!
+
     @IBOutlet weak var selectedGenreImageView: UIImageView!
-    @IBOutlet weak var selectedGenresStackView: UIStackView!
     @IBOutlet weak var selectedGenresLabel: UILabel!
     
+    //MARK: Actions
     
     @IBAction func nextButtonAction(_ sender: Any) {
     }

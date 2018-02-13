@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ByA-va-V41">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="aXl-KW-8ZX">
     <device id="retina3_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -21,26 +21,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg-iphone6plus" translatesAutoresizingMaskIntoConstraints="NO" id="NAu-lG-lNO">
-                                <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="2Wk-ef-zen">
-                                <rect key="frame" x="10" y="135" width="300" height="140"/>
+                                <rect key="frame" x="10" y="120" width="300" height="140"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="-140" translatesAutoresizingMaskIntoConstraints="NO" id="ylL-Q8-fF7" userLabel="You Stack View">
                                         <rect key="frame" x="0.0" y="0.0" width="140" height="140"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WpP-za-MIb">
-                                                <rect key="frame" x="0.0" y="0.0" width="140" height="140"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="140" id="4zP-dj-gbD"/>
-                                                    <constraint firstAttribute="width" constant="140" id="m6z-Zx-J2G"/>
-                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="140" id="vdR-4f-fPg"/>
-                                                </constraints>
-                                                <connections>
-                                                    <action selector="youStartPickingAMovie:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wye-Rd-AvG"/>
-                                                    <segue destination="fuP-fw-ilQ" kind="show" id="had-d7-dOw"/>
-                                                </connections>
-                                            </button>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Xkd-WR-EnY" userLabel="You Stack View">
                                                 <rect key="frame" x="0.0" y="0.0" width="140" height="140"/>
                                                 <subviews>
@@ -66,24 +54,22 @@
                                                     <constraint firstItem="11h-AL-O9u" firstAttribute="leading" secondItem="Xkd-WR-EnY" secondAttribute="leading" id="gNi-Ce-zRc"/>
                                                 </constraints>
                                             </stackView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WpP-za-MIb">
+                                                <rect key="frame" x="0.0" y="0.0" width="140" height="140"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="140" id="4zP-dj-gbD"/>
+                                                    <constraint firstAttribute="width" constant="140" id="m6z-Zx-J2G"/>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="140" id="vdR-4f-fPg"/>
+                                                </constraints>
+                                                <connections>
+                                                    <segue destination="fuP-fw-ilQ" kind="show" id="hnZ-Nf-ZkY"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="-140" translatesAutoresizingMaskIntoConstraints="NO" id="GVz-UJ-y9j" userLabel="Friend Stack View">
                                         <rect key="frame" x="160" y="0.0" width="140" height="140"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Kr-PY-4D9">
-                                                <rect key="frame" x="0.0" y="0.0" width="140" height="140"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="140" id="Oy2-AC-36r"/>
-                                                    <constraint firstAttribute="width" constant="140" id="Y53-vP-Xew"/>
-                                                    <constraint firstAttribute="height" constant="140" id="fb9-Tp-Zk4"/>
-                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="140" id="tEF-pc-a7E"/>
-                                                </constraints>
-                                                <connections>
-                                                    <action selector="yourFriendStartsToPickAMovieButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1mV-4d-ADK"/>
-                                                    <segue destination="rR5-3C-Kzb" kind="show" id="ksj-op-lLv"/>
-                                                </connections>
-                                            </button>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="kC4-Sa-ReC" userLabel="Friend Stack View">
                                                 <rect key="frame" x="0.0" y="0.0" width="140" height="140"/>
                                                 <subviews>
@@ -105,6 +91,18 @@
                                                     </label>
                                                 </subviews>
                                             </stackView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Kr-PY-4D9">
+                                                <rect key="frame" x="0.0" y="0.0" width="140" height="140"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="140" id="Oy2-AC-36r"/>
+                                                    <constraint firstAttribute="width" constant="140" id="Y53-vP-Xew"/>
+                                                    <constraint firstAttribute="height" constant="140" id="fb9-Tp-Zk4"/>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="140" id="tEF-pc-a7E"/>
+                                                </constraints>
+                                                <connections>
+                                                    <segue destination="rR5-3C-Kzb" kind="show" id="YWT-xN-jLs"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <constraints>
                                             <constraint firstItem="bTe-gW-biS" firstAttribute="leading" secondItem="GVz-UJ-y9j" secondAttribute="leading" id="MHI-3D-T5n"/>
@@ -114,43 +112,36 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lYx-UF-pGO">
-                                <rect key="frame" x="30.5" y="219.5" width="259" height="41"/>
+                                <rect key="frame" x="30.5" y="399.5" width="259" height="41"/>
                                 <fontDescription key="fontDescription" type="system" weight="black" pointSize="24"/>
                                 <state key="normal" title="Time To Pick A Movie!">
                                     <color key="titleColor" red="0.87058823529999996" green="0.81412265493088298" blue="0.59554004645893965" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="viewMovieResults:" destination="BYZ-38-t0r" eventType="touchUpInside" id="exe-AK-zNZ"/>
                                     <segue destination="TlM-WZ-SVT" kind="show" id="FuT-Fh-M3Y"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="NAu-lG-lNO" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="AIs-f6-pWH"/>
-                            <constraint firstItem="NAu-lG-lNO" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="OGj-nl-AgY"/>
+                            <constraint firstItem="NAu-lG-lNO" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="3dx-1y-WC5"/>
+                            <constraint firstItem="NAu-lG-lNO" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="HBt-xL-8nf"/>
                             <constraint firstItem="2Wk-ef-zen" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="U1Y-yW-e37"/>
-                            <constraint firstAttribute="trailing" secondItem="NAu-lG-lNO" secondAttribute="trailing" id="YYT-vq-8uB"/>
-                            <constraint firstItem="NAu-lG-lNO" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="Zsc-1p-d1g"/>
-                            <constraint firstItem="2Wk-ef-zen" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-35" id="diO-Xg-6T0"/>
-                            <constraint firstItem="lYx-UF-pGO" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="iOh-IP-Y6m"/>
+                            <constraint firstItem="2Wk-ef-zen" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-50" id="diO-Xg-6T0"/>
+                            <constraint firstItem="lYx-UF-pGO" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="180" id="iOh-IP-Y6m"/>
                             <constraint firstItem="lYx-UF-pGO" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="sbY-bQ-1BT"/>
+                            <constraint firstItem="NAu-lG-lNO" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="u6U-r7-2tE"/>
+                            <constraint firstItem="NAu-lG-lNO" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="vGD-cD-29A"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="EN8-Z5-S5l">
-                        <barButtonItem key="backBarButtonItem" title="Start" id="Fue-9C-CAO"/>
+                        <barButtonItem key="backBarButtonItem" title="Back" id="Fue-9C-CAO"/>
                     </navigationItem>
-                    <connections>
-                        <outlet property="timeToPickAMovieButton" destination="lYx-UF-pGO" id="19p-2J-Og6"/>
-                        <outlet property="youStackView" destination="ylL-Q8-fF7" id="EjX-M9-aMd"/>
-                        <outlet property="yourFriendStackView" destination="GVz-UJ-y9j" id="ftW-tC-6XH"/>
-                        <outlet property="yourFriendStartsPickingAMovie" destination="9Kr-PY-4D9" id="nrf-y6-uy0"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="862.5" y="12.5"/>
+            <point key="canvasLocation" x="1260" y="12.5"/>
         </scene>
         <!--You: Genre View Controller-->
         <scene sceneID="RwU-Ci-U3q">
@@ -312,7 +303,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OWL-2e-G0Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1595.625" y="-510"/>
+            <point key="canvasLocation" x="1993.125" y="-510"/>
         </scene>
         <!--You: People View Controller-->
         <scene sceneID="CHj-WZ-2GO">
@@ -582,7 +573,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VgB-LR-q0k" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2409.375" y="-510"/>
+            <point key="canvasLocation" x="2806.875" y="-510"/>
         </scene>
         <!--Movie Results Table View Controller-->
         <scene sceneID="z0Q-MB-pfF">
@@ -655,7 +646,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Which Movie Are You Going To See?" id="dYW-WG-vbi">
-                        <barButtonItem key="backBarButtonItem" title=" " id="QmI-D6-Oej"/>
+                        <barButtonItem key="backBarButtonItem" title=" Results" id="QmI-D6-Oej"/>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO"/>
                     <nil key="simulatedBottomBarMetrics"/>
@@ -663,7 +654,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hLV-Xm-pAR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3495" y="13"/>
+            <point key="canvasLocation" x="3624" y="13"/>
         </scene>
         <!--Your Movie Final-->
         <scene sceneID="hhf-77-G39">
@@ -732,25 +723,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QdR-Yl-xiQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4360.8695652173919" y="12.228260869565219"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="Q9E-7j-Q4K">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ByA-va-V41" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="9jw-Pg-z7v">
-                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="VXK-m3-Id6"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="DQ1-dr-tsp" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="13" y="13"/>
+            <point key="canvasLocation" x="4425" y="13"/>
         </scene>
         <!--Your Friend: Genre View Controller-->
         <scene sceneID="xNj-uY-bgZ">
@@ -894,6 +867,7 @@
                         <viewLayoutGuide key="safeArea" id="2cn-Ls-dB8"/>
                     </view>
                     <navigationItem key="navigationItem" title="Genres" id="3Go-Op-hqn">
+                        <barButtonItem key="backBarButtonItem" title="Genres" id="eTd-T1-rb3"/>
                         <barButtonItem key="rightBarButtonItem" title="Next" id="Yh0-6M-KEu">
                             <connections>
                                 <action selector="nextButtonAction:" destination="rR5-3C-Kzb" id="COj-qi-8dO"/>
@@ -902,16 +876,13 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="selectedGenreBubbleImageView" destination="5Be-AP-fGH" id="A1k-EA-WBM"/>
                         <outlet property="selectedGenreImageView" destination="5Be-AP-fGH" id="GzL-Z4-OId"/>
                         <outlet property="selectedGenresLabel" destination="Y9B-wr-uXW" id="dfD-fc-Eva"/>
-                        <outlet property="selectedGenresStackView" destination="BUe-6f-495" id="A6l-0q-UWP"/>
-                        <outlet property="selectegGenresBubble" destination="qiW-ZY-sJR" id="Q5d-p0-mCL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oCg-RO-iMh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1595.625" y="702.5"/>
+            <point key="canvasLocation" x="1993" y="538"/>
         </scene>
         <!--Your Friend: People View Controller-->
         <scene sceneID="ELw-fM-xTA">
@@ -1178,7 +1149,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="niR-rL-Nip" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2503" y="703"/>
+            <point key="canvasLocation" x="2854" y="538"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="bhE-hl-dM5">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="aXl-KW-8ZX" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="lhs-yF-xpS">
+                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="qwa-k3-SbC"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BGo-Ls-rS3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="450" y="13"/>
         </scene>
     </scenes>
     <resources>
