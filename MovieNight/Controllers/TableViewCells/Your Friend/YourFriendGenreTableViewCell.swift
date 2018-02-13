@@ -12,9 +12,8 @@ class YourFriendGenreTableViewCell: UITableViewCell {
 
     // MARK: Properties
     
-    @IBOutlet weak var bubbleImageView: UIImageView!
+
     
-    @IBOutlet weak var genreLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

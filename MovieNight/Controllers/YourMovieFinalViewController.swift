@@ -10,6 +10,14 @@ import UIKit
 
 class YourMovieFinalViewController: UIViewController {
 
+    //MARK:  Properties
+    
+    @IBOutlet weak var movieTitleLabel: UILabel!
+    @IBOutlet weak var moviePosterImageView: UIImageView!
+    
+    @IBAction func startOverButtonAction(_ sender: Any) {
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

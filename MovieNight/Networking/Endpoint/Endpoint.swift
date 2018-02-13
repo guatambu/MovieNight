@@ -62,6 +62,8 @@ path: discover/movie
  -> language=en-US
  -> &
  -> sort_by=popularity.desc
+         * sort path: sort_by=
+         * sort options: popularity.asc/desc, release_date.asc/desc, revenue.asc/desc, vote_average.asc/desc, vote_count.asc/desc, created_at.asc/desc <-(genre only)
  -> &
  -> include_adult=false
  -> &
@@ -70,11 +72,10 @@ path: discover/movie
  -> page=2
  -> &
  -> with_genres=35
+        * one can chain genres using commas - which means 'AND' - without whitespace like this:  with_genres=878,18
  -> &
  -> with_people=53
-
-    * sort path: sort_by=
-    * sort options: popularity.asc/desc, release_date.asc/desc, revenue.asc/desc, vote_average.asc/desc, vote_count.asc/desc, created_at.asc/desc <-(genre only)
+        * one can chain people using commas - which means 'AND' - without whitespace like this:  with_people=54,98,101
  
 
 4) ***** Full URL for a specific movie: *****

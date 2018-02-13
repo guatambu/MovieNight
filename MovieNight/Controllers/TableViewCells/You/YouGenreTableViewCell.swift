@@ -12,8 +12,10 @@ class YouGenreTableViewCell: UITableViewCell {
 
     //MARK: Properties
 
-    @IBOutlet weak var bubbleImageView: UIImageView!
-    @IBOutlet weak var genreLabel: UILabel!
+    @IBOutlet weak var youGenreTableCellView: UIView!
+    @IBOutlet weak var bubbleEmptyImageView: UIImageView!
+    @IBOutlet weak var genreTitleLabel: UILabel!
+    
     
     
     

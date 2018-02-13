@@ -15,6 +15,7 @@ class YourResultsTableViewCell: UITableViewCell {
     @IBOutlet weak var releaseDateLabel: UILabel!
     @IBOutlet weak var briefMovieDescriptionLabel: UILabel!
     @IBOutlet weak var moviePosterImageView: UIImageView!
+    @IBOutlet weak var movieTableCellContentView: UIView!
     
     override func awakeFromNib() {
         super.awakeFromNib()

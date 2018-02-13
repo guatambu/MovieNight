@@ -16,6 +16,10 @@ class YourFriendPeopleViewController: UIViewController {
     @IBOutlet weak var selectedPeopleLabel: UILabel!
     @IBOutlet weak var selectedGenresLabel: UILabel!
     @IBOutlet weak var selectedGenresBubbleImageView: UIImageView!
+
+    @IBAction func doneButtonAction(_ sender: Any) {
+    }
+    
     
     
     //MARK: ViewDidLoad

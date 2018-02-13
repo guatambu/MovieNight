@@ -10,6 +10,13 @@ import UIKit
 
 class YouActorsTableViewCell: UITableViewCell {
 
+    //MARK: Properrties
+    
+    @IBOutlet weak var youActorsTableCellContentView: UIView!
+    @IBOutlet weak var bubbleSelectedTableCellContentView: UIImageView!
+    @IBOutlet weak var personProfilePictureImageView: UIImageView!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

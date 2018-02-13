@@ -12,11 +12,17 @@ class YourFriendGenreViewController: UIViewController {
 
     //MARK: Properties
     
-    @IBOutlet weak var selectedGenreBubbleImageView: UIImageView!
-    
+    @IBOutlet weak var selectegGenresBubble: UIView!
+    @IBOutlet weak var selectedGenreImageView: UIImageView!
+    @IBOutlet weak var selectedGenresStackView: UIStackView!
     @IBOutlet weak var selectedGenresLabel: UILabel!
     
     
+    @IBAction func nextButtonAction(_ sender: Any) {
+    }
+    
+    
+   
     //MARK: ViewDidLoad
     
     override func viewDidLoad() {

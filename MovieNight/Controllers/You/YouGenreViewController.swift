@@ -16,6 +16,10 @@ class YouGenreViewController: UIViewController {
     @IBOutlet weak var selectedBubbleImageView: UIView!
     
     
+    @IBAction func nextButtonAction(_ sender: Any) {
+    }
+    
+    
     //MARK: ViewDidLoad
     
     override func viewDidLoad() {

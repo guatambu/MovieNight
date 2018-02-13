@@ -17,6 +17,9 @@ class YouPeopleViewController: UIViewController {
     @IBOutlet weak var selectedPeopleBubbleImageView: UIImageView!
     @IBOutlet weak var selectedPeopleLabel: UILabel!
     
+    @IBAction func doneButtonAction(_ sender: Any) {
+    }
+    
     //MARK: ViewDidLoad
     
     override func viewDidLoad() {
