@@ -14,6 +14,7 @@ class YourFriendGenreViewController: UIViewController {
 
     @IBOutlet weak var selectedGenreImageView: UIImageView!
     @IBOutlet weak var selectedGenresLabel: UILabel!
+    @IBOutlet weak var yourFriendGenreTableView: UITableView!
     
     //MARK: Actions
     

@@ -250,7 +250,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Genre Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UJb-pO-f3e">
-                                                    <rect key="frame" x="58" y="11" width="341" height="21"/>
+                                                    <rect key="frame" x="58" y="11" width="247" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -291,7 +291,6 @@
                     <navigationItem key="navigationItem" title="Genres" id="i3j-fn-9Pe">
                         <barButtonItem key="rightBarButtonItem" title="Next" id="ar6-KG-igk">
                             <connections>
-                                <action selector="nextButtonAction:" destination="fuP-fw-ilQ" id="spJ-b8-dhM"/>
                                 <segue destination="p3z-UI-hWH" kind="show" id="UK4-x9-qv7"/>
                             </connections>
                         </barButtonItem>
@@ -299,6 +298,7 @@
                     <connections>
                         <outlet property="selecteGenresLabel" destination="gSg-9x-9wo" id="hx4-d1-8b0"/>
                         <outlet property="selectedBubbleImageView" destination="T5p-Mv-aEx" id="KGx-sX-LQ7"/>
+                        <outlet property="youGenreTableView" destination="AW5-uv-Ae3" id="MNu-6G-bc2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OWL-2e-G0Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -493,7 +493,7 @@
                                 <rect key="frame" x="0.0" y="137" width="320" height="343"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="YouActorsTableViewCell" rowHeight="70" id="bqs-DH-bEn" customClass="YouActorsTableViewCell" customModule="MovieNight" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="YouActorsTableViewCell" rowHeight="70" id="bqs-DH-bEn" customClass="YouActorsTableViewCell" customModule="MovieNight" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="320" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bqs-DH-bEn" id="H9d-jd-HcX">
@@ -537,6 +537,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="actorFullNameLabel" destination="fxc-bt-sjm" id="eGB-Jl-xG7"/>
                                             <outlet property="bubbleSelectedTableCellContentView" destination="iOb-4e-RP6" id="DHq-TG-Axm"/>
                                             <outlet property="personProfilePictureImageView" destination="IbS-bV-iGD" id="Tf8-ca-Yec"/>
                                             <outlet property="youActorsTableCellContentView" destination="H9d-jd-HcX" id="jx3-DS-nrM"/>
@@ -569,6 +570,7 @@
                         <outlet property="selectedGenresLabel" destination="jC2-1M-dYN" id="sOs-AL-UJu"/>
                         <outlet property="selectedPeopleBubbleImageView" destination="fF1-f6-amq" id="v8p-Fh-cHN"/>
                         <outlet property="selectedPeopleLabel" destination="Bfv-7Z-xiW" id="hQe-v6-Syh"/>
+                        <outlet property="youPeopleTableView" destination="FKw-5u-bce" id="wyZ-G8-mU9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VgB-LR-q0k" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -636,7 +638,7 @@
                                     <outlet property="movieTableCellContentView" destination="M8h-aK-afb" id="DlU-vG-usX"/>
                                     <outlet property="movieTitleLabel" destination="y9E-eU-88M" id="YVj-wT-1M7"/>
                                     <outlet property="releaseDateLabel" destination="3UP-3A-7Us" id="Q95-WX-bBb"/>
-                                    <segue destination="mb8-Xs-JnB" kind="show" id="k0k-1V-ADP"/>
+                                    <segue destination="mb8-Xs-JnB" kind="show" identifier="showFinalMovieSelection" id="GV3-Gs-nCv"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -818,7 +820,7 @@
                                 <rect key="frame" x="0.0" y="98" width="320" height="382"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="YouGenreTableViewCell" rowHeight="50" id="ErU-20-fYg" customClass="YouGenreTableViewCell" customModule="MovieNight" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="YourFriendGenreTableViewCell" rowHeight="50" id="ErU-20-fYg" userLabel="YourFriendGenreTableViewCell" customClass="YouGenreTableViewCell" customModule="MovieNight" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="320" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ErU-20-fYg" id="aX1-Q6-qkp">
@@ -878,6 +880,7 @@
                     <connections>
                         <outlet property="selectedGenreImageView" destination="5Be-AP-fGH" id="GzL-Z4-OId"/>
                         <outlet property="selectedGenresLabel" destination="Y9B-wr-uXW" id="dfD-fc-Eva"/>
+                        <outlet property="yourFriendGenreTableView" destination="uQQ-04-Ja9" id="9Yc-eQ-R7s"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oCg-RO-iMh" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1145,6 +1148,7 @@
                         <outlet property="selectedGenresLabel" destination="Kou-Y1-QNM" id="wEs-23-coN"/>
                         <outlet property="selectedPeopleBubbleImageView" destination="eFX-8E-gRb" id="trn-bV-YKF"/>
                         <outlet property="selectedPeopleLabel" destination="Ovz-N6-edR" id="A7Y-Cm-HdK"/>
+                        <outlet property="yourFriendPeopleTableView" destination="OcH-tv-zdw" id="QFl-mf-fbk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="niR-rL-Nip" userLabel="First Responder" sceneMemberID="firstResponder"/>

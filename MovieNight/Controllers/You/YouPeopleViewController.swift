@@ -12,10 +12,13 @@ class YouPeopleViewController: UIViewController {
 
     //MARK: Properties
     
+    let dataSource = YouPeopleDataSource()
+    
     @IBOutlet weak var selectedGenreBubbleImageView: UIImageView!
     @IBOutlet weak var selectedGenresLabel: UILabel!
     @IBOutlet weak var selectedPeopleBubbleImageView: UIImageView!
     @IBOutlet weak var selectedPeopleLabel: UILabel!
+    @IBOutlet weak var youPeopleTableView: UITableView!
     
     //MARK: Actions
     
@@ -26,6 +29,9 @@ class YouPeopleViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        youPeopleTableView.dataSource = dataSource
+        updateTableViewDataSource(for: youPeopleTableView)
 
         // Do any additional setup after loading the view.
     }
@@ -46,4 +52,14 @@ class YouPeopleViewController: UIViewController {
     }
     */
 
+}
+
+extension YouPeopleViewController {
+    func updateTableViewDataSource(for tableView: UITableView) {
+        dataSource.update(with: StubData.person)
+        for thing in dataSource.data {
+            print(thing.name)
+        }
+        tableView.reloadData()
+    }
 }

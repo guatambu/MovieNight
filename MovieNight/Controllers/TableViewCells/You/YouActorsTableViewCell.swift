@@ -2,7 +2,7 @@
 //  YouActorsTableViewCell.swift
 //  MovieNight
 //
-//  Created by Kelly Johnson on 1/29/18.
+//  Created by Michael Guatambu Davis on 1/29/18.
 //  Copyright © 2018 leme group. All rights reserved.
 //
 
@@ -15,7 +15,7 @@ class YouActorsTableViewCell: UITableViewCell {
     @IBOutlet weak var youActorsTableCellContentView: UIView!
     @IBOutlet weak var bubbleSelectedTableCellContentView: UIImageView!
     @IBOutlet weak var personProfilePictureImageView: UIImageView!
-    
+    @IBOutlet weak var actorFullNameLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -27,5 +27,11 @@ class YouActorsTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
+    func configure (with viewModel: YouPeopleViewModel) {
+        actorFullNameLabel.text = viewModel.fullName
+    }
 
 }
+
+

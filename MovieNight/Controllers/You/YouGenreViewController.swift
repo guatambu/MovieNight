@@ -12,13 +12,13 @@ class YouGenreViewController: UIViewController {
     
     //MARK: Properties
     
+    let dataSource = YouGenreDataSource()
+    
     @IBOutlet weak var selecteGenresLabel: UILabel!
     @IBOutlet weak var selectedBubbleImageView: UIView!
+    @IBOutlet weak var youGenreTableView: UITableView!
     
     //MARK: Actions
-    
-    @IBAction func nextButtonAction(_ sender: Any) {
-    }
     
     
     //MARK: ViewDidLoad
@@ -27,6 +27,12 @@ class YouGenreViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        // Load sample data
+        youGenreTableView.dataSource = dataSource
+        updateTableViewDataSource(for: youGenreTableView)
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -45,4 +51,15 @@ class YouGenreViewController: UIViewController {
     }
     */
 
+}
+
+extension YouGenreViewController {
+    func updateTableViewDataSource(for tableView: UITableView) {
+        dataSource.update(with: StubData.genre)
+        for thing in dataSource.data {
+            print(thing.name)
+        }
+        tableView.reloadData()
+    }
+    
 }
