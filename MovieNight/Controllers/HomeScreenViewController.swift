@@ -12,7 +12,15 @@ class HomeScreenViewController: UIViewController {
 
     //MARK: Properties
     
+    @IBOutlet weak var youStackViewOutlet: UIStackView!
+    @IBOutlet weak var yourFriendStackViewOutlet: UIStackView!
     
+    @IBOutlet weak var viewResultsButtonOutlet: UIButton!
+    
+    @IBAction func startOver(_ sender: Any) {
+    }
+    
+
     
     //MARK: Actions
     
@@ -21,6 +29,25 @@ class HomeScreenViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.isNavigationBarHidden = true
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        // Hide the navigation bar on the this view controller
+        self.navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        // Show the navigation bar on other view controllers
+        self.navigationController?.setNavigationBarHidden(false, animated: animated)
     }
 
     override func didReceiveMemoryWarning() {

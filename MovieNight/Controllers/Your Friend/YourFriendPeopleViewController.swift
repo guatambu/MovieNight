@@ -30,6 +30,9 @@ class YourFriendPeopleViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationController?.navigationBar.backgroundColor = UIColor(red: 156/255, green: 222/255, blue: 186/255, alpha: 1.0)
+        self.navigationController?.isNavigationBarHidden = false
+        
         //Load Sample Data
         yourFriendPeopleTableView.dataSource = dataSource
         updateTableViewDataSource(for: yourFriendPeopleTableView)

@@ -32,6 +32,9 @@ class YourFriendGenreViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         
+        self.navigationController?.navigationBar.backgroundColor = UIColor(red: 156/255, green: 222/255, blue: 186/255, alpha: 1.0)
+        self.navigationController?.isNavigationBarHidden = false
+        
         // Load sample data
         yourFriendGenreTableView.dataSource = dataSource
         updateTableViewDataSource(for: yourFriendGenreTableView)
