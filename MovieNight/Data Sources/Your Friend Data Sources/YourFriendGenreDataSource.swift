@@ -1,23 +1,23 @@
 //
-//  YouPeopleDataSource.swift
+//  YourFriendGenreDataSource.swift
 //  MovieNight
 //
-//  Created by Michael Guatambu Davis on 2/20/18.
+//  Created by Michael Guatambu Davis on 2/21/18.
 //  Copyright © 2018 leme group. All rights reserved.
 //
 
 import UIKit
 
-class YouPeopleDataSource: NSObject, UITableViewDataSource {
-    
-    var data = [Person]()
+class YourFriendGenreDataSource: NSObject, UITableViewDataSource {
+        
+    var data = [Genre]()
     
     override init() {
         super.init()
     }
     
-    func update(with people: [Person]) {
-        data = people
+    func update(with genres: [Genre]) {
+        data = genres
     }
     
     //MARK: Data Source
@@ -31,11 +31,10 @@ class YouPeopleDataSource: NSObject, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "YouActorsTableViewCell", for: indexPath) as! YouActorsTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "YourFriendGenreTableViewCell", for: indexPath) as! YourFriendGenreTableViewCell
         
-        let actor = data[indexPath.row]
-        let viewModel = YouPeopleViewModel(person: actor)
-        cell.configure(with: viewModel)
+        let genre = data[indexPath.row]
+        cell.yourFriendGenreCellLabel.text = genre.name
         
         return cell
     }

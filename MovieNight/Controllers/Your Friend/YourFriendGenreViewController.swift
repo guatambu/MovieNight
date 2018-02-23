@@ -11,6 +11,8 @@ import UIKit
 class YourFriendGenreViewController: UIViewController {
 
     //MARK: Properties
+    
+    let dataSource = YourFriendGenreDataSource()
 
     @IBOutlet weak var selectedGenreImageView: UIImageView!
     @IBOutlet weak var selectedGenresLabel: UILabel!
@@ -29,6 +31,12 @@ class YourFriendGenreViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        // Load sample data
+        yourFriendGenreTableView.dataSource = dataSource
+        updateTableViewDataSource(for: yourFriendGenreTableView)
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -47,4 +55,15 @@ class YourFriendGenreViewController: UIViewController {
     }
     */
 
+}
+
+extension YourFriendGenreViewController {
+    func updateTableViewDataSource(for tableView: UITableView) {
+        dataSource.update(with: StubData.genre)
+        for thing in dataSource.data {
+            print(thing.name)
+        }
+        tableView.reloadData()
+    }
+    
 }

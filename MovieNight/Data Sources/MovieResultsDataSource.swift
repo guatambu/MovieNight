@@ -1,23 +1,23 @@
 //
-//  YouPeopleDataSource.swift
+//  MovieResultsDataSource.swift
 //  MovieNight
 //
-//  Created by Michael Guatambu Davis on 2/20/18.
+//  Created by Michael Guatambu Davis on 2/22/18.
 //  Copyright © 2018 leme group. All rights reserved.
 //
 
 import UIKit
 
-class YouPeopleDataSource: NSObject, UITableViewDataSource {
+class MovieResultsDataSource: NSObject, UITableViewDataSource {
     
-    var data = [Person]()
+    var data = [Movie]()
     
     override init() {
         super.init()
     }
     
-    func update(with people: [Person]) {
-        data = people
+    func update(with movies: [Movie]) {
+        data = movies
     }
     
     //MARK: Data Source
@@ -31,10 +31,10 @@ class YouPeopleDataSource: NSObject, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "YouActorsTableViewCell", for: indexPath) as! YouActorsTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "YourResultsTableViewCell", for: indexPath) as! YourResultsTableViewCell
         
-        let actor = data[indexPath.row]
-        let viewModel = YouPeopleViewModel(person: actor)
+        let movie = data[indexPath.row]
+        let viewModel = MovieViewModel(movie: movie)
         cell.configure(with: viewModel)
         
         return cell

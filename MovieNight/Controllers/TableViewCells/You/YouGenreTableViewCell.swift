@@ -17,9 +17,6 @@ class YouGenreTableViewCell: UITableViewCell {
     @IBOutlet weak var genreTitleLabel: UILabel!
     
     
-    
-    
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

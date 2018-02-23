@@ -27,5 +27,12 @@ class YourResultsTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
+    func configure (with viewModel: MovieViewModel) {
+        movieTitleLabel.text = viewModel.title
+        releaseDateLabel.text = viewModel.releaseDate
+        briefMovieDescriptionLabel.text = viewModel.briefDescription
+        
+    }
 
 }

@@ -9,6 +9,10 @@
 import UIKit
 
 class YourResultsTableViewController: UITableViewController {
+    
+    //MARK: Properties
+    
+    var dataSource = MovieResultsDataSource()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,6 +22,13 @@ class YourResultsTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
+        
+        //Load Sample Data
+        tableView.dataSource = dataSource
+        updateTableViewDataSource(for: tableView)
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -25,27 +36,7 @@ class YourResultsTableViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    // MARK: - Table view data source
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
-    }
-
-    /*
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
-        return cell
-    }
-    */
+   
 
     /*
     // Override to support conditional editing of the table view.
@@ -92,4 +83,11 @@ class YourResultsTableViewController: UITableViewController {
     }
     */
 
+}
+
+extension YourResultsTableViewController {
+    func updateTableViewDataSource(for tableView: UITableView) {
+        dataSource.update(with: StubData.movie)
+        tableView.reloadData()
+    }
 }

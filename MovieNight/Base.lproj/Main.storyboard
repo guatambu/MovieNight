@@ -586,7 +586,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="YouTableViewCell" rowHeight="90" id="Lhk-OV-EnM" userLabel="Your Movie Results TableViewCell" customClass="YourResultsTableViewCell" customModule="MovieNight" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="YourResultsTableViewCell" rowHeight="90" id="Lhk-OV-EnM" userLabel="Your Movie Results TableViewCell" customClass="YourResultsTableViewCell" customModule="MovieNight" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="320" height="90"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Lhk-OV-EnM" id="M8h-aK-afb">
@@ -820,7 +820,7 @@
                                 <rect key="frame" x="0.0" y="98" width="320" height="382"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="YourFriendGenreTableViewCell" rowHeight="50" id="ErU-20-fYg" userLabel="YourFriendGenreTableViewCell" customClass="YouGenreTableViewCell" customModule="MovieNight" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="YourFriendGenreTableViewCell" rowHeight="50" id="ErU-20-fYg" userLabel="YourFriendGenreTableViewCell" customClass="YourFriendGenreTableViewCell" customModule="MovieNight" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="320" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ErU-20-fYg" id="aX1-Q6-qkp">
@@ -852,6 +852,11 @@
                                                 <constraint firstItem="GvM-qc-Z2c" firstAttribute="leading" secondItem="5GI-gJ-rQS" secondAttribute="trailing" constant="8" id="xEz-xZ-gr7"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="yourFriendBubbleImageView" destination="5GI-gJ-rQS" id="HX1-RI-17g"/>
+                                            <outlet property="yourFriendGenreCellContentView" destination="aX1-Q6-qkp" id="H2O-IX-vto"/>
+                                            <outlet property="yourFriendGenreCellLabel" destination="GvM-qc-Z2c" id="r1f-aY-sD6"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -1075,7 +1080,7 @@
                                 <rect key="frame" x="0.0" y="137" width="320" height="343"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="YouActorsTableViewCell" rowHeight="70" id="AMx-Jn-SMt" userLabel="YourFriendActorsTableViewCell" customClass="YourFriendActorsTableViewCell" customModule="MovieNight" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="YourFriendActorsTableViewCell" rowHeight="70" id="AMx-Jn-SMt" userLabel="YourFriendActorsTableViewCell" customClass="YourFriendActorsTableViewCell" customModule="MovieNight" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="320" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="AMx-Jn-SMt" id="0CU-3b-NfZ" customClass="YourFriendActorsTableViewCell" customModule="MovieNight" customModuleProvider="target">

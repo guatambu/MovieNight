@@ -30,6 +30,7 @@ class YouPeopleViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //Load Sample Data
         youPeopleTableView.dataSource = dataSource
         updateTableViewDataSource(for: youPeopleTableView)
 
@@ -57,9 +58,6 @@ class YouPeopleViewController: UIViewController {
 extension YouPeopleViewController {
     func updateTableViewDataSource(for tableView: UITableView) {
         dataSource.update(with: StubData.person)
-        for thing in dataSource.data {
-            print(thing.name)
-        }
         tableView.reloadData()
     }
 }

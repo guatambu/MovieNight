@@ -12,10 +12,12 @@ class YourFriendPeopleViewController: UIViewController {
 
     //MARK: Properties
     
+    let dataSource = YourFriendPeopleDataSource()
+    
+    @IBOutlet weak var selectedGenresBubbleImageView: UIImageView!
+    @IBOutlet weak var selectedGenresLabel: UILabel!
     @IBOutlet weak var selectedPeopleBubbleImageView: UIImageView!
     @IBOutlet weak var selectedPeopleLabel: UILabel!
-    @IBOutlet weak var selectedGenresLabel: UILabel!
-    @IBOutlet weak var selectedGenresBubbleImageView: UIImageView!
     @IBOutlet weak var yourFriendPeopleTableView: UITableView!
     
     //MARK: Actions
@@ -23,30 +25,40 @@ class YourFriendPeopleViewController: UIViewController {
     @IBAction func doneButtonAction(_ sender: Any) {
     }
     
-    
-    
     //MARK: ViewDidLoad
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        //Load Sample Data
+        yourFriendPeopleTableView.dataSource = dataSource
+        updateTableViewDataSource(for: yourFriendPeopleTableView)
+        
         // Do any additional setup after loading the view.
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-
+    
     /*
-    // MARK: - Navigation
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
+}
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+extension YourFriendPeopleViewController {
+    func updateTableViewDataSource(for tableView: UITableView) {
+        dataSource.update(with: StubData.person1)
+        
+        tableView.reloadData()
     }
-    */
-
 }

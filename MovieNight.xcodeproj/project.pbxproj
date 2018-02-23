@@ -14,6 +14,9 @@
 		FA4A0386202D1DD2005F6F09 /* ImagesEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4A0385202D1DD2005F6F09 /* ImagesEndpoint.swift */; };
 		FA51F717203CB80A000A407D /* YouPeopleDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA51F716203CB80A000A407D /* YouPeopleDataSource.swift */; };
 		FA51F719203E30A1000A407D /* YouPeopleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA51F718203E30A1000A407D /* YouPeopleViewModel.swift */; };
+		FA51F71B203E6166000A407D /* YourFriendGenreDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA51F71A203E6166000A407D /* YourFriendGenreDataSource.swift */; };
+		FA51F71D203E62EE000A407D /* YourFriendPeopleDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA51F71C203E62EE000A407D /* YourFriendPeopleDataSource.swift */; };
+		FA51F71F203E6AFB000A407D /* YourFriendPeopleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA51F71E203E6AFB000A407D /* YourFriendPeopleViewModel.swift */; };
 		FAB4D7F5203786D90074F157 /* YouGenreDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB4D7F4203786D90074F157 /* YouGenreDataSource.swift */; };
 		FAB7E495201BCF560008497D /* YourResultsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB7E494201BCF560008497D /* YourResultsTableViewCell.swift */; };
 		FAB7E499201FCD0E0008497D /* YouGenreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB7E498201FCD0E0008497D /* YouGenreTableViewCell.swift */; };
@@ -36,6 +39,8 @@
 		FACB05352017D31F006545D6 /* StubData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACB05342017D31F006545D6 /* StubData.swift */; };
 		FACB05572017FFC5006545D6 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACB05562017FFC5006545D6 /* Person.swift */; };
 		FACB05592018002D006545D6 /* Genre.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACB05582018002D006545D6 /* Genre.swift */; };
+		FACBAB23203F8C6500B73A4F /* MovieResultsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACBAB22203F8C6500B73A4F /* MovieResultsDataSource.swift */; };
+		FACBAB25203F8E0A00B73A4F /* MovieViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACBAB24203F8E0A00B73A4F /* MovieViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +51,9 @@
 		FA4A0385202D1DD2005F6F09 /* ImagesEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesEndpoint.swift; sourceTree = "<group>"; };
 		FA51F716203CB80A000A407D /* YouPeopleDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouPeopleDataSource.swift; sourceTree = "<group>"; };
 		FA51F718203E30A1000A407D /* YouPeopleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouPeopleViewModel.swift; sourceTree = "<group>"; };
+		FA51F71A203E6166000A407D /* YourFriendGenreDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourFriendGenreDataSource.swift; sourceTree = "<group>"; };
+		FA51F71C203E62EE000A407D /* YourFriendPeopleDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourFriendPeopleDataSource.swift; sourceTree = "<group>"; };
+		FA51F71E203E6AFB000A407D /* YourFriendPeopleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourFriendPeopleViewModel.swift; sourceTree = "<group>"; };
 		FAB4D7F4203786D90074F157 /* YouGenreDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouGenreDataSource.swift; sourceTree = "<group>"; };
 		FAB7E494201BCF560008497D /* YourResultsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourResultsTableViewCell.swift; sourceTree = "<group>"; };
 		FAB7E498201FCD0E0008497D /* YouGenreTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouGenreTableViewCell.swift; sourceTree = "<group>"; };
@@ -70,6 +78,8 @@
 		FACB05342017D31F006545D6 /* StubData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StubData.swift; sourceTree = "<group>"; };
 		FACB05562017FFC5006545D6 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		FACB05582018002D006545D6 /* Genre.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Genre.swift; sourceTree = "<group>"; };
+		FACBAB22203F8C6500B73A4F /* MovieResultsDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieResultsDataSource.swift; sourceTree = "<group>"; };
+		FACBAB24203F8E0A00B73A4F /* MovieViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -198,6 +208,8 @@
 			isa = PBXGroup;
 			children = (
 				FA51F718203E30A1000A407D /* YouPeopleViewModel.swift */,
+				FA51F71E203E6AFB000A407D /* YourFriendPeopleViewModel.swift */,
+				FACBAB24203F8E0A00B73A4F /* MovieViewModel.swift */,
 			);
 			path = "View Models";
 			sourceTree = "<group>";
@@ -218,7 +230,9 @@
 		FACB05282017CF1F006545D6 /* Data Sources */ = {
 			isa = PBXGroup;
 			children = (
+				FACBAB22203F8C6500B73A4F /* MovieResultsDataSource.swift */,
 				FA51F715203CB7D0000A407D /* You Data Sources */,
+				FACBAB21203F8C3C00B73A4F /* Your Friend Data Sources */,
 			);
 			path = "Data Sources";
 			sourceTree = "<group>";
@@ -230,6 +244,15 @@
 				FA4A0385202D1DD2005F6F09 /* ImagesEndpoint.swift */,
 			);
 			path = Endpoint;
+			sourceTree = "<group>";
+		};
+		FACBAB21203F8C3C00B73A4F /* Your Friend Data Sources */ = {
+			isa = PBXGroup;
+			children = (
+				FA51F71A203E6166000A407D /* YourFriendGenreDataSource.swift */,
+				FA51F71C203E62EE000A407D /* YourFriendPeopleDataSource.swift */,
+			);
+			path = "Your Friend Data Sources";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -304,18 +327,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FACBAB23203F8C6500B73A4F /* MovieResultsDataSource.swift in Sources */,
 				FACB05572017FFC5006545D6 /* Person.swift in Sources */,
 				FAB7E495201BCF560008497D /* YourResultsTableViewCell.swift in Sources */,
 				FACB05312017D0A2006545D6 /* Movie.swift in Sources */,
 				FAB7E49E201FF2470008497D /* YouActorsTableViewCell.swift in Sources */,
 				FACB05332017D0F2006545D6 /* MovieDBEntity.swift in Sources */,
 				FA34BC702023D3BD00432B62 /* YouGenreViewController.swift in Sources */,
+				FACBAB25203F8E0A00B73A4F /* MovieViewModel.swift in Sources */,
 				FACB05592018002D006545D6 /* Genre.swift in Sources */,
 				FAB7E499201FCD0E0008497D /* YouGenreTableViewCell.swift in Sources */,
 				FACB052A2017CF50006545D6 /* JSONDownloader.swift in Sources */,
 				FA51F717203CB80A000A407D /* YouPeopleDataSource.swift in Sources */,
 				FAB7E4A0201FF25B0008497D /* YourFriendActorsTableViewCell.swift in Sources */,
 				FACB05132016769D006545D6 /* HomeScreenViewController.swift in Sources */,
+				FA51F71F203E6AFB000A407D /* YourFriendPeopleViewModel.swift in Sources */,
+				FA51F71D203E62EE000A407D /* YourFriendPeopleDataSource.swift in Sources */,
 				FA34BC722023D53900432B62 /* YouPeopleViewController.swift in Sources */,
 				FACB05232017CE95006545D6 /* Errors.swift in Sources */,
 				FA4A03822025055A005F6F09 /* YourFriendGenreViewController.swift in Sources */,
@@ -325,6 +352,7 @@
 				FACB05112016769D006545D6 /* AppDelegate.swift in Sources */,
 				FACB052F2017D042006545D6 /* Endpoint.swift in Sources */,
 				FAB7E49B201FD4E40008497D /* YourFriendGenreTableViewCell.swift in Sources */,
+				FA51F71B203E6166000A407D /* YourFriendGenreDataSource.swift in Sources */,
 				FACB052C2017CF93006545D6 /* MovieDatabaseAPIClient.swift in Sources */,
 				FACB05352017D31F006545D6 /* StubData.swift in Sources */,
 				FAB4D7F5203786D90074F157 /* YouGenreDataSource.swift in Sources */,

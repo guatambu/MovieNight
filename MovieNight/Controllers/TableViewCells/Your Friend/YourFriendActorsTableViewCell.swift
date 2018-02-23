@@ -13,9 +13,7 @@ class YourFriendActorsTableViewCell: UITableViewCell {
     //MARK:  Properties
     
     @IBOutlet weak var yourFriendPersonProfilePic: UIImageView!
-
     @IBOutlet weak var yourFriendPersonFullNameLabel: UILabel!
-    
     @IBOutlet weak var yourFriendPersonSelectedBubbleIMageView: UIImageView!
     
     
@@ -28,6 +26,10 @@ class YourFriendActorsTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    func configure (with viewModel: YourFriendPeopleViewModel) {
+        yourFriendPersonFullNameLabel.text = viewModel.fullName
     }
 
 }

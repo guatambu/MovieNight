@@ -12,7 +12,10 @@ class YourFriendGenreTableViewCell: UITableViewCell {
 
     // MARK: Properties
     
-
+    @IBOutlet weak var yourFriendGenreCellLabel: UILabel!
+    @IBOutlet weak var yourFriendBubbleImageView: UIImageView!
+    @IBOutlet weak var yourFriendGenreCellContentView: UIView!
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
