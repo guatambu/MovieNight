@@ -118,6 +118,7 @@
                                     <color key="titleColor" red="0.87058823529999996" green="0.81412265493088298" blue="0.59554004645893965" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
+                                    <action selector="viewMovieResults:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nwP-8b-4sN"/>
                                     <segue destination="TlM-WZ-SVT" kind="show" identifier="movieResults" id="FuT-Fh-M3Y"/>
                                 </connections>
                             </button>
@@ -603,7 +604,7 @@
             <objects>
                 <tableViewController id="TlM-WZ-SVT" userLabel="Movie Results Table View Controller" customClass="YourResultsTableViewController" customModule="MovieNight" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="90" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="KUx-mT-hPc">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -671,8 +672,6 @@
                     <navigationItem key="navigationItem" title="Choose a Movie" id="dYW-WG-vbi">
                         <barButtonItem key="backBarButtonItem" title=" Results" id="QmI-D6-Oej"/>
                     </navigationItem>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO"/>
-                    <nil key="simulatedBottomBarMetrics"/>
                     <splitViewMasterSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hLV-Xm-pAR" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -684,14 +683,14 @@
             <objects>
                 <viewController id="mb8-Xs-JnB" userLabel="Your Movie Final" customClass="YourMovieFinalViewController" customModule="MovieNight" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="few-y5-orI">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg-iphone6plus" translatesAutoresizingMaskIntoConstraints="NO" id="q4u-hF-Lfq" userLabel="Background Image View">
-                                <rect key="frame" x="0.0" y="-65" width="320" height="481"/>
+                                <rect key="frame" x="0.0" y="-65" width="320" height="545"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="black-rectangle-background" translatesAutoresizingMaskIntoConstraints="NO" id="Qf5-jq-1No">
-                                <rect key="frame" x="87" y="0.0" width="146" height="227"/>
+                                <rect key="frame" x="87" y="64" width="146" height="227"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -699,13 +698,13 @@
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="movie-poster" translatesAutoresizingMaskIntoConstraints="NO" id="6H7-Pj-xwi" userLabel="Movie Poster Image View">
-                                <rect key="frame" x="93" y="0.0" width="135" height="200"/>
+                                <rect key="frame" x="93" y="64" width="135" height="200"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="6H7-Pj-xwi" secondAttribute="height" multiplier="27:40" id="Se6-ya-Q3A"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Mad Max:  Fury Road" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="UPO-JX-Rhq">
-                                <rect key="frame" x="94" y="200" width="133" height="28"/>
+                                <rect key="frame" x="94" y="264" width="133" height="28"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="28" id="gN0-hg-UZ1"/>
                                 </constraints>
@@ -713,6 +712,21 @@
                                 <color key="textColor" red="0.87058823529999996" green="0.81412265490000002" blue="0.59554004650000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="POX-32-ySL">
+                                <rect key="frame" x="107.5" y="425" width="105" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="5Yi-2o-jQS"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="black" pointSize="20"/>
+                                <state key="normal" title="Start Over">
+                                    <color key="titleColor" red="0.57992988820000002" green="0.41483199599999998" blue="0.41736727950000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="startOver:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TFE-Mp-yjU"/>
+                                    <action selector="startOver:" destination="mb8-Xs-JnB" eventType="touchUpInside" id="bnl-2E-ORG"/>
+                                    <action selector="startOver:" destination="1au-DD-fFH" eventType="touchUpInside" id="qlh-LZ-7lb"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -721,6 +735,7 @@
                             <constraint firstItem="q4u-hF-Lfq" firstAttribute="top" secondItem="few-y5-orI" secondAttribute="top" constant="-65" id="9iA-dr-weS"/>
                             <constraint firstItem="ZCG-m7-JSg" firstAttribute="trailing" secondItem="Qf5-jq-1No" secondAttribute="trailing" constant="87" id="A5a-Pm-75w"/>
                             <constraint firstItem="ZCG-m7-JSg" firstAttribute="trailing" secondItem="UPO-JX-Rhq" secondAttribute="trailing" constant="93" id="CXN-aD-bz0"/>
+                            <constraint firstItem="ZCG-m7-JSg" firstAttribute="bottom" secondItem="POX-32-ySL" secondAttribute="bottom" constant="30" id="D29-Yj-hmz"/>
                             <constraint firstItem="6H7-Pj-xwi" firstAttribute="leading" secondItem="ZCG-m7-JSg" secondAttribute="leading" constant="93" id="Hfn-RE-VjW"/>
                             <constraint firstItem="UPO-JX-Rhq" firstAttribute="top" secondItem="6H7-Pj-xwi" secondAttribute="bottom" id="NKq-II-yng"/>
                             <constraint firstItem="q4u-hF-Lfq" firstAttribute="bottom" secondItem="ZCG-m7-JSg" secondAttribute="bottom" id="T3B-9s-wAd"/>
@@ -729,22 +744,18 @@
                             <constraint firstItem="6H7-Pj-xwi" firstAttribute="top" secondItem="ZCG-m7-JSg" secondAttribute="top" id="kNL-81-D8b"/>
                             <constraint firstItem="q4u-hF-Lfq" firstAttribute="leading" secondItem="ZCG-m7-JSg" secondAttribute="leading" id="kvC-mx-3RA"/>
                             <constraint firstItem="q4u-hF-Lfq" firstAttribute="trailing" secondItem="ZCG-m7-JSg" secondAttribute="trailing" id="maC-8w-JFm"/>
+                            <constraint firstItem="POX-32-ySL" firstAttribute="centerX" secondItem="few-y5-orI" secondAttribute="centerX" id="rcm-y8-oJy"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ZCG-m7-JSg"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Your Movie" id="fBP-TM-QeX">
-                        <barButtonItem key="rightBarButtonItem" title="Start Over" id="CGa-zE-4aA">
-                            <connections>
-                                <action selector="startOverButtonAction:" destination="mb8-Xs-JnB" id="Mzp-um-hoG"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Enjoy!" id="fBP-TM-QeX"/>
                     <connections>
                         <outlet property="moviePosterImageView" destination="6H7-Pj-xwi" id="NpL-vM-iZP"/>
                         <outlet property="movieTitleLabel" destination="UPO-JX-Rhq" id="wQY-4p-lF0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QdR-Yl-xiQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="1au-DD-fFH" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="4425" y="12.5"/>
         </scene>

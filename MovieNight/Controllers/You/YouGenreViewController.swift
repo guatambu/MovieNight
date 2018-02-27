@@ -12,7 +12,12 @@ class YouGenreViewController: UIViewController {
     
     //MARK: Properties
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent // .default
+    }
+    
     let dataSource = YouGenreDataSource()
+    let navigationBarAppearance = UINavigationBar.appearance()
     
     @IBOutlet weak var selecteGenresLabel: UILabel!
     @IBOutlet weak var selectedBubbleImageView: UIView!
@@ -28,8 +33,9 @@ class YouGenreViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         
+        
         self.navigationController?.navigationBar.backgroundColor = UIColor(red: 156/255, green: 192/255, blue: 222/255, alpha: 1.0)
-        self.navigationController?.isNavigationBarHidden = false
+        UIApplication.shared.statusBarView?.backgroundColor = UIColor(red: 156/255, green: 192/255, blue: 222/255, alpha: 1.0)
         
         // Load sample data
         youGenreTableView.dataSource = dataSource
@@ -37,6 +43,8 @@ class YouGenreViewController: UIViewController {
         
         
     }
+    
+   
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

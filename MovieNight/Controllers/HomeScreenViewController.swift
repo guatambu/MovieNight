@@ -12,6 +12,10 @@ class HomeScreenViewController: UIViewController {
 
     //MARK: Properties
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent // .default
+    }
+    
     @IBOutlet weak var youStackViewOutlet: UIStackView!
     @IBOutlet weak var yourFriendStackViewOutlet: UIStackView!
     
@@ -20,7 +24,11 @@ class HomeScreenViewController: UIViewController {
     @IBAction func startOver(_ sender: Any) {
     }
     
-
+    @IBAction func viewMovieResults(_ sender: Any) {
+        print("hello hello")
+        //navigationController?.navigationBar.popItem(animated: true)
+    }
+    
     
     //MARK: Actions
     
@@ -36,10 +44,13 @@ class HomeScreenViewController: UIViewController {
         
     }
     
+   
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         // Hide the navigation bar on the this view controller
+        UIApplication.shared.statusBarView?.backgroundColor = UIColor.clear
         self.navigationController?.setNavigationBarHidden(true, animated: animated)
     }
     
@@ -48,6 +59,7 @@ class HomeScreenViewController: UIViewController {
         
         // Show the navigation bar on other view controllers
         self.navigationController?.setNavigationBarHidden(false, animated: animated)
+        
     }
 
     override func didReceiveMemoryWarning() {

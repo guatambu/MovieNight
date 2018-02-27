@@ -12,21 +12,24 @@ class YourMovieFinalViewController: UIViewController {
 
     //MARK:  Properties
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent // .default
+    }
+    
     @IBOutlet weak var movieTitleLabel: UILabel!
     @IBOutlet weak var moviePosterImageView: UIImageView!
 
     //MARK: Actions
     
-    @IBAction func startOverButtonAction(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
-        let homeScreenViewController = HomeScreenViewController()
-        self.present(homeScreenViewController, animated: true, completion: nil)
+    @IBAction func startOver(_ sender: Any) {
     }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationController?.isNavigationBarHidden = false
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
 
         // Do any additional setup after loading the view.
     }
@@ -35,7 +38,8 @@ class YourMovieFinalViewController: UIViewController {
         super.viewWillAppear(animated)
         
         // Hide the navigation bar on the this view controller
-        self.navigationController?.setNavigationBarHidden(true, animated: animated)
+        UIApplication.shared.statusBarView?.backgroundColor = UIColor.clear
+        self.navigationController?.setNavigationBarHidden(false, animated: animated)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -45,7 +49,7 @@ class YourMovieFinalViewController: UIViewController {
         self.navigationController?.setNavigationBarHidden(false, animated: animated)
     }
     
-
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

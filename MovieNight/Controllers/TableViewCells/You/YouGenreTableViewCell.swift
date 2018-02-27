@@ -16,6 +16,7 @@ class YouGenreTableViewCell: UITableViewCell {
     @IBOutlet weak var bubbleEmptyImageView: UIImageView!
     @IBOutlet weak var genreTitleLabel: UILabel!
     
+
     
     override func awakeFromNib() {
         super.awakeFromNib()

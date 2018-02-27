@@ -12,6 +12,11 @@ class YourFriendPeopleViewController: UIViewController {
 
     //MARK: Properties
     
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent // .default
+    }
+    
     let dataSource = YourFriendPeopleDataSource()
     
     @IBOutlet weak var selectedGenresBubbleImageView: UIImageView!
@@ -31,7 +36,7 @@ class YourFriendPeopleViewController: UIViewController {
         super.viewDidLoad()
         
         self.navigationController?.navigationBar.backgroundColor = UIColor(red: 156/255, green: 222/255, blue: 186/255, alpha: 1.0)
-        self.navigationController?.isNavigationBarHidden = false
+        UIApplication.shared.statusBarView?.backgroundColor = UIColor(red: 156/255, green: 222/255, blue: 186/255, alpha: 1.0)
         
         //Load Sample Data
         yourFriendPeopleTableView.dataSource = dataSource
@@ -39,6 +44,7 @@ class YourFriendPeopleViewController: UIViewController {
         
         // Do any additional setup after loading the view.
     }
+   
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
