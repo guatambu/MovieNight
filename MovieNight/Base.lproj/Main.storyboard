@@ -593,9 +593,11 @@
                         <outlet property="selectedPeopleBubbleImageView" destination="fF1-f6-amq" id="v8p-Fh-cHN"/>
                         <outlet property="selectedPeopleLabel" destination="Bfv-7Z-xiW" id="hQe-v6-Syh"/>
                         <outlet property="youPeopleTableView" destination="FKw-5u-bce" id="wyZ-G8-mU9"/>
+                        <segue destination="8Rx-yY-9bc" kind="unwind" identifier="unwindSegueToHomeScreen" unwindAction="unwindToHomeScreenVCWithSegue:" id="n96-hV-Sex"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VgB-LR-q0k" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="8Rx-yY-9bc" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2806.875" y="-510"/>
         </scene>
@@ -752,6 +754,7 @@
                     <connections>
                         <outlet property="moviePosterImageView" destination="6H7-Pj-xwi" id="NpL-vM-iZP"/>
                         <outlet property="movieTitleLabel" destination="UPO-JX-Rhq" id="wQY-4p-lF0"/>
+                        <segue destination="1au-DD-fFH" kind="unwind" identifier="unwindSegueToHomeScreenViewController" unwindAction="unwindToHomeScreenVCWithSegue:" id="isg-ZK-H2W"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QdR-Yl-xiQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1197,9 +1200,11 @@
                         <outlet property="selectedPeopleBubbleImageView" destination="eFX-8E-gRb" id="trn-bV-YKF"/>
                         <outlet property="selectedPeopleLabel" destination="Ovz-N6-edR" id="A7Y-Cm-HdK"/>
                         <outlet property="yourFriendPeopleTableView" destination="OcH-tv-zdw" id="QFl-mf-fbk"/>
+                        <segue destination="tv7-fa-0kq" kind="unwind" identifier="unwindSegueToHomeScreenVC" unwindAction="unwindToHomeScreenVCWithSegue:" id="6GL-wI-Vcw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="niR-rL-Nip" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="tv7-fa-0kq" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2854" y="538"/>
         </scene>

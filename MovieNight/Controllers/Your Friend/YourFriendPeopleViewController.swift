@@ -28,6 +28,7 @@ class YourFriendPeopleViewController: UIViewController {
     //MARK: Actions
     
     @IBAction func doneButtonAction(_ sender: Any) {
+        performSegue(withIdentifier: "unwindSegueToHomeScreenVC", sender: self)
     }
     
     //MARK: ViewDidLoad

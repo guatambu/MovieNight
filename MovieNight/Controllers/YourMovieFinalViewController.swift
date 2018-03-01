@@ -22,14 +22,15 @@ class YourMovieFinalViewController: UIViewController {
     //MARK: Actions
     
     @IBAction func startOver(_ sender: Any) {
+        performSegue(withIdentifier: "unwindSegueToHomeScreenViewController", sender: self)
     }
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        self.navigationController?.navigationBar.shadowImage = UIImage()
+        UIApplication.shared.statusBarView?.backgroundColor = UIColor.clear
+        self.navigationController?.navigationBar.backgroundColor = UIColor.clear
 
         // Do any additional setup after loading the view.
     }

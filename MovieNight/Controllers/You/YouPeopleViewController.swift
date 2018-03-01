@@ -27,6 +27,7 @@ class YouPeopleViewController: UIViewController {
     //MARK: Actions
     
     @IBAction func doneButtonAction(_ sender: Any) {
+        performSegue(withIdentifier: "unwindSegueToHomeScreen", sender: self)
     }
     
     //MARK: ViewDidLoad

@@ -32,7 +32,7 @@ class HomeScreenViewController: UIViewController {
     
     //MARK: Actions
     
-    
+    @IBAction func unwindToHomeScreenVC(segue:UIStoryboardSegue) { }
     
     override func viewDidLoad() {
         super.viewDidLoad()
