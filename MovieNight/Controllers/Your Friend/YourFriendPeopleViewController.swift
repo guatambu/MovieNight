@@ -6,9 +6,10 @@
 //  Copyright © 2018 leme group. All rights reserved.
 //
 
+import Foundation
 import UIKit
 
-class YourFriendPeopleViewController: UIViewController {
+class YourFriendPeopleViewController: UIViewController, UITableViewDelegate {
 
     //MARK: Properties
     
@@ -18,7 +19,9 @@ class YourFriendPeopleViewController: UIViewController {
     }
     
     let dataSource = YourFriendPeopleDataSource()
+    var myPeopleArray = [String]()
     
+    @IBOutlet weak var doneNavButton: UIBarButtonItem!
     @IBOutlet weak var selectedGenresBubbleImageView: UIImageView!
     @IBOutlet weak var selectedGenresLabel: UILabel!
     @IBOutlet weak var selectedPeopleBubbleImageView: UIImageView!
@@ -36,14 +39,44 @@ class YourFriendPeopleViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationController?.navigationBar.tintColor = UIColor.white
         self.navigationController?.navigationBar.backgroundColor = UIColor(red: 156/255, green: 222/255, blue: 186/255, alpha: 1.0)
         UIApplication.shared.statusBarView?.backgroundColor = UIColor(red: 156/255, green: 222/255, blue: 186/255, alpha: 1.0)
+        selectedPeopleLabel.text = ""
+        selectedPeopleBubbleImageView.image = #imageLiteral(resourceName: "bubble-empty")
         
         //Load Sample Data
         yourFriendPeopleTableView.dataSource = dataSource
         updateTableViewDataSource(for: yourFriendPeopleTableView)
         
+        yourFriendPeopleTableView.delegate = self
+        
         // Do any additional setup after loading the view.
+    }
+    
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let person = dataSource.data[indexPath.row]
+        myPeopleArray.append(person.name)
+        let cell = self.yourFriendPeopleTableView.cellForRow(at: indexPath) as! YourFriendActorsTableViewCell
+        cell.yourFriendPersonSelectedBubbleIMageView.image = #imageLiteral(resourceName: "bubble-selected")
+        
+        if myPeopleArray.count == 1 {
+            selectedPeopleLabel.text = "\(myPeopleArray[0])"
+        } else if myPeopleArray.count == 2 {
+            selectedPeopleLabel.text = "\(myPeopleArray[0]), \(myPeopleArray[1])"
+        } else if myPeopleArray.count >= 3 {
+            selectedPeopleLabel.text = "\(myPeopleArray[0]), \(myPeopleArray[1]), \(myPeopleArray[2])"
+            selectedPeopleBubbleImageView.image = #imageLiteral(resourceName: "bubble-selected")
+            self.yourFriendPeopleTableView.allowsSelection = false
+            cell.setSelected(false, animated: true)
+            self.doneNavButton.isEnabled = true
+        } else {
+            self.yourFriendPeopleTableView.allowsSelection = true
+        }
+        
+        
+        
     }
    
     
@@ -51,6 +84,9 @@ class YourFriendPeopleViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    
+    
     
     
     /*
@@ -68,7 +104,9 @@ class YourFriendPeopleViewController: UIViewController {
 extension YourFriendPeopleViewController {
     func updateTableViewDataSource(for tableView: UITableView) {
         dataSource.update(with: StubData.person1)
-        
+        for thing in dataSource.data {
+            print("your friend: \(thing.name)")
+        }
         tableView.reloadData()
     }
 }

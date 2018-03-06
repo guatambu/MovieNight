@@ -41,6 +41,7 @@
 		FACB05592018002D006545D6 /* Genre.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACB05582018002D006545D6 /* Genre.swift */; };
 		FACBAB23203F8C6500B73A4F /* MovieResultsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACBAB22203F8C6500B73A4F /* MovieResultsDataSource.swift */; };
 		FACBAB25203F8E0A00B73A4F /* MovieViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACBAB24203F8E0A00B73A4F /* MovieViewModel.swift */; };
+		FACBAB272048CAF800B73A4F /* Selections.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACBAB262048CAF800B73A4F /* Selections.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,6 +81,7 @@
 		FACB05582018002D006545D6 /* Genre.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Genre.swift; sourceTree = "<group>"; };
 		FACBAB22203F8C6500B73A4F /* MovieResultsDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieResultsDataSource.swift; sourceTree = "<group>"; };
 		FACBAB24203F8E0A00B73A4F /* MovieViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieViewModel.swift; sourceTree = "<group>"; };
+		FACBAB262048CAF800B73A4F /* Selections.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Selections.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -200,6 +202,7 @@
 				FACB05302017D0A2006545D6 /* Movie.swift */,
 				FACB05562017FFC5006545D6 /* Person.swift */,
 				FACB05342017D31F006545D6 /* StubData.swift */,
+				FACBAB262048CAF800B73A4F /* Selections.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -331,6 +334,7 @@
 				FACB05572017FFC5006545D6 /* Person.swift in Sources */,
 				FAB7E495201BCF560008497D /* YourResultsTableViewCell.swift in Sources */,
 				FACB05312017D0A2006545D6 /* Movie.swift in Sources */,
+				FACBAB272048CAF800B73A4F /* Selections.swift in Sources */,
 				FAB7E49E201FF2470008497D /* YouActorsTableViewCell.swift in Sources */,
 				FACB05332017D0F2006545D6 /* MovieDBEntity.swift in Sources */,
 				FA34BC702023D3BD00432B62 /* YouGenreViewController.swift in Sources */,

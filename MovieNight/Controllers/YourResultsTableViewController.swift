@@ -26,9 +26,12 @@ class YourResultsTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        self.navigationController?.navigationBar.titleTextAttributes  = [NSAttributedStringKey(rawValue: NSAttributedStringKey.foregroundColor.rawValue): UIColor(red: 222.0/255.0, green: 208.0/255.0, blue: 152.0/255.0, alpha: 1.0), NSAttributedStringKey.font:UIFont(name:"Helvetica-Bold", size: 18)!]
+        self.navigationController?.navigationBar.tintColor = UIColor(red: 222.0/255.0, green: 208.0/255.0, blue: 152.0/255.0, alpha: 1.0)
         UIApplication.shared.statusBarView?.backgroundColor = UIColor.clear
         self.navigationController?.navigationBar.backgroundColor = UIColor.clear
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "bg-iphone6plus")!)
+        
         
         //Load Sample Data
         tableView.dataSource = dataSource

@@ -8,6 +8,8 @@
 
 import UIKit
 
+var selections = Selections(yourGenres: [], yourPeople: [], yourFriendGenres: [], yourFriendPeople: [])
+
 class HomeScreenViewController: UIViewController {
 
     //MARK: Properties
@@ -16,12 +18,26 @@ class HomeScreenViewController: UIViewController {
         return .lightContent // .default
     }
     
+    @IBOutlet weak var youBubbleImageView: UIImageView!
+    @IBOutlet weak var yourFriendBubbleImageView: UIImageView!
     @IBOutlet weak var youStackViewOutlet: UIStackView!
     @IBOutlet weak var yourFriendStackViewOutlet: UIStackView!
     
     @IBOutlet weak var viewResultsButtonOutlet: UIButton!
     
+    
+    //MARK: Actions
+    
     @IBAction func startOver(_ sender: Any) {
+        selections.yourGenres = []
+        selections.yourPeople = []
+        selections.yourFriendGenres = []
+        selections.yourFriendPeople = []
+        
+        viewResultsButtonOutlet.setTitleColor(UIColor(red: 104.0/255.0, green: 104.0/255.0, blue: 104.0/255.0, alpha: 0.6), for: .normal)
+        youBubbleImageView.image = #imageLiteral(resourceName: "bubble-empty")
+        yourFriendBubbleImageView.image = #imageLiteral(resourceName: "bubble-empty")
+        
     }
     
     @IBAction func viewMovieResults(_ sender: Any) {
@@ -29,21 +45,49 @@ class HomeScreenViewController: UIViewController {
         //navigationController?.navigationBar.popItem(animated: true)
     }
     
-    
-    //MARK: Actions
-    
     @IBAction func unwindToHomeScreenVC(segue:UIStoryboardSegue) { }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
+        selections.yourGenres = ["genre 1", "genre 2", "genre 3"]
+        selections.yourPeople = ["person 1", "person 2", "person 2"]
+        
+        selections.yourFriendGenres = ["friend genre 1", "friend genre 2", "friend genre 3"]
+        selections.yourFriendPeople = ["friend peep 1", "friend peep 2", "friend peep 3"]
+ 
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.isNavigationBarHidden = true
+        youBubbleImageView.image = #imageLiteral(resourceName: "bubble-empty")
+        yourFriendBubbleImageView.image = #imageLiteral(resourceName: "bubble-empty")
         
+        if selections.yourGenres.count == 3 && selections.yourPeople.count == 3 && selections.yourFriendGenres.count == 3 && selections.yourFriendPeople.count == 3 {
+            
+            youBubbleImageView.image = #imageLiteral(resourceName: "bubble-selected")
+            yourFriendBubbleImageView.image = #imageLiteral(resourceName: "bubble-selected")
+            viewResultsButtonOutlet.setTitleColor(UIColor(red: 222.0/255.0, green: 208.0/255.0, blue: 152.0/255.0, alpha: 1.0), for: .normal) 
+            viewResultsButtonOutlet.isEnabled = true
+            
+        } else if selections.yourGenres.count == 3 && selections.yourPeople.count == 3 {
+            
+            youBubbleImageView.image = #imageLiteral(resourceName: "bubble-selected")
+            yourFriendBubbleImageView.image = #imageLiteral(resourceName: "bubble-empty")
+            viewResultsButtonOutlet.setTitleColor(UIColor(red: 104.0/255.0, green: 104.0/255.0, blue: 104.0/255.0, alpha: 0.6), for: .normal)
+            
+        } else if selections.yourFriendGenres.count == 3 && selections.yourFriendPeople.count == 3 {
+            
+            youBubbleImageView.image = #imageLiteral(resourceName: "bubble-empty")
+            yourFriendBubbleImageView.image = #imageLiteral(resourceName: "bubble-selected")
+            viewResultsButtonOutlet.setTitleColor(UIColor(red: 104.0/255.0, green: 104.0/255.0, blue: 104.0/255.0, alpha: 0.6), for: .normal)
+        } else {
+            viewResultsButtonOutlet.setTitleColor(UIColor(red: 104.0/255.0, green: 104.0/255.0, blue: 104.0/255.0, alpha: 0.6), for: .normal)
+            youBubbleImageView.image = #imageLiteral(resourceName: "bubble-empty")
+            yourFriendBubbleImageView.image = #imageLiteral(resourceName: "bubble-empty")
+            
+        }
     }
-    
    
     
     override func viewWillAppear(_ animated: Bool) {

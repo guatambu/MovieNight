@@ -29,6 +29,8 @@ class YourMovieFinalViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationController?.navigationBar.titleTextAttributes  = [NSAttributedStringKey(rawValue: NSAttributedStringKey.foregroundColor.rawValue): UIColor(red: 222.0/255.0, green: 208.0/255.0, blue: 152.0/255.0, alpha: 1.0), NSAttributedStringKey.font:UIFont(name:"Helvetica-Bold", size: 18)!]
+        self.navigationController?.navigationBar.tintColor = UIColor(red: 222.0/255.0, green: 208.0/255.0, blue: 152.0/255.0, alpha: 1.0)
         UIApplication.shared.statusBarView?.backgroundColor = UIColor.clear
         self.navigationController?.navigationBar.backgroundColor = UIColor.clear
 
