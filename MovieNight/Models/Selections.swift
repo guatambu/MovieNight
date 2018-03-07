@@ -9,9 +9,11 @@
 import Foundation
 
 struct Selections {
-    /*static*/ var yourGenres: [String] //{ get set }
-    /*static*/ var yourPeople: [String] //{ get set }
-    /*static*/ var yourFriendGenres: [String] //{ get set }
-    /*static*/ var yourFriendPeople: [String] //{ get set }
-    
+    var yourGenres = [String]()
+    var yourPeople = [String]()
+    var yourFriendGenres = [String]()
+    var yourFriendPeople = [String]()
 }
+
+
+

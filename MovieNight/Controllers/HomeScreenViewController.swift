@@ -8,7 +8,7 @@
 
 import UIKit
 
-var selections = Selections(yourGenres: [], yourPeople: [], yourFriendGenres: [], yourFriendPeople: [])
+var selections = Selections()
 
 class HomeScreenViewController: UIViewController {
 
@@ -85,7 +85,6 @@ class HomeScreenViewController: UIViewController {
             viewResultsButtonOutlet.setTitleColor(UIColor(red: 104.0/255.0, green: 104.0/255.0, blue: 104.0/255.0, alpha: 0.6), for: .normal)
             youBubbleImageView.image = #imageLiteral(resourceName: "bubble-empty")
             yourFriendBubbleImageView.image = #imageLiteral(resourceName: "bubble-empty")
-            
         }
     }
    
@@ -109,6 +108,16 @@ class HomeScreenViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "youChooseSegue") {
+            guard let youGenreViewController = segue.destination as? YouGenreViewController else { return }
+        } else if (segue.identifier == "yourFreindChoosesSegue") {
+            guard let yourFriendGenreViewController = segue.destination as? YourFriendGenreViewController else { return }
+        } else if (segue.identifier == "movieResults") {
+            guard let yourResultsViewController = segue.destination as? YourResultsTableViewController else { return }
+        }
     }
 
 

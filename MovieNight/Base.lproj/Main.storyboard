@@ -438,7 +438,7 @@
                                                 </constraints>
                                             </view>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="Ec8-lL-AMj" userLabel="Selected People Stack View">
-                                                <rect key="frame" x="0.0" y="39" width="320" height="34"/>
+                                                <rect key="frame" x="0.0" y="39" width="318" height="34"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CWa-gr-STX" userLabel="Bubble View">
                                                         <rect key="frame" x="0.0" y="0.0" width="34" height="34"/>
@@ -462,7 +462,7 @@
                                                         </constraints>
                                                     </view>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="TTS-rD-wPi" userLabel="People Text Stack View">
-                                                        <rect key="frame" x="40" y="0.0" width="280" height="34"/>
+                                                        <rect key="frame" x="40" y="0.0" width="278" height="34"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" horizontalHuggingPriority="252" translatesAutoresizingMaskIntoConstraints="NO" id="55E-il-uEg" userLabel="Selected Label View">
                                                                 <rect key="frame" x="0.0" y="0.0" width="56" height="34"/>
@@ -484,10 +484,10 @@
                                                                 </constraints>
                                                             </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Ee-Wj-zwi" userLabel="Selected People View">
-                                                                <rect key="frame" x="64" y="0.0" width="216" height="34"/>
+                                                                <rect key="frame" x="64" y="0.0" width="214" height="34"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="Julia Roberts, Denzel Washington, Robert DeNiro" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bfv-7Z-xiW" userLabel="Selected People Label">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="216" height="34"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="214" height="34"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="34" id="tbJ-vi-D2g"/>
                                                                         </constraints>
@@ -975,13 +975,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b9w-ia-AQe" userLabel="Selected Items View">
-                                <rect key="frame" x="0.0" y="64" width="321" height="73"/>
+                                <rect key="frame" x="0.0" y="64" width="320" height="73"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="rVi-xB-L2s" userLabel="Selected Items Stack View">
-                                        <rect key="frame" x="0.0" y="0.0" width="321" height="73"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="73"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="cke-CY-jOA" userLabel="Selected Genres Stack View">
-                                                <rect key="frame" x="0.0" y="0.0" width="321" height="34"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="320" height="34"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c2a-TM-i95" userLabel="Bubble View">
                                                         <rect key="frame" x="0.0" y="0.0" width="34" height="34"/>
@@ -1004,7 +1004,7 @@
                                                         </constraints>
                                                     </view>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="UF4-5y-Gtq" userLabel="Genres Text Stack View">
-                                                        <rect key="frame" x="39.5" y="0.0" width="281" height="34"/>
+                                                        <rect key="frame" x="40" y="0.0" width="280" height="34"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" horizontalHuggingPriority="252" translatesAutoresizingMaskIntoConstraints="NO" id="fxR-9j-H74" userLabel="Selected Label View">
                                                                 <rect key="frame" x="0.0" y="0.0" width="56" height="34"/>
@@ -1026,10 +1026,10 @@
                                                                 </constraints>
                                                             </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ShR-cs-yzY" userLabel="Selected Genres View">
-                                                                <rect key="frame" x="64" y="0.0" width="217" height="34"/>
+                                                                <rect key="frame" x="64" y="0.0" width="216" height="34"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="Documentary, Science Fiction, Documentary" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kou-Y1-QNM" userLabel="Selected Genres Label">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="217" height="34"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="216" height="34"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="34" id="koh-ii-sSH"/>
                                                                         </constraints>
@@ -1062,14 +1062,14 @@
                                                 </constraints>
                                             </stackView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EsN-Et-06I">
-                                                <rect key="frame" x="0.0" y="36" width="321" height="1"/>
+                                                <rect key="frame" x="0.0" y="36" width="320" height="1"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="1" id="yea-PZ-6TO"/>
                                                 </constraints>
                                             </view>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="DeD-aP-3we" userLabel="Selected People Stack View">
-                                                <rect key="frame" x="0.0" y="39" width="321" height="34"/>
+                                                <rect key="frame" x="0.0" y="39" width="320" height="34"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wkb-Fd-alh" userLabel="Bubble View">
                                                         <rect key="frame" x="0.0" y="0.0" width="34" height="34"/>
@@ -1092,7 +1092,7 @@
                                                         </constraints>
                                                     </view>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="mgo-ka-lJc" userLabel="People Text Stack View">
-                                                        <rect key="frame" x="38.5" y="0.0" width="282" height="34"/>
+                                                        <rect key="frame" x="39" y="0.0" width="281" height="34"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" horizontalHuggingPriority="252" translatesAutoresizingMaskIntoConstraints="NO" id="FOR-TK-m89" userLabel="Selected Label View">
                                                                 <rect key="frame" x="0.0" y="0.0" width="56" height="34"/>
@@ -1114,10 +1114,10 @@
                                                                 </constraints>
                                                             </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gvt-2w-vmT" userLabel="Selected People View">
-                                                                <rect key="frame" x="64" y="0.0" width="218" height="34"/>
+                                                                <rect key="frame" x="64" y="0.0" width="217" height="34"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="Julia Roberts, Denzel Washington, Robert DeNiro" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ovz-N6-edR" userLabel="Selected Genres Label">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="218" height="34"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="217" height="34"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="34" id="UKU-uK-XoF"/>
                                                                         </constraints>
@@ -1166,18 +1166,18 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="70" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="OcH-tv-zdw">
-                                <rect key="frame" x="0.0" y="137" width="321" height="343"/>
+                                <rect key="frame" x="0.0" y="137" width="320" height="343"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="YourFriendActorsTableViewCell" rowHeight="70" id="AMx-Jn-SMt" userLabel="YourFriendActorsTableViewCell" customClass="YourFriendActorsTableViewCell" customModule="MovieNight" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="321" height="70"/>
+                                        <rect key="frame" x="0.0" y="28" width="320" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="AMx-Jn-SMt" id="0CU-3b-NfZ" customClass="YourFriendActorsTableViewCell" customModule="MovieNight" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="0.0" width="321" height="69.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="69.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="jh6-2K-BYG">
-                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="69.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="321" height="69.5"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" image="person-5" translatesAutoresizingMaskIntoConstraints="NO" id="2vI-kx-a7P" userLabel="Profile Image View">
                                                             <rect key="frame" x="0.0" y="0.0" width="50" height="69.5"/>
@@ -1186,13 +1186,13 @@
                                                             </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Person Full Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5dE-0I-T7O">
-                                                            <rect key="frame" x="55" y="24" width="220" height="21.5"/>
+                                                            <rect key="frame" x="55" y="24" width="221" height="21.5"/>
                                                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="252" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" image="bubble-empty" translatesAutoresizingMaskIntoConstraints="NO" id="3eU-BE-idn">
-                                                            <rect key="frame" x="280" y="15" width="40" height="40"/>
+                                                            <rect key="frame" x="281" y="15" width="40" height="40"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="40" id="41I-u1-m2T"/>
                                                                 <constraint firstAttribute="height" constant="40" id="YsT-aL-A5b"/>
