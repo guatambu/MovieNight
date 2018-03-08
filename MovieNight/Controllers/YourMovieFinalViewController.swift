@@ -12,6 +12,8 @@ class YourMovieFinalViewController: UIViewController {
 
     //MARK:  Properties
     
+    var finalMoviePickInstance: MovieResults!
+    
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent // .default
     }
@@ -23,6 +25,7 @@ class YourMovieFinalViewController: UIViewController {
     
     @IBAction func startOver(_ sender: Any) {
         performSegue(withIdentifier: "unwindSegueToHomeScreenViewController", sender: self)
+        
     }
     
     

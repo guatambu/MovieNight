@@ -19,6 +19,7 @@ class YouPeopleViewController: UIViewController, UITableViewDelegate {
     
     let dataSource = YouPeopleDataSource()
     var myPeopleArray = [String]()
+    var youPeopleSelectionsInstance: Selections!
     
     @IBOutlet weak var doneNavButton: UIBarButtonItem!
     @IBOutlet weak var selectedGenreBubbleImageView: UIImageView!
@@ -31,6 +32,7 @@ class YouPeopleViewController: UIViewController, UITableViewDelegate {
     
     @IBAction func doneButtonAction(_ sender: Any) {
         performSegue(withIdentifier: "unwindSegueToHomeScreen", sender: self)
+        
     }
     
     //MARK: ViewDidLoad
@@ -45,6 +47,7 @@ class YouPeopleViewController: UIViewController, UITableViewDelegate {
         selectedPeopleLabel.text = ""
         selectedPeopleBubbleImageView.image = #imageLiteral(resourceName: "bubble-empty")
         
+        selectedGenresLabel.text = "\(youPeopleSelectionsInstance.yourGenres[0]), \(youPeopleSelectionsInstance.yourGenres[1]), \(youPeopleSelectionsInstance.yourGenres[2])"
         
         //Load Sample Data
         youPeopleTableView.dataSource = dataSource
@@ -58,16 +61,16 @@ class YouPeopleViewController: UIViewController, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let person = dataSource.data[indexPath.row]
-        myPeopleArray.append(person.name)
+        youPeopleSelectionsInstance.yourPeople.append(person.name)
         let cell = self.youPeopleTableView.cellForRow(at: indexPath) as! YouActorsTableViewCell
         cell.bubbleSelectedTableCellContentView.image = #imageLiteral(resourceName: "bubble-selected")
         
-        if myPeopleArray.count == 1 {
-            selectedPeopleLabel.text = "\(myPeopleArray[0])"
-        } else if myPeopleArray.count == 2 {
-            selectedPeopleLabel.text = "\(myPeopleArray[0]), \(myPeopleArray[1])"
-        } else if myPeopleArray.count >= 3 {
-            selectedPeopleLabel.text = "\(myPeopleArray[0]), \(myPeopleArray[1]), \(myPeopleArray[2])"
+        if youPeopleSelectionsInstance.yourPeople.count == 1 {
+            selectedPeopleLabel.text = "\(youPeopleSelectionsInstance.yourPeople[0])"
+        } else if youPeopleSelectionsInstance.yourPeople.count == 2 {
+            selectedPeopleLabel.text = "\(youPeopleSelectionsInstance.yourPeople[0]), \(youPeopleSelectionsInstance.yourPeople[1])"
+        } else if youPeopleSelectionsInstance.yourPeople.count >= 3 {
+            selectedPeopleLabel.text = "\(youPeopleSelectionsInstance.yourPeople[0]), \(youPeopleSelectionsInstance.yourPeople[1]), \(youPeopleSelectionsInstance.yourPeople[2])"
             selectedPeopleBubbleImageView.image = #imageLiteral(resourceName: "bubble-selected")
             self.youPeopleTableView.allowsSelection = false
             cell.setSelected(false, animated: true)
@@ -75,29 +78,12 @@ class YouPeopleViewController: UIViewController, UITableViewDelegate {
         } else {
             self.youPeopleTableView.allowsSelection = true
         }
-        
-        
-        
     }
-    
-   
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
 
 extension YouPeopleViewController {

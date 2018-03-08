@@ -22,6 +22,7 @@ class YouGenreViewController: UIViewController, UITableViewDelegate {
     let youGenreTableViewCell = YouGenreTableViewCell()
     
     var myArray = [String]()
+    var youGenreSelectionsInstance: Selections!
     
     @IBOutlet weak var nextNavButton: UIBarButtonItem!
     @IBOutlet weak var selecteGenresLabel: UILabel!
@@ -56,16 +57,16 @@ class YouGenreViewController: UIViewController, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let genre = dataSource.data[indexPath.row]
-        myArray.append(genre.name)
+        youGenreSelectionsInstance.yourGenres.append(genre.name)
         let cell = self.youGenreTableView.cellForRow(at: indexPath) as! YouGenreTableViewCell
         cell.bubbleEmptyImageView.image = #imageLiteral(resourceName: "bubble-selected")
         
-        if myArray.count == 1 {
-            selecteGenresLabel.text = "\(myArray[0])"
-        } else if myArray.count == 2 {
-            selecteGenresLabel.text = "\(myArray[0]), \(myArray[1])"
-        } else if myArray.count >= 3 {
-            selecteGenresLabel.text = "\(myArray[0]), \(myArray[1]), \(myArray[2])"
+        if youGenreSelectionsInstance.yourGenres.count == 1 {
+            selecteGenresLabel.text = "\(youGenreSelectionsInstance.yourGenres[0])"
+        } else if youGenreSelectionsInstance.yourGenres.count == 2 {
+            selecteGenresLabel.text = "\(youGenreSelectionsInstance.yourGenres[0]), \(youGenreSelectionsInstance.yourGenres[1])"
+        } else if youGenreSelectionsInstance.yourGenres.count >= 3 {
+            selecteGenresLabel.text = "\(youGenreSelectionsInstance.yourGenres[0]), \(youGenreSelectionsInstance.yourGenres[1]), \(youGenreSelectionsInstance.yourGenres[2])"
             selectionBubbleImageView.image = #imageLiteral(resourceName: "bubble-selected")
             self.youGenreTableView.allowsSelection = false
             cell.setSelected(false, animated: true)
@@ -90,8 +91,10 @@ class YouGenreViewController: UIViewController, UITableViewDelegate {
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        
+        guard let youPeopleFinalViewController = segue.destination as? YouPeopleViewController else { return }
+        youPeopleFinalViewController.youPeopleSelectionsInstance = youGenreSelectionsInstance
+        
     }
     /*
      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

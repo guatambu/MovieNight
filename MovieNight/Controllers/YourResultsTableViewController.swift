@@ -13,6 +13,7 @@ class YourResultsTableViewController: UITableViewController {
     //MARK: Properties
     
     var dataSource = MovieResultsDataSource()
+    var yourMoviesResultsInstance: MovieResults!
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
@@ -90,7 +91,7 @@ class YourResultsTableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         guard let yourMovieFinalViewController = segue.destination as? YourMovieFinalViewController else { return }
-        
+        //yourMovieFinalViewController.finalMoviePickInstance = *(# object contained in user selected cell #)*
     }
 
 }

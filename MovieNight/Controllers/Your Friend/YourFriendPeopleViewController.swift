@@ -20,6 +20,7 @@ class YourFriendPeopleViewController: UIViewController, UITableViewDelegate {
     
     let dataSource = YourFriendPeopleDataSource()
     var myPeopleArray = [String]()
+    var yourFriendPeopleSelectionsInstance: Selections!
     
     @IBOutlet weak var doneNavButton: UIBarButtonItem!
     @IBOutlet weak var selectedGenresBubbleImageView: UIImageView!
@@ -32,6 +33,7 @@ class YourFriendPeopleViewController: UIViewController, UITableViewDelegate {
     
     @IBAction func doneButtonAction(_ sender: Any) {
         performSegue(withIdentifier: "unwindSegueToHomeScreenVC", sender: self)
+        
     }
     
     //MARK: ViewDidLoad
@@ -45,6 +47,9 @@ class YourFriendPeopleViewController: UIViewController, UITableViewDelegate {
         selectedPeopleLabel.text = ""
         selectedPeopleBubbleImageView.image = #imageLiteral(resourceName: "bubble-empty")
         
+        selectedGenresLabel.text = "\(yourFriendPeopleSelectionsInstance.yourFriendGenres[0]), \(yourFriendPeopleSelectionsInstance.yourFriendGenres[1]), \(yourFriendPeopleSelectionsInstance.yourFriendGenres[2])"
+        selectedGenresBubbleImageView.image = #imageLiteral(resourceName: "bubble-selected")
+        
         //Load Sample Data
         yourFriendPeopleTableView.dataSource = dataSource
         updateTableViewDataSource(for: yourFriendPeopleTableView)
@@ -57,16 +62,16 @@ class YourFriendPeopleViewController: UIViewController, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let person = dataSource.data[indexPath.row]
-        myPeopleArray.append(person.name)
+        yourFriendPeopleSelectionsInstance.yourFriendPeople.append(person.name)
         let cell = self.yourFriendPeopleTableView.cellForRow(at: indexPath) as! YourFriendActorsTableViewCell
         cell.yourFriendPersonSelectedBubbleIMageView.image = #imageLiteral(resourceName: "bubble-selected")
         
-        if myPeopleArray.count == 1 {
-            selectedPeopleLabel.text = "\(myPeopleArray[0])"
-        } else if myPeopleArray.count == 2 {
-            selectedPeopleLabel.text = "\(myPeopleArray[0]), \(myPeopleArray[1])"
-        } else if myPeopleArray.count >= 3 {
-            selectedPeopleLabel.text = "\(myPeopleArray[0]), \(myPeopleArray[1]), \(myPeopleArray[2])"
+        if yourFriendPeopleSelectionsInstance.yourFriendPeople.count == 1 {
+            selectedPeopleLabel.text = "\(yourFriendPeopleSelectionsInstance.yourFriendPeople[0])"
+        } else if yourFriendPeopleSelectionsInstance.yourFriendPeople.count == 2 {
+            selectedPeopleLabel.text = "\(yourFriendPeopleSelectionsInstance.yourFriendPeople[0]), \(yourFriendPeopleSelectionsInstance.yourFriendPeople[1])"
+        } else if yourFriendPeopleSelectionsInstance.yourFriendPeople.count >= 3 {
+            selectedPeopleLabel.text = "\(yourFriendPeopleSelectionsInstance.yourFriendPeople[0]), \(yourFriendPeopleSelectionsInstance.yourFriendPeople[1]), \(yourFriendPeopleSelectionsInstance.yourFriendPeople[2])"
             selectedPeopleBubbleImageView.image = #imageLiteral(resourceName: "bubble-selected")
             self.yourFriendPeopleTableView.allowsSelection = false
             cell.setSelected(false, animated: true)

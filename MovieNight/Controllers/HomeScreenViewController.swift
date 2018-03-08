@@ -9,6 +9,9 @@
 import UIKit
 
 var selections = Selections()
+var genreSelections: Selections!
+var peopleSelections: Selections!
+var movieResults = MovieResults()
 
 class HomeScreenViewController: UIViewController {
 
@@ -50,13 +53,13 @@ class HomeScreenViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
+        /*
         selections.yourGenres = ["genre 1", "genre 2", "genre 3"]
         selections.yourPeople = ["person 1", "person 2", "person 2"]
         
         selections.yourFriendGenres = ["friend genre 1", "friend genre 2", "friend genre 3"]
         selections.yourFriendPeople = ["friend peep 1", "friend peep 2", "friend peep 3"]
- 
+        */
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.isNavigationBarHidden = true
@@ -113,10 +116,13 @@ class HomeScreenViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "youChooseSegue") {
             guard let youGenreViewController = segue.destination as? YouGenreViewController else { return }
+            youGenreViewController.youGenreSelectionsInstance = selections
         } else if (segue.identifier == "yourFreindChoosesSegue") {
             guard let yourFriendGenreViewController = segue.destination as? YourFriendGenreViewController else { return }
+            yourFriendGenreViewController.yourFriendGenreSelectionsInstance = selections
         } else if (segue.identifier == "movieResults") {
             guard let yourResultsViewController = segue.destination as? YourResultsTableViewController else { return }
+            //yourResultsViewController.yourMoviesResultsInstance = movieResults
         }
     }
 

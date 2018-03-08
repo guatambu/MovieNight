@@ -19,6 +19,7 @@ class YourFriendGenreViewController: UIViewController, UITableViewDelegate {
     
     let dataSource = YourFriendGenreDataSource()
     var myArray = [String]()
+    var yourFriendGenreSelectionsInstance: Selections!
     
     @IBOutlet weak var nextNavButton: UIBarButtonItem!
     @IBOutlet weak var selectedGenreImageView: UIImageView!
@@ -55,16 +56,16 @@ class YourFriendGenreViewController: UIViewController, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let genre = dataSource.data[indexPath.row]
-        myArray.append(genre.name)
+        yourFriendGenreSelectionsInstance.yourFriendGenres.append(genre.name)
         let cell = self.yourFriendGenreTableView.cellForRow(at: indexPath) as! YourFriendGenreTableViewCell
         cell.yourFriendBubbleImageView.image = #imageLiteral(resourceName: "bubble-selected")
         
-        if myArray.count == 1 {
-            selectedGenresLabel.text = "\(myArray[0])"
-        } else if myArray.count == 2 {
-            selectedGenresLabel.text = "\(myArray[0]), \(myArray[1])"
-        } else if myArray.count >= 3 {
-            selectedGenresLabel.text = "\(myArray[0]), \(myArray[1]), \(myArray[2])"
+        if yourFriendGenreSelectionsInstance.yourFriendGenres.count == 1 {
+            selectedGenresLabel.text = "\(yourFriendGenreSelectionsInstance.yourFriendGenres[0])"
+        } else if yourFriendGenreSelectionsInstance.yourFriendGenres.count == 2 {
+            selectedGenresLabel.text = "\(yourFriendGenreSelectionsInstance.yourFriendGenres[0]), \(yourFriendGenreSelectionsInstance.yourFriendGenres[1])"
+        } else if yourFriendGenreSelectionsInstance.yourFriendGenres.count >= 3 {
+            selectedGenresLabel.text = "\(yourFriendGenreSelectionsInstance.yourFriendGenres[0]), \(yourFriendGenreSelectionsInstance.yourFriendGenres[1]), \(yourFriendGenreSelectionsInstance.yourFriendGenres[2])"
             selectedGenreImageView.image = #imageLiteral(resourceName: "bubble-selected")
             self.yourFriendGenreTableView.allowsSelection = false
             cell.setSelected(false, animated: true)
@@ -87,6 +88,7 @@ class YourFriendGenreViewController: UIViewController, UITableViewDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         guard let yourFriendPeopleFinalViewController = segue.destination as? YourFriendPeopleViewController else { return }
+        yourFriendPeopleFinalViewController.yourFriendPeopleSelectionsInstance = yourFriendGenreSelectionsInstance
         
     }
 
