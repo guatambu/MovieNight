@@ -179,8 +179,10 @@ class HomeScreenViewController: UIViewController {
             yourFriendGenreViewController.yourFriendGenreSelectionsInstance = selections
         } else if (segue.identifier == "movieResults") {
             guard let yourResultsViewController = segue.destination as? YourResultsTableViewController else { return }
-            //yourResultsViewController.yourMoviesResultsInstance = movieResults
-    
+            
+            selections.resultsSynthesis()
+            yourResultsViewController.yourMoviesResultsInstance = selections
+            
         }
     }
 }

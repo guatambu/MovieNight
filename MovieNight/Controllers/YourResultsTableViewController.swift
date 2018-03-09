@@ -13,7 +13,7 @@ class YourResultsTableViewController: UITableViewController {
     //MARK: Properties
     
     var dataSource = MovieResultsDataSource()
-    var yourMoviesResultsInstance: MovieResults!
+    var yourMoviesResultsInstance: Selections!
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
