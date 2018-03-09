@@ -29,11 +29,13 @@ struct Selections {
     //the users selections comparison will:
     //look in the two genre arrays for any overlap
     //look in the two people arrays for any overlap
-    //then it will spit out a flatmap array removing any overlapping duplicates and generate a MovieAPI URL for the network call for those overlapping strings
-    //if there is no overlap between the users two selections, then it will spit out a flatmapped array of all the strings present
-    //from here, the network call will be made with a MovieDB API "discover" query
-    //case 1: using the overlapping strings as query parameters to query the MovieDB API using *** and/or *** query parameters to get all results including the overlapping user selections
-    //case 2: an alert window will come up giving the users a warning that their selections produed no common results and they will be given the choice to proceed with a search that includes all their various input which could be quite a lot of results or to start over and try again for some overlap
+    //then it will spit out an array removing any overlapping duplicates and generate a MovieAPI URL for the network call for those overlapping strings
+    //if there is no overlap between the users two selections, then it will spit out an array of all the strings present
+        //case 1: using the overlapping strings as query parameters to query the MovieDB API using *** and/or *** query parameters to get all results including the overlapping user selections
+            //this results in an "OR" query where any multiples of query items, be they genres or people will be, and they will be using the "|" to separate the items in the list of query items
+        //case 2: an alert window will come up giving the users a warning that their selections produed no common results and they will be given the choice to proceed with a search that includes all their various input which could be quite a lot of results or to start over and try again for some overlap
+            //this results in an "OR" query where any multiples of query items, be they genres or people will be, and they will be using the "|" to separate the items in the list of query items which is liekly to be a very long list of returned items
+        //from here, the network call will be made with a MovieDB API "discover" query
     //the YourResultsTableViewController will then display the results of the above network call
     
     func resultsSynthesis() {

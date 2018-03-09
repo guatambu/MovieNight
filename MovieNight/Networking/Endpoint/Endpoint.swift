@@ -267,7 +267,11 @@ extension TMDBAPI: Endpoint {
 
  
 
- 
+// about the TMDBAPI discover/movie tool/path...
+// it allows for multiple queries on a single parameter separated by either a ',' or '|'
+// ',' allows for an AND type search which is more specific, honing the search to the very item(s) that fit(s) the TOTAL combination of the search's criteria sorted in descending order by the popularity rating... most popular first
+// '|' allows for an OR type search which will be a grab bag of all matching parameters included returning everything that hits any one or all of the parameters and returns results sorted in descending order by the popularity rating... most popular first
+// if there results are numerous enough, then the results will be returned paginated with 20 returned results per page
  
  
  
