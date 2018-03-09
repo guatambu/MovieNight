@@ -8,6 +8,10 @@
 
 import Foundation
 
-struct MovieResults {
+
+class MovieResults {
+    var genreSelections = [String]()
+    var peopleSelections = [String]()
     var results = [Movie]()
 }
+

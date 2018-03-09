@@ -9,8 +9,6 @@
 import UIKit
 
 var selections = Selections()
-var genreSelections: Selections!
-var peopleSelections: Selections!
 var movieResults = MovieResults()
 
 class HomeScreenViewController: UIViewController {
@@ -48,29 +46,31 @@ class HomeScreenViewController: UIViewController {
         //navigationController?.navigationBar.popItem(animated: true)
     }
     
-    @IBAction func unwindToHomeScreenVC(segue:UIStoryboardSegue) { }
+    //MARK: Unwind Outlets
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        /*
-        selections.yourGenres = ["genre 1", "genre 2", "genre 3"]
-        selections.yourPeople = ["person 1", "person 2", "person 2"]
+    @IBAction func startOverUnwindToHomeScreenVC(segue:UIStoryboardSegue, sender: UIStoryboardSegue) {
+        selections.yourGenres = []
+        selections.yourPeople = []
+        selections.yourFriendGenres = []
+        selections.yourFriendPeople = []
         
-        selections.yourFriendGenres = ["friend genre 1", "friend genre 2", "friend genre 3"]
-        selections.yourFriendPeople = ["friend peep 1", "friend peep 2", "friend peep 3"]
-        */
-        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        navigationController?.navigationBar.shadowImage = UIImage()
-        self.navigationController?.isNavigationBarHidden = true
+        viewResultsButtonOutlet.setTitleColor(UIColor(red: 104.0/255.0, green: 104.0/255.0, blue: 104.0/255.0, alpha: 0.6), for: .normal)
         youBubbleImageView.image = #imageLiteral(resourceName: "bubble-empty")
         yourFriendBubbleImageView.image = #imageLiteral(resourceName: "bubble-empty")
+    }
+    
+    @IBAction func youUnwindToHomeScreenVC(segue:UIStoryboardSegue, sender: UIStoryboardSegue) {
+        guard let youPeopleViewController = sender.source as? YouPeopleViewController else { return }
+        selections.yourGenres = youPeopleViewController.youPeopleSelectionsInstance.yourGenres
+        selections.yourPeople = youPeopleViewController.youPeopleSelectionsInstance.yourPeople
+        
+        print("\(selections.yourGenres)\n\(selections.yourPeople)\n\(selections.yourFriendGenres)\n\(selections.yourFriendPeople)")
         
         if selections.yourGenres.count == 3 && selections.yourPeople.count == 3 && selections.yourFriendGenres.count == 3 && selections.yourFriendPeople.count == 3 {
             
             youBubbleImageView.image = #imageLiteral(resourceName: "bubble-selected")
             yourFriendBubbleImageView.image = #imageLiteral(resourceName: "bubble-selected")
-            viewResultsButtonOutlet.setTitleColor(UIColor(red: 222.0/255.0, green: 208.0/255.0, blue: 152.0/255.0, alpha: 1.0), for: .normal) 
+            viewResultsButtonOutlet.setTitleColor(UIColor(red: 222.0/255.0, green: 208.0/255.0, blue: 152.0/255.0, alpha: 1.0), for: .normal)
             viewResultsButtonOutlet.isEnabled = true
             
         } else if selections.yourGenres.count == 3 && selections.yourPeople.count == 3 {
@@ -90,7 +90,62 @@ class HomeScreenViewController: UIViewController {
             yourFriendBubbleImageView.image = #imageLiteral(resourceName: "bubble-empty")
         }
     }
+    
+    @IBAction func friendUnwindToHomeScreenVC(segue:UIStoryboardSegue, sender: UIStoryboardSegue) {
+        
+         guard let yourFriendPeopleViewController = sender.source as? YourFriendPeopleViewController else { return }
+         selections.yourFriendGenres = yourFriendPeopleViewController.yourFriendPeopleSelectionsInstance.yourFriendGenres
+         selections.yourFriendPeople = yourFriendPeopleViewController.yourFriendPeopleSelectionsInstance.yourFriendPeople
+ 
+        print("\(selections.yourGenres)\n\(selections.yourPeople)\n\(selections.yourFriendGenres)\n\(selections.yourFriendPeople)")
+        if selections.yourGenres.count == 3 && selections.yourPeople.count == 3 && selections.yourFriendGenres.count == 3 && selections.yourFriendPeople.count == 3 {
+            
+            youBubbleImageView.image = #imageLiteral(resourceName: "bubble-selected")
+            yourFriendBubbleImageView.image = #imageLiteral(resourceName: "bubble-selected")
+            viewResultsButtonOutlet.setTitleColor(UIColor(red: 222.0/255.0, green: 208.0/255.0, blue: 152.0/255.0, alpha: 1.0), for: .normal)
+            viewResultsButtonOutlet.isEnabled = true
+            
+        } else if selections.yourGenres.count == 3 && selections.yourPeople.count == 3 {
+            
+            youBubbleImageView.image = #imageLiteral(resourceName: "bubble-selected")
+            yourFriendBubbleImageView.image = #imageLiteral(resourceName: "bubble-empty")
+            viewResultsButtonOutlet.setTitleColor(UIColor(red: 104.0/255.0, green: 104.0/255.0, blue: 104.0/255.0, alpha: 0.6), for: .normal)
+            
+        } else if selections.yourFriendGenres.count == 3 && selections.yourFriendPeople.count == 3 {
+            
+            youBubbleImageView.image = #imageLiteral(resourceName: "bubble-empty")
+            yourFriendBubbleImageView.image = #imageLiteral(resourceName: "bubble-selected")
+            viewResultsButtonOutlet.setTitleColor(UIColor(red: 104.0/255.0, green: 104.0/255.0, blue: 104.0/255.0, alpha: 0.6), for: .normal)
+        } else {
+            viewResultsButtonOutlet.setTitleColor(UIColor(red: 104.0/255.0, green: 104.0/255.0, blue: 104.0/255.0, alpha: 0.6), for: .normal)
+            youBubbleImageView.image = #imageLiteral(resourceName: "bubble-empty")
+            yourFriendBubbleImageView.image = #imageLiteral(resourceName: "bubble-empty")
+        }
+    }
+    
+
+    //MARK: ViewDidLoad
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view, typically from a nib.
+        /*
+        selections.yourGenres = ["genre 1", "genre 2", "genre 3"]
+        selections.yourPeople = ["person 1", "person 2", "person 2"]
+        
+        selections.yourFriendGenres = ["friend genre 1", "friend genre 2", "friend genre 3"]
+        selections.yourFriendPeople = ["friend peep 1", "friend peep 2", "friend peep 3"]
+        */
+        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.isNavigationBarHidden = true
+        youBubbleImageView.image = #imageLiteral(resourceName: "bubble-empty")
+        yourFriendBubbleImageView.image = #imageLiteral(resourceName: "bubble-empty")
+        
+        
+    }
    
+    //MARK: Navgation Helper Functions
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -113,6 +168,8 @@ class HomeScreenViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    //MARK: Prepare For Segue
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "youChooseSegue") {
             guard let youGenreViewController = segue.destination as? YouGenreViewController else { return }
@@ -123,9 +180,8 @@ class HomeScreenViewController: UIViewController {
         } else if (segue.identifier == "movieResults") {
             guard let yourResultsViewController = segue.destination as? YourResultsTableViewController else { return }
             //yourResultsViewController.yourMoviesResultsInstance = movieResults
+    
         }
     }
-
-
 }
 

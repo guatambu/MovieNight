@@ -605,6 +605,7 @@
                         <barButtonItem key="rightBarButtonItem" enabled="NO" title="Done" id="aag-Vn-2Ef">
                             <connections>
                                 <action selector="doneButtonAction:" destination="p3z-UI-hWH" id="0oZ-De-lfG"/>
+                                <segue destination="8Rx-yY-9bc" kind="unwind" unwindAction="youUnwindToHomeScreenVCWithSegue:sender:" id="Imr-Zp-F4p"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -746,9 +747,7 @@
                                     <color key="titleColor" red="0.57992988820000002" green="0.41483199599999998" blue="0.41736727950000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="startOver:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TFE-Mp-yjU"/>
-                                    <action selector="startOver:" destination="mb8-Xs-JnB" eventType="touchUpInside" id="bnl-2E-ORG"/>
-                                    <action selector="startOver:" destination="1au-DD-fFH" eventType="touchUpInside" id="qlh-LZ-7lb"/>
+                                    <segue destination="1au-DD-fFH" kind="unwind" unwindAction="startOverUnwindToHomeScreenVCWithSegue:sender:" id="RYZ-Y0-i2P"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1233,6 +1232,7 @@
                         <barButtonItem key="rightBarButtonItem" enabled="NO" title="Done" id="mGH-2Z-hnK">
                             <connections>
                                 <action selector="doneButtonAction:" destination="y78-rR-UNf" id="9bB-iH-Wr0"/>
+                                <segue destination="tv7-fa-0kq" kind="unwind" unwindAction="friendUnwindToHomeScreenVCWithSegue:sender:" id="Z9r-xM-bOQ"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
