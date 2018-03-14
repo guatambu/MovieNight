@@ -180,7 +180,7 @@ class HomeScreenViewController: UIViewController {
         } else if (segue.identifier == "movieResults") {
             guard let yourResultsViewController = segue.destination as? YourResultsTableViewController else { return }
             
-            selections.resultsSynthesis()
+            selections.matchFinder()
             yourResultsViewController.yourMoviesResultsInstance = selections
             
         }

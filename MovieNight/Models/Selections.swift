@@ -37,8 +37,8 @@ struct Selections {
             //this results in an "OR" query where any multiples of query items, be they genres or people will be, and they will be using the "|" to separate the items in the list of query items which is liekly to be a very long list of returned items
         //from here, the network call will be made with a MovieDB API "discover" query
     //the YourResultsTableViewController will then display the results of the above network call
-    
-    func resultsSynthesis() {
+        
+    func matchFinder() {
         for selection in selections.yourGenres {
             selections.aggregateGenreSelections.append(selection)
         }
@@ -54,21 +54,28 @@ struct Selections {
         
         print("\(selections.aggregateGenreSelections)\n\(selections.aggregatePeopleSelections)")
         
-        let uniqueGenreResults = Array(Set(selections.aggregateGenreSelections))
-        let uniquePeopleResults = Array(Set(selections.aggregatePeopleSelections))
+        var genreMatches: [String: Int] = [:]
+        var peopleMatches: [String: Int] = [:]
         
-        for result in uniqueGenreResults{
-            selections.results.append(result)
+        selections.aggregateGenreSelections.forEach { genreMatches[$0, default: 0] += 1 }
+        selections.aggregatePeopleSelections.forEach { peopleMatches[$0, default: 0] += 1 }
+        
+        print("\(peopleMatches)\n\(genreMatches)")
+        
+        for (key, value) in genreMatches {
+            if value >= 2 {
+                selections.results.append(key)
+            }
         }
-        for result in uniquePeopleResults {
-            selections.results.append(result)
+        for (key, value) in peopleMatches {
+            if value >= 2 {
+                selections.results.append(key)
+            }
         }
-        print("\(uniqueGenreResults)\n\(uniquePeopleResults)")
+        
         
         print(selections.results)
     }
-    
-    
 }
 
 
