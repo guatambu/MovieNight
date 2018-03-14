@@ -56,16 +56,16 @@ class YourFriendGenreViewController: UIViewController, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let genre = dataSource.data[indexPath.row]
-        yourFriendGenreSelectionsInstance.yourFriendGenres.append(genre.name)
+        yourFriendGenreSelectionsInstance.yourFriendGenres.append(genre)
         let cell = self.yourFriendGenreTableView.cellForRow(at: indexPath) as! YourFriendGenreTableViewCell
         cell.yourFriendBubbleImageView.image = #imageLiteral(resourceName: "bubble-selected")
         
         if yourFriendGenreSelectionsInstance.yourFriendGenres.count == 1 {
-            selectedGenresLabel.text = "\(yourFriendGenreSelectionsInstance.yourFriendGenres[0])"
+            selectedGenresLabel.text = "\(yourFriendGenreSelectionsInstance.yourFriendGenres[0].name)"
         } else if yourFriendGenreSelectionsInstance.yourFriendGenres.count == 2 {
-            selectedGenresLabel.text = "\(yourFriendGenreSelectionsInstance.yourFriendGenres[0]), \(yourFriendGenreSelectionsInstance.yourFriendGenres[1])"
+            selectedGenresLabel.text = "\(yourFriendGenreSelectionsInstance.yourFriendGenres[0].name), \(yourFriendGenreSelectionsInstance.yourFriendGenres[1].name)"
         } else if yourFriendGenreSelectionsInstance.yourFriendGenres.count >= 3 {
-            selectedGenresLabel.text = "\(yourFriendGenreSelectionsInstance.yourFriendGenres[0]), \(yourFriendGenreSelectionsInstance.yourFriendGenres[1]), \(yourFriendGenreSelectionsInstance.yourFriendGenres[2])"
+            selectedGenresLabel.text = "\(yourFriendGenreSelectionsInstance.yourFriendGenres[0].name), \(yourFriendGenreSelectionsInstance.yourFriendGenres[1].name), \(yourFriendGenreSelectionsInstance.yourFriendGenres[2].name)"
             selectedGenreImageView.image = #imageLiteral(resourceName: "bubble-selected")
             self.yourFriendGenreTableView.allowsSelection = false
             cell.setSelected(false, animated: true)
@@ -97,9 +97,9 @@ class YourFriendGenreViewController: UIViewController, UITableViewDelegate {
 extension YourFriendGenreViewController {
     func updateTableViewDataSource(for tableView: UITableView) {
         dataSource.update(with: StubData.genre)
-        for thing in dataSource.data {
+        /*for thing in dataSource.data {
             print(thing.name)
-        }
+        }*/
         tableView.reloadData()
     }
     

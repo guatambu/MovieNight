@@ -12,7 +12,7 @@ class YourMovieFinalViewController: UIViewController {
 
     //MARK:  Properties
     
-    var finalMoviePickInstance: MovieResults!
+    var finalMoviePickInstance: Selections!
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent // .default

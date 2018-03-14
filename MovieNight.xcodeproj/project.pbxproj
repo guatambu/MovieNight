@@ -17,7 +17,6 @@
 		FA51F71B203E6166000A407D /* YourFriendGenreDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA51F71A203E6166000A407D /* YourFriendGenreDataSource.swift */; };
 		FA51F71D203E62EE000A407D /* YourFriendPeopleDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA51F71C203E62EE000A407D /* YourFriendPeopleDataSource.swift */; };
 		FA51F71F203E6AFB000A407D /* YourFriendPeopleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA51F71E203E6AFB000A407D /* YourFriendPeopleViewModel.swift */; };
-		FA81D0432050D546008B61E9 /* MovieResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA81D0422050D546008B61E9 /* MovieResults.swift */; };
 		FAB4D7F5203786D90074F157 /* YouGenreDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB4D7F4203786D90074F157 /* YouGenreDataSource.swift */; };
 		FAB7E495201BCF560008497D /* YourResultsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB7E494201BCF560008497D /* YourResultsTableViewCell.swift */; };
 		FAB7E499201FCD0E0008497D /* YouGenreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB7E498201FCD0E0008497D /* YouGenreTableViewCell.swift */; };
@@ -56,7 +55,6 @@
 		FA51F71A203E6166000A407D /* YourFriendGenreDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourFriendGenreDataSource.swift; sourceTree = "<group>"; };
 		FA51F71C203E62EE000A407D /* YourFriendPeopleDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourFriendPeopleDataSource.swift; sourceTree = "<group>"; };
 		FA51F71E203E6AFB000A407D /* YourFriendPeopleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourFriendPeopleViewModel.swift; sourceTree = "<group>"; };
-		FA81D0422050D546008B61E9 /* MovieResults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieResults.swift; sourceTree = "<group>"; };
 		FAB4D7F4203786D90074F157 /* YouGenreDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouGenreDataSource.swift; sourceTree = "<group>"; };
 		FAB7E494201BCF560008497D /* YourResultsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourResultsTableViewCell.swift; sourceTree = "<group>"; };
 		FAB7E498201FCD0E0008497D /* YouGenreTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouGenreTableViewCell.swift; sourceTree = "<group>"; };
@@ -213,7 +211,6 @@
 				FACB05562017FFC5006545D6 /* Person.swift */,
 				FACB05342017D31F006545D6 /* StubData.swift */,
 				FACBAB262048CAF800B73A4F /* Selections.swift */,
-				FA81D0422050D546008B61E9 /* MovieResults.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -363,7 +360,6 @@
 				FA4A03822025055A005F6F09 /* YourFriendGenreViewController.swift in Sources */,
 				FA4A0386202D1DD2005F6F09 /* ImagesEndpoint.swift in Sources */,
 				FAB7E4A6202108380008497D /* YourResultsTableViewController.swift in Sources */,
-				FA81D0432050D546008B61E9 /* MovieResults.swift in Sources */,
 				FAB7E4A4202107B10008497D /* YourMovieFinalViewController.swift in Sources */,
 				FACB05112016769D006545D6 /* AppDelegate.swift in Sources */,
 				FACB052F2017D042006545D6 /* Endpoint.swift in Sources */,

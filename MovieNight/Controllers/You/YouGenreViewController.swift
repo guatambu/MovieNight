@@ -57,16 +57,16 @@ class YouGenreViewController: UIViewController, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let genre = dataSource.data[indexPath.row]
-        youGenreSelectionsInstance.yourGenres.append(genre.name)
+        youGenreSelectionsInstance.yourGenres.append(genre)
         let cell = self.youGenreTableView.cellForRow(at: indexPath) as! YouGenreTableViewCell
         cell.bubbleEmptyImageView.image = #imageLiteral(resourceName: "bubble-selected")
         
         if youGenreSelectionsInstance.yourGenres.count == 1 {
-            selecteGenresLabel.text = "\(youGenreSelectionsInstance.yourGenres[0])"
+            selecteGenresLabel.text = "\(youGenreSelectionsInstance.yourGenres[0].name)"
         } else if youGenreSelectionsInstance.yourGenres.count == 2 {
-            selecteGenresLabel.text = "\(youGenreSelectionsInstance.yourGenres[0]), \(youGenreSelectionsInstance.yourGenres[1])"
+            selecteGenresLabel.text = "\(youGenreSelectionsInstance.yourGenres[0].name), \(youGenreSelectionsInstance.yourGenres[1].name)"
         } else if youGenreSelectionsInstance.yourGenres.count >= 3 {
-            selecteGenresLabel.text = "\(youGenreSelectionsInstance.yourGenres[0]), \(youGenreSelectionsInstance.yourGenres[1]), \(youGenreSelectionsInstance.yourGenres[2])"
+            selecteGenresLabel.text = "\(youGenreSelectionsInstance.yourGenres[0].name), \(youGenreSelectionsInstance.yourGenres[1].name), \(youGenreSelectionsInstance.yourGenres[2].name)"
             selectionBubbleImageView.image = #imageLiteral(resourceName: "bubble-selected")
             self.youGenreTableView.allowsSelection = false
             cell.setSelected(false, animated: true)
@@ -130,9 +130,9 @@ class YouGenreViewController: UIViewController, UITableViewDelegate {
 extension YouGenreViewController {
     func updateTableViewDataSource(for tableView: UITableView) {
         dataSource.update(with: StubData.genre)
-        for thing in dataSource.data {
+        /*for thing in dataSource.data {
             print(thing.name)
-        }
+        }*/
         tableView.reloadData()
     }
     

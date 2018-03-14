@@ -93,21 +93,6 @@ api_key=9d2b65148c48ec092a601516a168a71b
 
 */
 
-
-struct Movie1 {
-    let langauge: String = "en-US"
-    let sortBy: String = "pop.desc"
-    let includeAdult: String = "false"
-    let includeVideo: String = "false"
-    let page: String = "12"
-    let withGenreID: String = "28"
-    let people: String = "53"
-    let movieID: String = "12"
-}
-
-let myMovie = Movie1()
-
-
 protocol Endpoint {
     var base: String { get }
     var path: String { get }
@@ -115,9 +100,9 @@ protocol Endpoint {
     
 }
 
-fileprivate var apiKey: String {
-    return "9d2b65148c48ec092a601516a168a71b"
-}
+//fileprivate var apiKey: String {
+//    return "9d2b65148c48ec092a601516a168a71b"
+//}
 
 extension Endpoint {
     var urlComponents: URLComponents {
@@ -271,7 +256,7 @@ extension TMDBAPI: Endpoint {
 // it allows for multiple queries on a single parameter separated by either a ',' or '|'
 // ',' allows for an AND type search which is more specific, honing the search to the very item(s) that fit(s) the TOTAL combination of the search's criteria sorted in descending order by the popularity rating... most popular first
 // '|' allows for an OR type search which will be a grab bag of all matching parameters included returning everything that hits any one or all of the parameters and returns results sorted in descending order by the popularity rating... most popular first
-// if there results are numerous enough, then the results will be returned paginated with 20 returned results per page
+// if these results are numerous enough, then the results will be returned paginated with 20 returned results per page
  
  
  

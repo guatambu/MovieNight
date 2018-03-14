@@ -48,14 +48,8 @@ struct StubData {
     }
     
     static var genre: [Genre] {
-        let genre1 = Genre.action
-        let genre2 = Genre.adventure
-        let genre3 = Genre.comedy
-        let genre4 = Genre.drama
-        let genre5 = Genre.horror
-        let genre6 = Genre.sciFi
-        
-        return [genre1, genre2, genre3, genre4, genre5, genre6]
+    
+        return [Genre.action, Genre.adventure, Genre.animation, Genre.comedy, Genre.crime, Genre.documentary, Genre.drama, Genre.family, Genre.fantasy, Genre.history, Genre.horror, Genre.music, Genre.mystery, Genre.romance, Genre.sciFi, Genre.thriller, Genre.tvMovie, Genre.war, Genre.western]
     }
     
 }

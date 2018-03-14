@@ -9,11 +9,20 @@
 import UIKit
 
 var selections = Selections()
-var movieResults = MovieResults()
 
 class HomeScreenViewController: UIViewController {
 
     //MARK: Properties
+    
+    fileprivate enum DiscoverOptions: String {
+        case apiKey = "9d2b65148c48ec092a601516a168a71b"
+        case languageEnglishUS = "en-US"
+        case sortByDescendingPopularity = "popularity.desc"
+        case sortByAscendingPopularity = "popularity.asc"
+        case isTrue = "true"
+        case isFalse = "false"
+        case page1 = "1"
+    }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent // .default
@@ -64,7 +73,7 @@ class HomeScreenViewController: UIViewController {
         selections.yourGenres = youPeopleViewController.youPeopleSelectionsInstance.yourGenres
         selections.yourPeople = youPeopleViewController.youPeopleSelectionsInstance.yourPeople
         
-        print("\(selections.yourGenres)\n\(selections.yourPeople)\n\(selections.yourFriendGenres)\n\(selections.yourFriendPeople)")
+        //print("\(selections.yourGenres)\n\(selections.yourPeople)\n\(selections.yourFriendGenres)\n\(selections.yourFriendPeople)")
         
         if selections.yourGenres.count == 3 && selections.yourPeople.count == 3 && selections.yourFriendGenres.count == 3 && selections.yourFriendPeople.count == 3 {
             
@@ -97,7 +106,7 @@ class HomeScreenViewController: UIViewController {
          selections.yourFriendGenres = yourFriendPeopleViewController.yourFriendPeopleSelectionsInstance.yourFriendGenres
          selections.yourFriendPeople = yourFriendPeopleViewController.yourFriendPeopleSelectionsInstance.yourFriendPeople
  
-        print("\(selections.yourGenres)\n\(selections.yourPeople)\n\(selections.yourFriendGenres)\n\(selections.yourFriendPeople)")
+        //print("\(selections.yourGenres)\n\(selections.yourPeople)\n\(selections.yourFriendGenres)\n\(selections.yourFriendPeople)")
         if selections.yourGenres.count == 3 && selections.yourPeople.count == 3 && selections.yourFriendGenres.count == 3 && selections.yourFriendPeople.count == 3 {
             
             youBubbleImageView.image = #imageLiteral(resourceName: "bubble-selected")
@@ -129,19 +138,12 @@ class HomeScreenViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        /*
-        selections.yourGenres = ["genre 1", "genre 2", "genre 3"]
-        selections.yourPeople = ["person 1", "person 2", "person 2"]
-        
-        selections.yourFriendGenres = ["friend genre 1", "friend genre 2", "friend genre 3"]
-        selections.yourFriendPeople = ["friend peep 1", "friend peep 2", "friend peep 3"]
-        */
+       
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.isNavigationBarHidden = true
         youBubbleImageView.image = #imageLiteral(resourceName: "bubble-empty")
         yourFriendBubbleImageView.image = #imageLiteral(resourceName: "bubble-empty")
-        
         
     }
    
@@ -181,8 +183,15 @@ class HomeScreenViewController: UIViewController {
             guard let yourResultsViewController = segue.destination as? YourResultsTableViewController else { return }
             
             selections.matchFinder()
-            yourResultsViewController.yourMoviesResultsInstance = selections
             
+            
+            let endpoint = TMDBAPI.moviesInGenreWithPerson(apiKey: DiscoverOptions.apiKey.rawValue, language: DiscoverOptions.languageEnglishUS.rawValue, sortBy: DiscoverOptions.sortByDescendingPopularity.rawValue, includeAdult: DiscoverOptions.isFalse.rawValue, includeVideo: DiscoverOptions.isFalse.rawValue, page: DiscoverOptions.page1.rawValue, withGenreID: "", people: "")
+            
+            print(endpoint.request)
+            
+            //here i will have to generate the endpoint.request URL which suggests i have to include the api_key in this file
+            
+            yourResultsViewController.yourMoviesResultsInstance = selections
         }
     }
 }

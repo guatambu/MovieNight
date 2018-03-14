@@ -89,9 +89,9 @@ class YouPeopleViewController: UIViewController, UITableViewDelegate {
 extension YouPeopleViewController {
     func updateTableViewDataSource(for tableView: UITableView) {
         dataSource.update(with: StubData.person)
-        for thing in dataSource.data {
+        /*for thing in dataSource.data {
             print("you: \(thing.name)")
-        }
+        }*/
         tableView.reloadData()
     }
 }
