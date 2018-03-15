@@ -8,15 +8,19 @@
 
 import Foundation
 
-struct Selections {
+class Selections {
     var yourGenres = [Genre]()
-    var yourPeople = [String]()
+    var yourPeople = [Person]()
     var yourFriendGenres = [Genre]()
-    var yourFriendPeople = [String]()
+    var yourFriendPeople = [Person]()
     var aggregateGenreSelections = [Genre]()
-    var aggregatePeopleSelections = [String]()
+    var aggregatePeopleSelections = [Person]()
     var genreMatches = [Genre]()
-    var peopleMatches = [String]()
+    var peopleMatches = [Person]()
+    var genreMatchStrings = [String]()
+    var genreMatchValues: String = ""
+    var peopleMatchStrings = [String]()
+    var peopleMatchValues: String = ""
     
     
     //in the YourResultsViewController in the prepare(for:segue) comment line i have the movie results object being passed to the movie results VC
@@ -49,7 +53,7 @@ struct Selections {
         print("Users Genre selections: \(selections.aggregateGenreSelections)\nUsers People selections: \(selections.aggregatePeopleSelections)")
         
         var genreMatchesDict: [Genre: Int] = [:]
-        var peopleMatchesDict: [String: Int] = [:]
+        var peopleMatchesDict: [Person: Int] = [:]
         
         selections.aggregateGenreSelections.forEach { genreMatchesDict[$0, default: 0] += 1 }
         selections.aggregatePeopleSelections.forEach { peopleMatchesDict[$0, default: 0] += 1 }
@@ -67,7 +71,18 @@ struct Selections {
         print("These are the genre matches: \(selections.genreMatches).\nThese are the people matches: \(selections.peopleMatches).")
         for genre in selections.genreMatches {
             print("These are the matched genre IDs: \(genre.rawValue)")
+            selections.genreMatchStrings.append("\(genre.rawValue)")
         }
+        let myGenreMatches = selections.genreMatchStrings.joined(separator: ",")
+        genreMatchValues = myGenreMatches
+        print(genreMatchValues)
+        for person in selections.peopleMatches {
+            print("These are the matched people IDs: \(person.id)")
+            selections.peopleMatchStrings.append("\(person.id)")
+        }
+        let myPeopleMatches = selections.peopleMatchStrings.joined(separator: ",")
+        peopleMatchValues = myPeopleMatches
+        print(peopleMatchValues)
     }
 }
 

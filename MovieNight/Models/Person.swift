@@ -9,7 +9,8 @@
 import Foundation
 import UIKit
 
-class Person: MovieDBEntity {
+class Person: MovieDBEntity, Hashable {
+
     // ID
     var id: Int
     // Name
@@ -17,6 +18,10 @@ class Person: MovieDBEntity {
     // Profile Pic Path
     //var profilePath: String
     var profilePicStub: UIImage
+    // HashValue
+    var hashValue: Int {
+        return self.id
+    }
     
     init(id: Int,
          name: String,
@@ -28,9 +33,10 @@ class Person: MovieDBEntity {
             self.name = name
             //profilePath = profilePath
             self.profilePicStub = profilePicStub
-        
     }
-    
+    static func ==(lhs: Person, rhs: Person) -> Bool {
+        return lhs.hashValue == rhs.hashValue
+    }
     
     /*
     init?(json: [String: Any]) {

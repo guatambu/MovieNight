@@ -185,7 +185,7 @@ class HomeScreenViewController: UIViewController {
             selections.matchFinder()
             
             
-            let endpoint = TMDBAPI.moviesInGenreWithPerson(apiKey: DiscoverOptions.apiKey.rawValue, language: DiscoverOptions.languageEnglishUS.rawValue, sortBy: DiscoverOptions.sortByDescendingPopularity.rawValue, includeAdult: DiscoverOptions.isFalse.rawValue, includeVideo: DiscoverOptions.isFalse.rawValue, page: DiscoverOptions.page1.rawValue, withGenreID: "", people: "")
+            let endpoint = TMDBAPI.moviesInGenreWithPerson(apiKey: DiscoverOptions.apiKey.rawValue, language: DiscoverOptions.languageEnglishUS.rawValue, sortBy: DiscoverOptions.sortByDescendingPopularity.rawValue, includeAdult: DiscoverOptions.isFalse.rawValue, includeVideo: DiscoverOptions.isFalse.rawValue, page: DiscoverOptions.page1.rawValue, withGenreID: selections.genreMatchValues, people: selections.peopleMatchValues)
             
             print(endpoint.request)
             

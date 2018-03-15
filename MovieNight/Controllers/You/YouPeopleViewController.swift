@@ -61,16 +61,16 @@ class YouPeopleViewController: UIViewController, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let person = dataSource.data[indexPath.row]
-        youPeopleSelectionsInstance.yourPeople.append(person.name)
+        youPeopleSelectionsInstance.yourPeople.append(person)
         let cell = self.youPeopleTableView.cellForRow(at: indexPath) as! YouActorsTableViewCell
         cell.bubbleSelectedTableCellContentView.image = #imageLiteral(resourceName: "bubble-selected")
         
         if youPeopleSelectionsInstance.yourPeople.count == 1 {
-            selectedPeopleLabel.text = "\(youPeopleSelectionsInstance.yourPeople[0])"
+            selectedPeopleLabel.text = "\(youPeopleSelectionsInstance.yourPeople[0].name)"
         } else if youPeopleSelectionsInstance.yourPeople.count == 2 {
-            selectedPeopleLabel.text = "\(youPeopleSelectionsInstance.yourPeople[0]), \(youPeopleSelectionsInstance.yourPeople[1])"
+            selectedPeopleLabel.text = "\(youPeopleSelectionsInstance.yourPeople[0].name), \(youPeopleSelectionsInstance.yourPeople[1].name)"
         } else if youPeopleSelectionsInstance.yourPeople.count >= 3 {
-            selectedPeopleLabel.text = "\(youPeopleSelectionsInstance.yourPeople[0]), \(youPeopleSelectionsInstance.yourPeople[1]), \(youPeopleSelectionsInstance.yourPeople[2])"
+            selectedPeopleLabel.text = "\(youPeopleSelectionsInstance.yourPeople[0].name), \(youPeopleSelectionsInstance.yourPeople[1].name), \(youPeopleSelectionsInstance.yourPeople[2].name)"
             selectedPeopleBubbleImageView.image = #imageLiteral(resourceName: "bubble-selected")
             self.youPeopleTableView.allowsSelection = false
             cell.setSelected(false, animated: true)

@@ -62,16 +62,16 @@ class YourFriendPeopleViewController: UIViewController, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let person = dataSource.data[indexPath.row]
-        yourFriendPeopleSelectionsInstance.yourFriendPeople.append(person.name)
+        yourFriendPeopleSelectionsInstance.yourFriendPeople.append(person)
         let cell = self.yourFriendPeopleTableView.cellForRow(at: indexPath) as! YourFriendActorsTableViewCell
         cell.yourFriendPersonSelectedBubbleIMageView.image = #imageLiteral(resourceName: "bubble-selected")
         
         if yourFriendPeopleSelectionsInstance.yourFriendPeople.count == 1 {
-            selectedPeopleLabel.text = "\(yourFriendPeopleSelectionsInstance.yourFriendPeople[0])"
+            selectedPeopleLabel.text = "\(yourFriendPeopleSelectionsInstance.yourFriendPeople[0].name)"
         } else if yourFriendPeopleSelectionsInstance.yourFriendPeople.count == 2 {
-            selectedPeopleLabel.text = "\(yourFriendPeopleSelectionsInstance.yourFriendPeople[0]), \(yourFriendPeopleSelectionsInstance.yourFriendPeople[1])"
+            selectedPeopleLabel.text = "\(yourFriendPeopleSelectionsInstance.yourFriendPeople[0].name), \(yourFriendPeopleSelectionsInstance.yourFriendPeople[1].name)"
         } else if yourFriendPeopleSelectionsInstance.yourFriendPeople.count >= 3 {
-            selectedPeopleLabel.text = "\(yourFriendPeopleSelectionsInstance.yourFriendPeople[0]), \(yourFriendPeopleSelectionsInstance.yourFriendPeople[1]), \(yourFriendPeopleSelectionsInstance.yourFriendPeople[2])"
+            selectedPeopleLabel.text = "\(yourFriendPeopleSelectionsInstance.yourFriendPeople[0].name), \(yourFriendPeopleSelectionsInstance.yourFriendPeople[1].name), \(yourFriendPeopleSelectionsInstance.yourFriendPeople[2].name)"
             selectedPeopleBubbleImageView.image = #imageLiteral(resourceName: "bubble-selected")
             self.yourFriendPeopleTableView.allowsSelection = false
             cell.setSelected(false, animated: true)
