@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum Errors_API_Awakens: Error {
+enum ErrorsTMDBAPI: Error {
     case stringNotInteger(message: String)
     case stringNotDouble(message: String)
     case requestFailed(message: String)
