@@ -129,17 +129,17 @@ enum TMDBAPI {
 extension TMDBAPI: Endpoint {
     
     var base: String {
-        return "https://api.themoviedb.org/3"
+        return "https://api.themoviedb.org"
     }
     
     
     
     var path: String {
         switch self {
-        case .movieGenreList: return "/genre/movie/list"
-        case .person: return "/person/popular"
-        case .moviesInGenreWithPerson: return "/discover/movie"
-        case .movie(let id): return "/movie/\(id.movieID)"
+        case .movieGenreList: return "/3/genre/movie/list"
+        case .person: return "/3/person/popular"
+        case .moviesInGenreWithPerson: return "/3/discover/movie"
+        case .movie(let id): return "/3/movie/\(id.movieID)"
         }
     }
     
@@ -152,7 +152,7 @@ extension TMDBAPI: Endpoint {
             var result = [URLQueryItem]()
             
             if let apiKey = apiKey {
-                let apiKeyValue = URLQueryItem(name: "apiKey", value: apiKey)
+                let apiKeyValue = URLQueryItem(name: "api_key", value: apiKey)
                 result.append(apiKeyValue)
             }
             
@@ -168,7 +168,7 @@ extension TMDBAPI: Endpoint {
             var result = [URLQueryItem]()
             
             if let apiKey = apiKey {
-                let apiKeyValue = URLQueryItem(name: "apiKey", value: apiKey)
+                let apiKeyValue = URLQueryItem(name: "api_key", value: apiKey)
                 result.append(apiKeyValue)
             }
             
@@ -189,7 +189,7 @@ extension TMDBAPI: Endpoint {
             var result = [URLQueryItem]()
             
             if let apiKey = apiKey {
-                let apiKeyValue = URLQueryItem(name: "apiKey", value: apiKey)
+                let apiKeyValue = URLQueryItem(name: "api_key", value: apiKey)
                 result.append(apiKeyValue)
             }
             
@@ -219,7 +219,7 @@ extension TMDBAPI: Endpoint {
             }
             
             if let withGenreID = withGenreID {
-                let genreID = URLQueryItem(name: "with_genre", value: withGenreID)
+                let genreID = URLQueryItem(name: "with_genres", value: withGenreID)
                 result.append(genreID)
             }
             
@@ -235,7 +235,7 @@ extension TMDBAPI: Endpoint {
             
             let movieIDValue = URLQueryItem(name: "movieID", value: movieID)
             
-            let apiKeyValue = URLQueryItem(name: "apiKey", value: apiKey)
+            let apiKeyValue = URLQueryItem(name: "api_key", value: apiKey)
             result.append(apiKeyValue)
             
             
