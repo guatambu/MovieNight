@@ -13,6 +13,12 @@ class YourFriendGenreViewController: UIViewController, UITableViewDelegate {
 
     //MARK: Properties
     
+    fileprivate enum EndpointOptions: String {
+        case apiKey = "9d2b65148c48ec092a601516a168a71b"
+        case languageEnglishUS = "en-US"
+        case page1 = "1"
+    }
+    
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent // .default
     }
@@ -89,6 +95,11 @@ class YourFriendGenreViewController: UIViewController, UITableViewDelegate {
         
         guard let yourFriendPeopleFinalViewController = segue.destination as? YourFriendPeopleViewController else { return }
         yourFriendPeopleFinalViewController.yourFriendPeopleSelectionsInstance = yourFriendGenreSelectionsInstance
+        
+        let endpoint = TMDBAPI.person(apiKey: EndpointOptions.apiKey.rawValue, language: EndpointOptions.languageEnglishUS.rawValue, page: EndpointOptions.page1.rawValue)
+        
+        print("******\n\(endpoint.request)\n*****")
+        
         
     }
 

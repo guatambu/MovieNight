@@ -13,6 +13,12 @@ class YouGenreViewController: UIViewController, UITableViewDelegate {
     
     //MARK: Properties
     
+    fileprivate enum EndpointOptions: String {
+        case apiKey = "9d2b65148c48ec092a601516a168a71b"
+        case languageEnglishUS = "en-US"
+        case page1 = "1"
+    }
+    
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent // .default
     }
@@ -95,34 +101,16 @@ class YouGenreViewController: UIViewController, UITableViewDelegate {
         guard let youPeopleFinalViewController = segue.destination as? YouPeopleViewController else { return }
         youPeopleFinalViewController.youPeopleSelectionsInstance = youGenreSelectionsInstance
         
+
+        let endpoint = TMDBAPI.person(apiKey: EndpointOptions.apiKey.rawValue, language: EndpointOptions.languageEnglishUS.rawValue, page: EndpointOptions.page1.rawValue)
+        
+        print("******\n\(endpoint.request)\n*****")
+        
+        //here i will have to generate the endpoint.request URL which suggests i have to include the api_key in this file
+            
+    
+        
     }
-    /*
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "genPass" {
-            do {
-             if greenLightMeansGo == false {
-             throw ErrorSource.missingGeneralInformation(description: "Whoops! You are missing something.")
-             } else {
-                if let createNewPassViewController = segue.destination as? CreateNewPassViewController {
-                    let entrant = newUser
-                    createNewPassViewController.entrant = entrant
-     
-                    print("this is entrant's value after successful segue: \(String(describing: entrant))")
-     
-                    createNewPassViewController.viewDidLoad()
-                }
-            }
-            } catch ErrorSource.missingGeneralInformation {
-                let alertController = UIAlertController(title: "Whoops! Something is missing.", message: "Please complete the necessary information marked in Red.", preferredStyle: .alert)
-                let action = UIAlertAction(title: "OK", style: .default, handler: nil)
-                alertController.addAction(action)
-                present(alertController, animated: true, completion: nil)
-            } catch let error {
-                    fatalError("\(error.localizedDescription)")
-            }
-        }
-    }
-    */
     
 
 }
