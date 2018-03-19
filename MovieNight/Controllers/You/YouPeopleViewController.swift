@@ -18,7 +18,7 @@ class YouPeopleViewController: UIViewController, UITableViewDelegate {
     }
     
     let dataSource = YouPeopleDataSource()
-    var myPeopleArray = [String]()
+    var myPeopleArray = [Person]()
     var youPeopleSelectionsInstance: Selections!
     
     @IBOutlet weak var doneNavButton: UIBarButtonItem!
@@ -88,10 +88,8 @@ class YouPeopleViewController: UIViewController, UITableViewDelegate {
 
 extension YouPeopleViewController {
     func updateTableViewDataSource(for tableView: UITableView) {
-        dataSource.update(with: StubData.person)
-        /*for thing in dataSource.data {
-            print("you: \(thing.name)")
-        }*/
+        dataSource.update(with: myPeopleArray)
         tableView.reloadData()
+        print("******* YouPeopleDataSource:\n\(dataSource.data)\n*******")
     }
 }

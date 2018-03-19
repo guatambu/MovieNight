@@ -24,7 +24,7 @@ struct StubData {
         let movie6 = Movie(id: 01, title: "title 6", releaseDate: "09-09-2006", genreIDs: [28, 35], posterPath: "/dU1XG1DI6lkZ567vmtM9ifQJ38F.jpg", voteAverage: 4, voteCount: 209, briefDescription: "brief description")
         return [movie1, movie2, movie3, movie4, movie5, movie6]
     }
-    
+    /*
     static var person: [Person] {
         let person1 = Person(id: 01, name: "name1", /*profilePath: "/13YNM8lBKnK26MYd2Lp3OpU6JdI.jpg",*/ profilePicStub: #imageLiteral(resourceName: "person-4"))
         let person2 = Person(id: 02, name: "name2", /*profilePath: "/13YNM8lBKnK26MYd2Lp3OpU6JdI.jpg",*/ profilePicStub: #imageLiteral(resourceName: "person-4"))
@@ -46,7 +46,7 @@ struct StubData {
         
         return [person1, person2, person3, person4, person5, person6]
     }
-    
+    */
     static var genre: [Genre] {
     
         return [Genre.action, Genre.adventure, Genre.animation, Genre.comedy, Genre.crime, Genre.documentary, Genre.drama, Genre.family, Genre.fantasy, Genre.history, Genre.horror, Genre.music, Genre.mystery, Genre.romance, Genre.sciFi, Genre.thriller, Genre.tvMovie, Genre.war, Genre.western]

@@ -19,7 +19,7 @@ class YourFriendPeopleViewController: UIViewController, UITableViewDelegate {
     }
     
     let dataSource = YourFriendPeopleDataSource()
-    var myPeopleArray = [String]()
+    var myFriendPeopleArray = [Person]()
     var yourFriendPeopleSelectionsInstance: Selections!
     
     @IBOutlet weak var doneNavButton: UIBarButtonItem!
@@ -108,7 +108,7 @@ class YourFriendPeopleViewController: UIViewController, UITableViewDelegate {
 
 extension YourFriendPeopleViewController {
     func updateTableViewDataSource(for tableView: UITableView) {
-        dataSource.update(with: StubData.person1)
+       // dataSource.update(with: StubData.person1)
         /*for thing in dataSource.data {
             print("your friend: \(thing.name)")
         }*/

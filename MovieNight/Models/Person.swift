@@ -11,28 +11,34 @@ import UIKit
 
 class Person: MovieDBEntity, Hashable {
 
-    // ID
-    var id: Int
+    
     // Name
     var name: String
+    //Popularity
+    var popularity: Double
     // Profile Pic Path
     var profilePath: String
     //var profilePicStub: UIImage
+    // ID
+    var id: Int
     // HashValue
     var hashValue: Int {
         return self.id
     }
     
-    init(id: Int,
+    init(
          name: String,
+         popularity: Double,
          profilePath: String,
-         profilePicStub: UIImage
+         //profilePicStub: UIImage,
+         id: Int
          
         ) {
-            self.id = id
             self.name = name
+            self.popularity = popularity
             self.profilePath = profilePath
             //self.profilePicStub = profilePicStub
+            self.id = id
     }
     static func ==(lhs: Person, rhs: Person) -> Bool {
         return lhs.hashValue == rhs.hashValue
@@ -41,18 +47,22 @@ class Person: MovieDBEntity, Hashable {
     
     init?(json: [String: Any]) {
         struct Key {
-            static let id = "ID"
             static let name = "name"
+            static let popularity = "popularity"
             static let profilePath = "profile_path"
+            static let id = "id"
         }
-        guard let idValue = json[Key.id] as? Int,
-            let nameValue = json[Key.name] as? String,
-            let profilePathValue = json[Key.profilePath] as? String
+        guard let nameValue = json[Key.name] as? String,
+            let popularity = json[Key.popularity] as? Double,
+            let profilePathValue = json[Key.profilePath] as? String,
+            let idValue = json[Key.id] as? Int
+        
             else { return nil }
         
-        self.id = idValue
         self.name = nameValue
+        self.popularity = popularity
         self.profilePath = profilePathValue
+        self.id = idValue
         }
     
 }

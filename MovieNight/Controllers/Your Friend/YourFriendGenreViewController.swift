@@ -23,6 +23,7 @@ class YourFriendGenreViewController: UIViewController, UITableViewDelegate {
         return .lightContent // .default
     }
     
+    let client = MovieDatabaseAPIClient()
     let dataSource = YourFriendGenreDataSource()
     var myArray = [String]()
     var yourFriendGenreSelectionsInstance: Selections!
@@ -96,9 +97,15 @@ class YourFriendGenreViewController: UIViewController, UITableViewDelegate {
         guard let yourFriendPeopleFinalViewController = segue.destination as? YourFriendPeopleViewController else { return }
         yourFriendPeopleFinalViewController.yourFriendPeopleSelectionsInstance = yourFriendGenreSelectionsInstance
         
-        let endpoint = TMDBAPI.person(apiKey: EndpointOptions.apiKey.rawValue, language: EndpointOptions.languageEnglishUS.rawValue, page: EndpointOptions.page1.rawValue)
+        client.getPopularPeople(with: client.popularPeopleEndpoint) { myFriendPeopleArray, error in
+            yourFriendPeopleFinalViewController.myFriendPeopleArray = myFriendPeopleArray
+            yourFriendPeopleFinalViewController.yourFriendPeopleTableView.reloadData()
+            
+        }
         
-        print("******\n\(endpoint.request)\n*****")
+        //let endpoint = TMDBAPI.person(apiKey: EndpointOptions.apiKey.rawValue, language: EndpointOptions.languageEnglishUS.rawValue, page: EndpointOptions.page1.rawValue)
+        
+        //print("******\n\(endpoint.request)\n*****")
         
         
     }
