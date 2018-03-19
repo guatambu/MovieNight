@@ -16,8 +16,8 @@ class Person: MovieDBEntity, Hashable {
     // Name
     var name: String
     // Profile Pic Path
-    //var profilePath: String
-    var profilePicStub: UIImage
+    var profilePath: String
+    //var profilePicStub: UIImage
     // HashValue
     var hashValue: Int {
         return self.id
@@ -25,20 +25,20 @@ class Person: MovieDBEntity, Hashable {
     
     init(id: Int,
          name: String,
-         //profilePath: String,
+         profilePath: String,
          profilePicStub: UIImage
          
         ) {
             self.id = id
             self.name = name
-            //profilePath = profilePath
-            self.profilePicStub = profilePicStub
+            self.profilePath = profilePath
+            //self.profilePicStub = profilePicStub
     }
     static func ==(lhs: Person, rhs: Person) -> Bool {
         return lhs.hashValue == rhs.hashValue
     }
     
-    /*
+    
     init?(json: [String: Any]) {
         struct Key {
             static let id = "ID"
@@ -54,5 +54,5 @@ class Person: MovieDBEntity, Hashable {
         self.name = nameValue
         self.profilePath = profilePathValue
         }
-    */
+    
 }

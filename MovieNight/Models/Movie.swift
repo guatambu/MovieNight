@@ -46,7 +46,7 @@ class Movie: MovieDBEntity {
     }
     
     
-    /*
+    
      init?(json: [String: Any]) {
          struct Key {
              static let id = "ID"
@@ -77,7 +77,7 @@ class Movie: MovieDBEntity {
          self.voteCount = voteCountValue
          self.briefDescription = briefDescriptionValue
      }
-     */
+ 
 }
 
 

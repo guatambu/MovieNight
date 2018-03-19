@@ -55,14 +55,14 @@ class MovieDatabaseAPIClient {
                 }
                 let movies: [Movie] = results.flatMap { Movie(json: $0) }
                 //let sortedMovies: [Starship] = starships.sorted(by: {$1.name > $0.name})
-                self.allDownloadedStarships.append(contentsOf: movies/*sortedMovies*/)
-                let totalPages = json["total_pages"]
+                self.allDownloadedMovies.append(contentsOf: movies/*sortedMovies*/)
+                let totalPages: Int = json["total_pages"] as! Int
                 if totalPages > 1 || totalPages < 6 {
-                    self.discoverEndpoint = TMDBAPI.moviesInGenreWithPerson(apiKey: DiscoverOptions.apiKey.rawValue, language: DiscoverOptions.languageEnglishUS.rawValue, sortBy: DiscoverOptions.sortByDescendingPopularity.rawValue, includeAdult: DiscoverOptions.isFalse.rawValue, includeVideo: DiscoverOptions.isFalse.rawValue, page: ("\(pageNumber)"), withGenreID: "<#T##String?#>", people: "<#T##String?#>")
+                    self.discoverEndpoint = TMDBAPI.moviesInGenreWithPerson(apiKey: DiscoverOptions.apiKey.rawValue, language: DiscoverOptions.languageEnglishUS.rawValue, sortBy: DiscoverOptions.sortByDescendingPopularity.rawValue, includeAdult: DiscoverOptions.isFalse.rawValue, includeVideo: DiscoverOptions.isFalse.rawValue, page: ("\(self.pageNumber)"), withGenreID: "<#T##String?#>", people: "<#T##String?#>")
                     self.discover(with: self.discoverEndpoint, completionHandler: completion)
                     self.pageNumber += 1
                 } else {
-                    self.discoverEndpoint = TMDBAPI.moviesInGenreWithPerson(apiKey: DiscoverOptions.apiKey.rawValue, language: DiscoverOptions.languageEnglishUS.rawValue, sortBy: DiscoverOptions.sortByDescendingPopularity.rawValue, includeAdult: DiscoverOptions.isFalse.rawValue, includeVideo: DiscoverOptions.isFalse.rawValue, page: ("\(pageNumber)"), withGenreID: "<#T##String?#>", people: "<#T##String?#>")
+                    self.discoverEndpoint = TMDBAPI.moviesInGenreWithPerson(apiKey: DiscoverOptions.apiKey.rawValue, language: DiscoverOptions.languageEnglishUS.rawValue, sortBy: DiscoverOptions.sortByDescendingPopularity.rawValue, includeAdult: DiscoverOptions.isFalse.rawValue, includeVideo: DiscoverOptions.isFalse.rawValue, page: ("\(self.pageNumber)"), withGenreID: "<#T##String?#>", people: "<#T##String?#>")
                     print("endpoint has been reset to: \(self.discoverEndpoint)")
                     self.pageNumber = 2
                     print("\(self.pageNumber)")
@@ -92,11 +92,11 @@ class MovieDatabaseAPIClient {
                     return
                 }
                 let people: [Person] = results.flatMap { Person(json: $0) }
-                //let sortedMovies: [Starship] = starships.sorted(by: {$1.name > $0.name})
+                //let sortedPeople: [Person] = people.sorted(by: {$1.name > $0.name})
                 self.allDownloadedPeople.append(contentsOf: people/*sortedMovies*/)
-                let totalPages = json["total_pages"]
+                let totalPages: Int = json["total_pages"] as! Int
                 if totalPages > 1 || totalPages < 6 {
-                    self.discoverEndpoint = TMDBAPI.person(apiKey: DiscoverOptions.apiKey.rawValue, language: DiscoverOptions.languageEnglishUS.rawValue, page: "\(pageNumber)")
+                    self.discoverEndpoint = TMDBAPI.person(apiKey: DiscoverOptions.apiKey.rawValue, language: DiscoverOptions.languageEnglishUS.rawValue, page: "\(self.pageNumber)")
                     self.getPopularPeople(with: self.popularPeopleEndpoint, completionHandler: completion)
                     self.pageNumber += 1
                 } else {
