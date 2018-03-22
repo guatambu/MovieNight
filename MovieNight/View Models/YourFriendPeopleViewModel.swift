@@ -12,7 +12,7 @@ import Foundation
 struct YourFriendPeopleViewModel {
     let id: Int
     let fullName: String
-    //var profilePath: String
+    var profilePath: String
     
 }
 
@@ -21,6 +21,6 @@ extension YourFriendPeopleViewModel {
     init(person: Person) {
         self.id = person.id
         self.fullName = person.name
-        //self.profilePath = person.profilePath
+        self.profilePath = person.profilePath
     }
 }

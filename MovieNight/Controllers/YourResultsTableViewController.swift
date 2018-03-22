@@ -14,6 +14,11 @@ class YourResultsTableViewController: UITableViewController {
     
     var dataSource = MovieResultsDataSource()
     var yourMoviesResultsInstance: Selections!
+    var movieResults = [Movie]()
+    // there is a chance you will get no movie results, so no you need to account for this chance error in the results VC  or in the prepare for segue from the home screen VC
+    // bring up an alert window saying the matches have returned no results and asks the user to start over
+    // so one button "start over"
+    
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
@@ -98,7 +103,8 @@ class YourResultsTableViewController: UITableViewController {
 
 extension YourResultsTableViewController {
     func updateTableViewDataSource(for tableView: UITableView) {
-        dataSource.update(with: StubData.movie)
+        dataSource.update(with: movieResults)
         tableView.reloadData()
+        print("results VC datasource check: \(dataSource.data)")
     }
 }

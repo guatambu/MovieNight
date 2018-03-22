@@ -8,6 +8,10 @@
 
 import UIKit
 
+// i will want to reset the seslctions.genres array to empty when user hits the back button on either the youGenres VC or yourFriendGenres VC - can be done by calling the "startOver" func present in this the homeScreen VC
+// likely to be best done via the unwind segue from either VC
+
+
 var selections = Selections()
 
 class HomeScreenViewController: UIViewController {
@@ -28,6 +32,12 @@ class HomeScreenViewController: UIViewController {
         return .lightContent // .default
     }
     
+    let client = MovieDatabaseAPIClient()
+    var endpoint = TMDBAPI.moviesInGenreWithPerson(apiKey: DiscoverOptions.apiKey.rawValue, language: DiscoverOptions.languageEnglishUS.rawValue, sortBy: DiscoverOptions.sortByDescendingPopularity.rawValue, includeAdult: DiscoverOptions.isFalse.rawValue, includeVideo: DiscoverOptions.isFalse.rawValue, page: DiscoverOptions.page1.rawValue, withGenreID: "", people: "")
+    
+    var newEndpoint = TMDBAPI.moviesInGenreWithPerson(apiKey: DiscoverOptions.apiKey.rawValue, language: DiscoverOptions.languageEnglishUS.rawValue, sortBy: DiscoverOptions.sortByDescendingPopularity.rawValue, includeAdult: DiscoverOptions.isFalse.rawValue, includeVideo: DiscoverOptions.isFalse.rawValue, page: DiscoverOptions.page1.rawValue, withGenreID: "", people: "")
+
+    
     @IBOutlet weak var youBubbleImageView: UIImageView!
     @IBOutlet weak var yourFriendBubbleImageView: UIImageView!
     @IBOutlet weak var youStackViewOutlet: UIStackView!
@@ -47,7 +57,7 @@ class HomeScreenViewController: UIViewController {
         viewResultsButtonOutlet.setTitleColor(UIColor(red: 104.0/255.0, green: 104.0/255.0, blue: 104.0/255.0, alpha: 0.6), for: .normal)
         youBubbleImageView.image = #imageLiteral(resourceName: "bubble-empty")
         yourFriendBubbleImageView.image = #imageLiteral(resourceName: "bubble-empty")
-        
+        endpoint = newEndpoint
     }
     
     @IBAction func viewMovieResults(_ sender: Any) {
@@ -184,8 +194,26 @@ class HomeScreenViewController: UIViewController {
             
             selections.matchFinder()
             
+            /*
+            client.getPopularPeople(with: client.popularPeopleEndpoint) { myPeopleArray, error in
+                //myPeopleArray = client.allDownloadedPeople
+                youPeopleFinalViewController.myPeopleArray = self.client.allDownloadedPeople
+                youPeopleFinalViewController.dataSource.data = youPeopleFinalViewController.myPeopleArray
+                youPeopleFinalViewController.youPeopleTableView.reloadData()
+                print("print displayed myPeopleArray: \(youPeopleFinalViewController.myPeopleArray)")
+            }
+            */
+            print("genre matches:\(selections.genreMatchValues)")
+            endpoint = TMDBAPI.moviesInGenreWithPerson(apiKey: DiscoverOptions.apiKey.rawValue, language: DiscoverOptions.languageEnglishUS.rawValue, sortBy: DiscoverOptions.sortByDescendingPopularity.rawValue, includeAdult: DiscoverOptions.isFalse.rawValue, includeVideo: DiscoverOptions.isFalse.rawValue, page: DiscoverOptions.page1.rawValue, withGenreID: selections.genreMatchValues, people: selections.peopleMatchValues)
             
-            let endpoint = TMDBAPI.moviesInGenreWithPerson(apiKey: DiscoverOptions.apiKey.rawValue, language: DiscoverOptions.languageEnglishUS.rawValue, sortBy: DiscoverOptions.sortByDescendingPopularity.rawValue, includeAdult: DiscoverOptions.isFalse.rawValue, includeVideo: DiscoverOptions.isFalse.rawValue, page: DiscoverOptions.page1.rawValue, withGenreID: selections.genreMatchValues, people: selections.peopleMatchValues)
+            client.discoverMovies(with: endpoint) { movieResults, error in
+                yourResultsViewController.movieResults = self.client.allDownloadedMovies
+                yourResultsViewController.dataSource.data = yourResultsViewController.movieResults
+                yourResultsViewController.tableView.reloadData()
+                print("here are the movie results as objects: \(yourResultsViewController.dataSource.data)")
+            }
+        
+            
             
             print(endpoint.request)
             

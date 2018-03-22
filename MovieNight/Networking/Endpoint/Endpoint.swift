@@ -219,7 +219,7 @@ extension TMDBAPI: Endpoint {
             }
             
             if let withGenreID = withGenreID {
-                let genreID = URLQueryItem(name: "with_genres", value: withGenreID)
+                let genreID = URLQueryItem(name: "with_genres", value: "\(withGenreID)")
                 result.append(genreID)
             }
             

@@ -73,7 +73,7 @@ class Selections {
             print("These are the matched genre IDs: \(genre.rawValue)")
             selections.genreMatchStrings.append("\(genre.rawValue)")
         }
-        let myGenreMatches = selections.genreMatchStrings.joined(separator: ",")
+        let myGenreMatches = selections.genreMatchStrings.joined(separator: "|")
         genreMatchValues = myGenreMatches
         print(genreMatchValues)
         for person in selections.peopleMatches {

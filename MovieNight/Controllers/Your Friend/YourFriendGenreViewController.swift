@@ -97,10 +97,12 @@ class YourFriendGenreViewController: UIViewController, UITableViewDelegate {
         guard let yourFriendPeopleFinalViewController = segue.destination as? YourFriendPeopleViewController else { return }
         yourFriendPeopleFinalViewController.yourFriendPeopleSelectionsInstance = yourFriendGenreSelectionsInstance
         
-        client.getPopularPeople(with: client.popularPeopleEndpoint) { myFriendPeopleArray, error in
-            yourFriendPeopleFinalViewController.myFriendPeopleArray = myFriendPeopleArray
+        client.getPopularPeople(with: client.popularPeopleEndpoint) { myPeopleArray, error in
+            //myPeopleArray = client.allDownloadedPeople
+            yourFriendPeopleFinalViewController.myFriendPeopleArray = self.client.allDownloadedPeople
+            yourFriendPeopleFinalViewController.dataSource.data = yourFriendPeopleFinalViewController.myFriendPeopleArray
             yourFriendPeopleFinalViewController.yourFriendPeopleTableView.reloadData()
-            
+            print("print displayed myFriendPeopleArray: \(yourFriendPeopleFinalViewController.myFriendPeopleArray)")
         }
         
         //let endpoint = TMDBAPI.person(apiKey: EndpointOptions.apiKey.rawValue, language: EndpointOptions.languageEnglishUS.rawValue, page: EndpointOptions.page1.rawValue)

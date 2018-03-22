@@ -108,10 +108,8 @@ class YourFriendPeopleViewController: UIViewController, UITableViewDelegate {
 
 extension YourFriendPeopleViewController {
     func updateTableViewDataSource(for tableView: UITableView) {
-       // dataSource.update(with: StubData.person1)
-        /*for thing in dataSource.data {
-            print("your friend: \(thing.name)")
-        }*/
+        dataSource.update(with: myFriendPeopleArray)
         tableView.reloadData()
+        print("******* YourFriendPeopleDataSource:\n\(dataSource.data)\n*******")
     }
 }

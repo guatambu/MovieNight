@@ -24,8 +24,7 @@ class MovieDatabaseAPIClient {
     let downloader = JSONDownloader()
     let session = URLSession.shared
     
-    var discoverEndpoint = TMDBAPI.moviesInGenreWithPerson(apiKey: DiscoverOptions.apiKey.rawValue, language: DiscoverOptions.languageEnglishUS.rawValue, sortBy: DiscoverOptions.sortByDescendingPopularity.rawValue, includeAdult: DiscoverOptions.isFalse.rawValue, includeVideo: DiscoverOptions.isFalse.rawValue, page: DiscoverOptions.page1.rawValue, withGenreID: "", people: "")
-    
+    var neutralMovieResultsEndpoint = TMDBAPI.moviesInGenreWithPerson(apiKey: DiscoverOptions.apiKey.rawValue, language: DiscoverOptions.languageEnglishUS.rawValue, sortBy: DiscoverOptions.sortByDescendingPopularity.rawValue, includeAdult: DiscoverOptions.isFalse.rawValue, includeVideo: DiscoverOptions.isFalse.rawValue, page: DiscoverOptions.page1.rawValue, withGenreID: "", people: "")
     var popularPeopleEndpoint = TMDBAPI.person(apiKey: DiscoverOptions.apiKey.rawValue, language: DiscoverOptions.languageEnglishUS.rawValue, page: DiscoverOptions.page1.rawValue)
     
     var pageNumber = 2
@@ -39,8 +38,8 @@ class MovieDatabaseAPIClient {
     typealias MoviesCompletionHandler = ([Movie], ErrorsTMDBAPI?) -> Void
     typealias PeopleCompletionHandler = ([Person], ErrorsTMDBAPI?) -> Void
 
-    func discoverMovies(with movieDBEntityEntityURLPath: Endpoint, completionHandler completion: @escaping MoviesCompletionHandler) {
-        let task = downloader.jsonTask(with: discoverEndpoint.request) { json, error in
+    func discoverMovies(with movieDBEntityURLPath: Endpoint, completionHandler completion: @escaping MoviesCompletionHandler) {
+        let task = downloader.jsonTask(with: movieDBEntityURLPath.request) { json, error in
             DispatchQueue.main.async {
                 guard let json = json else {
                     completion([], ErrorsTMDBAPI.noJSONData(message: "no JSON Data - failed at MovieDatabaseAPIClient.swift line 41?"))
@@ -55,21 +54,30 @@ class MovieDatabaseAPIClient {
                 }
                 let movies: [Movie] = results.flatMap { Movie(json: $0) }
                 //let sortedMovies: [Starship] = starships.sorted(by: {$1.name > $0.name})
-                self.allDownloadedMovies.append(contentsOf: movies/*sortedMovies*/)
-                let totalPages: Int = json["total_pages"] as! Int
-                if totalPages > 1 || totalPages < 6 {
-                    self.discoverEndpoint = TMDBAPI.moviesInGenreWithPerson(apiKey: DiscoverOptions.apiKey.rawValue, language: DiscoverOptions.languageEnglishUS.rawValue, sortBy: DiscoverOptions.sortByDescendingPopularity.rawValue, includeAdult: DiscoverOptions.isFalse.rawValue, includeVideo: DiscoverOptions.isFalse.rawValue, page: ("\(self.pageNumber)"), withGenreID: "<#T##String?#>", people: "<#T##String?#>")
-                    self.discoverMovies(with: self.discoverEndpoint, completionHandler: completion)
+                print(results)
+                //var movies = [Movie]()
+                //for movie in results {
+                //    guard let mov = Movie(json: movie) else {
+                //        print("can't create a Movie object to save my life MovieDataBaseAPIClient line 59")
+                //        return
+                //    }
+                //    movies.append(mov)
+                //}
+                self.allDownloadedMovies.append(contentsOf: movies)
+                
+                //let totalPages: Int = json["total_pages"] as! Int
+                if self.pageNumber < 6 {
+                    self.discoverMovies(with: movieDBEntityURLPath, completionHandler: completion)
                     self.pageNumber += 1
                 } else {
-                    self.discoverEndpoint = TMDBAPI.moviesInGenreWithPerson(apiKey: DiscoverOptions.apiKey.rawValue, language: DiscoverOptions.languageEnglishUS.rawValue, sortBy: DiscoverOptions.sortByDescendingPopularity.rawValue, includeAdult: DiscoverOptions.isFalse.rawValue, includeVideo: DiscoverOptions.isFalse.rawValue, page: ("\(self.pageNumber)"), withGenreID: "<#T##String?#>", people: "<#T##String?#>")
-                    print("endpoint has been reset to: \(self.discoverEndpoint)")
+                    print("endpoint has been reset to: \(self.neutralMovieResultsEndpoint)")
                     self.pageNumber = 2
                     print("\(self.pageNumber)")
                     self.allDiscoverJSON = [:]
                 }
                 //self.allDownloadedMovies = self.allDownloadedMovies.sorted(by: {$1.name > $0.name})
                 completion(movies, nil)
+                
             }
         }
         task.resume()
@@ -77,7 +85,7 @@ class MovieDatabaseAPIClient {
     
     
     
-    func getPopularPeople(with movieDBEntityEntityURLPath: Endpoint, completionHandler completion: @escaping PeopleCompletionHandler) {
+    func getPopularPeople(with movieDBEntityURLPath: Endpoint, completionHandler completion: @escaping PeopleCompletionHandler) {
         print(popularPeopleEndpoint.request)
         let task = downloader.jsonTask(with: popularPeopleEndpoint.request) { json, error in
             DispatchQueue.main.async {
@@ -106,6 +114,7 @@ class MovieDatabaseAPIClient {
                 //let sortedPeople: [Person] = people.sorted(by: {$1.name > $0.name})
                 self.allDownloadedPeople.append(contentsOf: people/*sortedPeople*/)
                 //let totalPages: Int = json["total_pages"] as! Int
+                
                 if self.pageNumber < 6 {
                     self.popularPeopleEndpoint = TMDBAPI.person(apiKey: DiscoverOptions.apiKey.rawValue, language: DiscoverOptions.languageEnglishUS.rawValue, page: "\(self.pageNumber)")
                     self.getPopularPeople(with: self.popularPeopleEndpoint, completionHandler: completion)
